@@ -25,7 +25,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_IN',
     siteName: 'Nakshatra Namaha Creations',
-    images: [{ url: 'https://www.nakshatranamahacreations.com/media/teams/NNCGRPPHO.avif', width: 1200, height: 630, alt: 'Custom CRM Development Mysuru Nakshatra Namaha Creations' }],
+    images: [{ url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png', width: 1200, height: 630, alt: 'Custom CRM Development Mysuru Nakshatra Namaha Creations' }],
   },
   twitter: {
     card: 'summary_large_image',

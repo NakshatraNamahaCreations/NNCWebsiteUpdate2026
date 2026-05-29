@@ -19,7 +19,7 @@ export const metadata = {
     description: APP_PAGE.description,
     images: [
       {
-        url: 'https://www.nakshatranamahacreations.com/media/teams/NNCGRPPHO.avif',
+        url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
         width: 1200,
         height: 630,
         alt: 'NNC Digital Mobile App Development Company Bangalore',

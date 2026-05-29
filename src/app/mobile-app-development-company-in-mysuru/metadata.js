@@ -44,7 +44,7 @@ export const metadata = {
       'Top mobile app development company in Mysuru. Custom Android & iOS apps on React Native & Flutter. Walk-in office. Fixed price. Source code yours.',
     images: [
       {
-        url: 'https://www.nakshatranamahacreations.com/media/teams/NNCGRPPHO.avif',
+        url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
         width: 1200,
         height: 630,
         alt: 'Mobile App Development Company Mysuru Nakshatra Namaha Creations',

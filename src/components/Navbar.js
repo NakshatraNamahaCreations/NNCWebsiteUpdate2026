@@ -556,7 +556,7 @@ useEffect(() => {
             <img src={SITE.logo} alt="NNC Digital Logo" width={46} height={46} style={{ borderRadius: 8, objectFit: 'contain' }} />
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
               <span style={{ fontSize: 'clamp(11px,2.5vw,14px)', fontWeight: 800, color: '#0B1F4B', letterSpacing: '-.02em', whiteSpace: 'nowrap' }}>Nakshatra Namaha Creations</span>
-              <span style={{ fontSize: 'clamp(9px,2vw,11px)', fontWeight: 500, color: '#94A3B8', letterSpacing: '.01em', whiteSpace: 'nowrap' }}>Yours Digital Partner Solutions</span>
+              <span style={{ fontSize: 'clamp(9px,2vw,11px)', fontWeight: 500, color: '#94A3B8', letterSpacing: '.01em', whiteSpace: 'nowrap' }}>Your Digital Solutions Partner</span>
             </div>
           </Link>
 
