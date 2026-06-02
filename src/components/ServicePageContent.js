@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { SITE } from '@/data/siteData'
+import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
 import CustomHero from './CustomHero'
 import PremiumCTA from './PremiumCTA'
 import ClientsAcross from './ClientsAcross'
@@ -481,6 +482,8 @@ export default function ServicePageContent({ data, customHero = false, showCTA =
   const [sending, setSending] = useState(false)
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', message: '' })
   const [error, setError] = useState('')
+  const [hp, setHp] = useState('')
+  const renderedAt = useRenderedAt()
 
   const openQuote = () => window.dispatchEvent(new CustomEvent('open-quote'))
   // Validation helpers
@@ -580,7 +583,9 @@ export default function ServicePageContent({ data, customHero = false, showCTA =
           email: form.email,
           service: data.serviceName,
           message: form.message,
-          landingPage: typeof window !== 'undefined' ? window.location.pathname : '/'
+          landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
+          company_website: hp,
+          renderedAt: renderedAt.current,
         }),
       });
       const responseData = await res.json();
@@ -947,6 +952,7 @@ export default function ServicePageContent({ data, customHero = false, showCTA =
                 </div>
 
                 <form onSubmit={submit} noValidate>
+                  <Honeypot value={hp} onChange={setHp} />
                   <div className="row g-2 mb-2">
                     <div className="col-6">
                       <input

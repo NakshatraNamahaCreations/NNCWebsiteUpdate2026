@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { SITE, OFFICES } from '@/data/siteData'
+import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
 
 function Svg({ d, size = 16, color = 'currentColor', sw = 1.8 }) {
   return (
@@ -15,6 +16,8 @@ export default function ContactContent() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', service: '', message: '' })
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', service: '', message: '' })
   const [sending, setSending] = useState(false)
+  const [hp, setHp] = useState('')
+  const renderedAt = useRenderedAt()
 
   // Validation helpers
   const validateName = (value) => {
@@ -121,7 +124,7 @@ export default function ContactContent() {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, landingPage: '/contact-us' }),
+        body: JSON.stringify({ ...form, landingPage: '/contact-us', company_website: hp, renderedAt: renderedAt.current }),
       });
       const data = await res.json();
       if (res.ok) {
@@ -229,6 +232,7 @@ export default function ContactContent() {
                 </div>
 
                 <form onSubmit={submit} noValidate>
+                  <Honeypot value={hp} onChange={setHp} />
                   <div className="row g-3 mb-3">
                     <div className="col-md-6">
                       <label style={{ fontSize: 12.5, fontWeight: 600, color: '#475569', marginBottom: 6, display: 'block' }}>Your Name *</label>

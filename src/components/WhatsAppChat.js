@@ -136,6 +136,7 @@ export default function WhatsAppChat() {
   const [showOptions, setShowOptions] = useState(false)
   const chatRef = useRef(null)
   const inputRef = useRef(null)
+  const renderedAt = useRef(0)
 
   useEffect(() => {
     if (chatRef.current) {
@@ -165,6 +166,7 @@ export default function WhatsAppChat() {
   const handleOpen = () => {
     setOpen(true)
     setPulse(false)
+    renderedAt.current = Date.now()
     if (messages.length === 0) {
       setTyping(true)
       setTimeout(() => {
@@ -314,6 +316,9 @@ export default function WhatsAppChat() {
           service: ans.service || 'General',
           message: `[Chatbot Lead]\n\n${message}`,
           landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
+          source: 'chatbot',
+          company_website: '',
+          renderedAt: renderedAt.current,
         }),
       })
     } catch { /* silent fail WhatsApp is the primary channel */ }

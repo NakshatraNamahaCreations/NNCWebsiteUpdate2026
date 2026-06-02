@@ -1,5 +1,37 @@
 import nodemailer from 'nodemailer'
 
+const submissionLog = new Map()
+
+function rateLimited(ip, maxPerHour = 3) {
+  if (!ip) return false
+  const now = Date.now()
+  const windowMs = 60 * 60 * 1000
+  const hits = (submissionLog.get(ip) || []).filter((t) => now - t < windowMs)
+  hits.push(now)
+  submissionLog.set(ip, hits)
+  if (submissionLog.size > 5000) {
+    for (const [k, v] of submissionLog) {
+      if (!v.some((t) => now - t < windowMs)) submissionLog.delete(k)
+    }
+  }
+  return hits.length > maxPerHour
+}
+
+function looksGibberish(s = '') {
+  const str = String(s).trim()
+  if (str.length <= 8) return false
+  const noSpaces = !/\s/.test(str)
+  const mixedCase = /[a-z]/.test(str) && /[A-Z]/.test(str)
+  const vowelRatio = (str.match(/[aeiou]/gi) || []).length / str.length
+  return noSpaces && mixedCase && vowelRatio < 0.3
+}
+
+function getClientIp(request) {
+  const xff = request.headers.get('x-forwarded-for')
+  if (xff) return xff.split(',')[0].trim()
+  return request.headers.get('x-real-ip') || ''
+}
+
 function getTransporter() {
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -157,10 +189,48 @@ function thankYouEmail(name, service) {
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { name, phone, email, service, message, landingPage, source } = body
+    const {
+      name, phone, email, service, message, landingPage, source,
+      company_website, renderedAt,
+    } = body
+
+    if (company_website) {
+      return Response.json({ success: true })
+    }
+
+    const ip = getClientIp(request)
+
+    const renderedAtNum = Number(renderedAt)
+    if (renderedAtNum && Date.now() - renderedAtNum < 3000) {
+      return Response.json({ error: 'spam_detected' }, { status: 400 })
+    }
+
+    if (rateLimited(ip)) {
+      return Response.json({ error: 'too_many_requests' }, { status: 429 })
+    }
 
     if (!name || !phone) {
       return Response.json({ error: 'Name and phone are required.' }, { status: 400 })
+    }
+
+    const isChatbot = source === 'chatbot'
+    if (!isChatbot) {
+      const cleanPhone = String(phone).replace(/[\s\-()]/g, '')
+      const phoneOk = /^(\+91)?[6-9]\d{9}$/.test(cleanPhone)
+      if (!phoneOk) {
+        return Response.json({ error: 'invalid_contact' }, { status: 400 })
+      }
+    }
+
+    if (email) {
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email))
+      if (!emailOk) {
+        return Response.json({ error: 'invalid_contact' }, { status: 400 })
+      }
+    }
+
+    if (looksGibberish(name) || (!isChatbot && looksGibberish(message))) {
+      return Response.json({ error: 'invalid_content' }, { status: 400 })
     }
 
     // Determine the landing page label prefer explicit landingPage field,

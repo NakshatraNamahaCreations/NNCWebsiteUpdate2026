@@ -8,6 +8,7 @@ import {
   APP_PORTFOLIO, APP_FAQS, APP_TESTIMONIALS,
 } from '@/data/mobileAppData'
 import { SITE } from '@/data/siteData'
+import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
 
 /* ── helpers ── */
 const sc = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -544,6 +545,8 @@ function FaqContact() {
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', message: '' })
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
+  const [hp, setHp] = useState('')
+  const renderedAt = useRenderedAt()
 
   // Validation helpers
   const validateName = (value) => {
@@ -646,7 +649,9 @@ function FaqContact() {
           email: form.email,
           service: `Mobile App ${form.app || ''} | Budget: ${form.budget || ''}`,
           message: form.message,
-          landingPage: '/mobile-app-development-company-in-bangalore'
+          landingPage: '/mobile-app-development-company-in-bangalore',
+          company_website: hp,
+          renderedAt: renderedAt.current,
         }),
       });
       const data = await res.json();
@@ -709,6 +714,7 @@ function FaqContact() {
               </div>
 
               <form onSubmit={submit} noValidate>
+                <Honeypot value={hp} onChange={setHp} />
                 <div className="row g-2 mb-2">
                   <div className="col-6">
                     <input

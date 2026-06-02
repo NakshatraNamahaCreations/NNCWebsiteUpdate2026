@@ -1,6 +1,7 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
+import { Honeypot } from '@/utils/formSpamProtection'
 
 const SERVICES = [
   'Website Development',
@@ -20,11 +21,15 @@ export default function QuoteModal() {
   const [error, setError] = useState('')
   const [form, setForm] = useState({ name: '', phone: '', email: '', service: '', message: '', landingPage: '' })
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', service: '', message: '' });
+  const [hp, setHp] = useState('')
+  const renderedAt = useRef(0)
 
   const openModal = useCallback(() => {
     setOpen(true)
     setErrors({ name: '', phone: '', email: '', service: '', message: '' });
     setError('')
+    setHp('')
+    renderedAt.current = Date.now()
     setForm({ name: '', phone: '', email: '', service: '', message: '', landingPage: typeof window !== 'undefined' ? window.location.pathname : '/' })
   }, [])
 
@@ -154,7 +159,7 @@ export default function QuoteModal() {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, company_website: hp, renderedAt: renderedAt.current }),
       })
       const data = await res.json()
       if (res.ok) {
@@ -207,6 +212,7 @@ export default function QuoteModal() {
           </div>
 
           <form onSubmit={handleSubmit}>
+            <Honeypot value={hp} onChange={setHp} />
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px 16px' }}>
               {/* Name - left column */}
               <div style={{ gridColumn: '1' }}>

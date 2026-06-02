@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { CASE_STUDIES, PROCESS_STEPS, TESTIMONIALS, CLIENTS, INDUSTRIES, TECH_STACK, FAQS, SITE, OFFICES } from '@/data/siteData'
+import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
 
 /* ── CASE STUDIES ─────────────────────────────────────────────── */
 export function CaseStudies() {
@@ -454,6 +455,8 @@ export function FaqContact() {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', message: '' })
+  const [hp, setHp] = useState('')
+  const renderedAt = useRenderedAt()
 
   const toggle = (i) => setOpen(open === i ? null : i)
 
@@ -554,7 +557,12 @@ export function FaqContact() {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, landingPage: typeof window !== 'undefined' ? window.location.pathname : '/' }),
+        body: JSON.stringify({
+          ...form,
+          landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
+          company_website: hp,
+          renderedAt: renderedAt.current,
+        }),
       });
       const data = await res.json();
       if (res.ok) {
@@ -635,6 +643,7 @@ export function FaqContact() {
               </div>
 
               <form onSubmit={submit} noValidate>
+                <Honeypot value={hp} onChange={setHp} />
                 <div className="row g-2 mb-2">
                   {/* NAME */}
                   <div className="col-6">

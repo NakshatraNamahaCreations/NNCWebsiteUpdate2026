@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { SITE } from '@/data/siteData'
+import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
 
 const sc = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
 
@@ -218,6 +219,8 @@ export default function CityServiceContent({ slug, svc, city, hood, titleOverrid
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', message: '' })
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
+  const [hp, setHp] = useState('')
+  const renderedAt = useRenderedAt()
 
   const location = hood ? `${hood.name}, ${city?.name}` : city?.name || 'India'
   const headline = titleOverride
@@ -322,7 +325,9 @@ export default function CityServiceContent({ slug, svc, city, hood, titleOverrid
           email: form.email,
           service: svc?.name,
           message: form.message,
-          landingPage: `/${slug}`
+          landingPage: `/${slug}`,
+          company_website: hp,
+          renderedAt: renderedAt.current,
         }),
       });
       const data = await res.json();
@@ -559,6 +564,7 @@ export default function CityServiceContent({ slug, svc, city, hood, titleOverrid
                 </div>
 
                 <form onSubmit={submit} noValidate>
+                  <Honeypot value={hp} onChange={setHp} />
                   <div className="row g-2 mb-2">
                     <div className="col-6">
                       <input

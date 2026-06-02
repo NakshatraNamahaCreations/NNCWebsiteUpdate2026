@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
 import {
   MYSURU_APP_PAGE, MYSURU_APP_STATS, MYSURU_APP_TECH, MYSURU_APP_TYPES,
   MYSURU_APP_PROCESS, MYSURU_APP_FEATURES, MYSURU_APP_PRICING,
@@ -557,6 +558,8 @@ function FaqContact() {
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', message: '' })
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
+  const [hp, setHp] = useState('')
+  const renderedAt = useRenderedAt()
 
   const vName = v => { const t = v.trim(); if (!t) return 'Full name is required'; if (!/^[A-Za-z\s]+$/.test(t)) return 'Only alphabets and spaces'; if (t.length < 2) return 'At least 2 characters'; return '' }
   const vPhone = v => { const d = v.replace(/\D/g,''); if (!d) return 'Phone is required'; if (d.length !== 10) return 'Enter 10-digit number'; return '' }
@@ -580,7 +583,7 @@ function FaqContact() {
     if (Object.values(errs).some(Boolean)) { setErrors(errs); return }
     setErrors({ name: '', phone: '', email: '', message: '' }); setSending(true)
     try {
-      const res = await fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: form.name, phone: form.phone, email: form.email, service: `Mobile App ${form.app||''} | Budget: ${form.budget||''}`, message: form.message, landingPage: '/mobile-app-development-company-in-mysuru' }) })
+      const res = await fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: form.name, phone: form.phone, email: form.email, service: `Mobile App ${form.app||''} | Budget: ${form.budget||''}`, message: form.message, landingPage: '/mobile-app-development-company-in-mysuru', company_website: hp, renderedAt: renderedAt.current }) })
       const data = await res.json()
       if (res.ok) router.push('/thankyou'); else setError(data.error || 'Something went wrong.')
     } catch { setError('Network error.') } finally { setSending(false) }
@@ -618,6 +621,7 @@ function FaqContact() {
                 <a href={`mailto:${SITE.email}`} className="cc-link"><Ico d="M2 4h20v16H2zM22 7l-10 6.5L2 7" size={14} />{SITE.email}</a>
               </div>
               <form onSubmit={submit} noValidate>
+                <Honeypot value={hp} onChange={setHp} />
                 <div className="row g-2 mb-2">
                   <div className="col-6">
                     <input className="cc-inp" type="text" placeholder="Your name *" name="name" value={form.name} onChange={handleChange} onBlur={e => validateField(e.target.name, e.target.value)} maxLength={100} style={{ borderColor: errors.name ? '#EF4444' : undefined }} />
