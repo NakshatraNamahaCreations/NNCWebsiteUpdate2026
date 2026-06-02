@@ -216,7 +216,7 @@ export default function AdminBlogPage() {
               </a>
               <div className="lg-left-logo-text">
                 <div className="lg-left-logo-name">Nakshatra Namaha Creations</div>
-                <div className="lg-left-logo-tag">Yours Digital Partner Solutions</div>
+                <div className="lg-left-logo-tag">Your digital solutions partner</div>
               </div>
             </div>
             <div className="lg-left-body">
@@ -529,7 +529,7 @@ export default function AdminBlogPage() {
             <div className="tb-divider" />
             <div>
               <div className="tb-name">Nakshatra Namaha Creations</div>
-              <div className="tb-tag">Yours Digital Partner Solutions</div>
+              <div className="tb-tag">Your digital solutions partner</div>
             </div>
             <span className="tb-badge">Admin</span>
           </div>

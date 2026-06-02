@@ -45,7 +45,7 @@ export const metadata = {
     siteName: 'NNC Digital Website Development Company Bangalore',
     title: 'Website & App Development Company in Bangalore | NNC',
     description:
-      'NNC builds websites, mobile apps, CRM software and runs digital marketing. 35+ in-house team, 565+ projects, 4 offices. Fixed price. Free quote in 24hrs.',
+      'Build your digital presence with a Website & App Development Company creating custom websites, mobile apps, UI/UX, and scalable business solutions.',
     images: [
       {
         url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',

@@ -4,7 +4,7 @@
 export const SITE = {
   name: 'Nakshatra Namaha Creations Pvt. Ltd.',
   shortName: 'Nakshatra Namaha Creations',
-  tagline: 'Your Digital Partner Solutions',
+  tagline: 'Your digital solutions partner',
   url: 'https://www.nakshatranamahacreations.com',
   phone: '+91 99005 66466',
   phoneHref: 'tel:+919900566466',

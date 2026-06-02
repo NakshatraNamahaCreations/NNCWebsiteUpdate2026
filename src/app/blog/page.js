@@ -3,8 +3,7 @@ import AnimObserver from '@/components/AnimObserver'
 import { SeoKeywords, Footer, WaFloat } from '@/components/Sections'
 import BlogContent from './BlogContent'
 import { SITE } from '@/data/siteData'
-import { connectDB } from '@/lib/mongodb'
-import Blog from '@/lib/BlogModel'
+import { getAllPosts } from '@/lib/blogSource'
 
 export const dynamic = 'force-dynamic'
 
@@ -15,18 +14,7 @@ export const metadata = {
 }
 
 export default async function BlogPage() {
-  let posts = []
-  try {
-    await connectDB()
-    const raw = await Blog.find({}).sort({ date: -1 }).lean()
-    posts = raw.map(p => ({
-      slug: p.slug, title: p.title, category: p.category,
-      date: p.date, readTime: p.readTime,
-      description: p.description || '', body: p.body || '',
-    }))
-  } catch (err) {
-    console.error('[blog] failed to load posts from MongoDB:', err.message)
-  }
+  const posts = await getAllPosts()
 
   return (
     <>

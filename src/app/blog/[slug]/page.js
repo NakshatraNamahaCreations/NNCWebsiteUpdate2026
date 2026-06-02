@@ -1,41 +1,35 @@
 import Navbar from '@/components/Navbar'
 import AnimObserver from '@/components/AnimObserver'
 import { SeoKeywords, Footer, WaFloat } from '@/components/Sections'
-import { connectDB } from '@/lib/mongodb'
-import Blog from '@/lib/BlogModel'
+import { getPost } from '@/lib/blogSource'
 import { SITE } from '@/data/siteData'
 import Link from 'next/link'
 
 export const dynamic = 'force-dynamic'
 
 export async function generateMetadata({ params }) {
-  try {
-    await connectDB()
-    const post = await Blog.findOne({ slug: params.slug }).lean()
-    if (!post) return { title: 'Blog | NNC Digital' }
-    const description = post.description || `${post.title} practical insights from NNC Digital's in-house team in Bengaluru. Expert guide on ${post.category.toLowerCase()} for businesses in India.`
-    return {
-      title: `${post.title} | NNC Digital Blog`,
+  const { post } = await getPost(params.slug)
+  if (!post) return { title: 'Blog | NNC Digital' }
+  const description = post.description || `${post.title} practical insights from NNC Digital's in-house team in Bengaluru. Expert guide on ${post.category.toLowerCase()} for businesses in India.`
+  return {
+    title: `${post.title} | NNC Digital Blog`,
+    description,
+    alternates: { canonical: `${SITE.url}/blog/${post.slug}` },
+    openGraph: {
+      title: post.title,
       description,
-      alternates: { canonical: `${SITE.url}/blog/${post.slug}` },
-      openGraph: {
-        title: post.title,
-        description,
-        type: 'article',
-        publishedTime: post.date,
-        url: `${SITE.url}/blog/${post.slug}`,
-        images: [{ url: SITE.teamPhoto, width: 1200, height: 630, alt: `${post.title} NNC Digital Blog` }],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        site: '@nncbengaluru',
-        title: post.title,
-        description,
-        images: [SITE.teamPhoto],
-      },
-    }
-  } catch {
-    return { title: 'Blog | NNC Digital' }
+      type: 'article',
+      publishedTime: post.date,
+      url: `${SITE.url}/blog/${post.slug}`,
+      images: [{ url: SITE.teamPhoto, width: 1200, height: 630, alt: `${post.title} NNC Digital Blog` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@nncbengaluru',
+      title: post.title,
+      description,
+      images: [SITE.teamPhoto],
+    },
   }
 }
 
@@ -56,17 +50,7 @@ function generateContent(post) {
 }
 
 export default async function BlogPostPage({ params }) {
-  let post = null
-  let related = []
-  try {
-    await connectDB()
-    post = await Blog.findOne({ slug: params.slug }).lean()
-    if (post) {
-      related = await Blog.find({ category: post.category, slug: { $ne: post.slug } }).limit(3).lean()
-    }
-  } catch (err) {
-    console.error('[blog/slug] failed to load post from MongoDB:', err.message)
-  }
+  const { post, related } = await getPost(params.slug)
 
   if (!post) return <div style={{ padding: 80, textAlign: 'center', fontSize: 18, color: '#6B7A99' }}>Blog post not found.</div>
 
