@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
+import { Honeypot, useRenderedAt, TurnstileWidget, readTurnstileToken } from '@/utils/formSpamProtection'
 import {
   MYSURU_APP_PAGE, MYSURU_APP_STATS, MYSURU_APP_TECH, MYSURU_APP_TYPES,
   MYSURU_APP_PROCESS, MYSURU_APP_FEATURES, MYSURU_APP_PRICING,
@@ -583,7 +583,7 @@ function FaqContact() {
     if (Object.values(errs).some(Boolean)) { setErrors(errs); return }
     setErrors({ name: '', phone: '', email: '', message: '' }); setSending(true)
     try {
-      const res = await fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: form.name, phone: form.phone, email: form.email, service: `Mobile App ${form.app||''} | Budget: ${form.budget||''}`, message: form.message, landingPage: '/mobile-app-development-mysuru', company_website: hp, renderedAt: renderedAt.current }) })
+      const res = await fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: form.name, phone: form.phone, email: form.email, service: `Mobile App ${form.app||''} | Budget: ${form.budget||''}`, message: form.message, landingPage: '/mobile-app-development-mysuru', company_website: hp, renderedAt: renderedAt.current, cfToken: readTurnstileToken() }) })
       const data = await res.json()
       if (res.ok) router.push('/thankyou'); else setError(data.error || 'Something went wrong.')
     } catch { setError('Network error.') } finally { setSending(false) }
@@ -645,6 +645,7 @@ function FaqContact() {
                 <textarea className="cc-ta d-block mb-2" rows="3" placeholder="Brief description of your app idea... (min 10 chars)" name="message" value={form.message} onChange={handleChange} onBlur={e => validateField(e.target.name, e.target.value)} style={{ borderColor: errors.message ? '#EF4444' : undefined }} />
                 {errors.message && <div style={{ color: '#EF4444', fontSize: 11, marginTop: -4, marginBottom: 6 }}>{errors.message}</div>}
                 {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10 }}>{error}</p>}
+                <TurnstileWidget theme="dark" />
                 <button type="submit" className="cc-submit mb-3" disabled={sending || Object.values(errors).some(Boolean)}>
                   {sending ? 'Sending…' : <>Get Free App Quote <Ico d="M5 12h14M12 5l7 7-7 7" color="#fff" size={13} sw={2.5} /></>}
                 </button>

@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { Honeypot } from '@/utils/formSpamProtection'
+import { Honeypot, TurnstileWidget, readTurnstileToken } from '@/utils/formSpamProtection'
 
 const SERVICES = [
   'Website Development',
@@ -159,7 +159,7 @@ export default function QuoteModal() {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, company_website: hp, renderedAt: renderedAt.current }),
+        body: JSON.stringify({ ...form, company_website: hp, renderedAt: renderedAt.current, cfToken: readTurnstileToken() }),
       })
       const data = await res.json()
       if (res.ok) {
@@ -297,6 +297,8 @@ export default function QuoteModal() {
             {error && (
               <p style={{ color: '#EF4444', fontSize: 13, marginTop: 10, marginBottom: 0 }}>{error}</p>
             )}
+
+            <TurnstileWidget theme="light" />
 
             <button
               type="submit"

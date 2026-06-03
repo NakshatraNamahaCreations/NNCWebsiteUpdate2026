@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { SITE } from '@/data/siteData'
-import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
+import { Honeypot, useRenderedAt, TurnstileWidget, readTurnstileToken } from '@/utils/formSpamProtection'
 
 const sc = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
 
@@ -328,6 +328,7 @@ export default function CityServiceContent({ slug, svc, city, hood, titleOverrid
           landingPage: `/${slug}`,
           company_website: hp,
           renderedAt: renderedAt.current,
+          cfToken: readTurnstileToken(),
         }),
       });
       const data = await res.json();
@@ -615,6 +616,8 @@ export default function CityServiceContent({ slug, svc, city, hood, titleOverrid
                   {errors.message && <div style={{ color: '#EF4444', fontSize: 11, marginTop: -4, marginBottom: 6 }}>{errors.message}</div>}
 
                   {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10 }}>{error}</p>}
+
+                  <TurnstileWidget theme="light" />
 
                   <button
                     type="submit"

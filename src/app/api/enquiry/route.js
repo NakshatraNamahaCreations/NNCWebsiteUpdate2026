@@ -32,6 +32,27 @@ function getClientIp(request) {
   return request.headers.get('x-real-ip') || ''
 }
 
+async function verifyTurnstile(token, ip) {
+  const secret = process.env.TURNSTILE_SECRET
+  if (!secret) return { ok: true, skipped: true }
+  if (!token) return { ok: false, reason: 'missing_token' }
+  try {
+    const params = new URLSearchParams({ secret, response: token })
+    if (ip) params.append('remoteip', ip)
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params,
+    })
+    const data = await res.json().catch(() => ({}))
+    if (data.success) return { ok: true }
+    return { ok: false, reason: (data['error-codes'] || []).join(',') || 'verify_failed' }
+  } catch (err) {
+    console.error('[enquiry] Turnstile verify error:', err.message)
+    return { ok: false, reason: 'verify_error' }
+  }
+}
+
 function getTransporter() {
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -191,7 +212,7 @@ export async function POST(request) {
     const body = await request.json()
     const {
       name, phone, email, service, message, landingPage, source,
-      company_website, renderedAt,
+      company_website, renderedAt, cfToken,
     } = body
 
     if (company_website) {
@@ -209,11 +230,18 @@ export async function POST(request) {
       return Response.json({ error: 'too_many_requests' }, { status: 429 })
     }
 
+    const isChatbot = source === 'chatbot'
+
+    if (!isChatbot) {
+      const captcha = await verifyTurnstile(cfToken, ip)
+      if (!captcha.ok) {
+        return Response.json({ error: 'challenge_failed', reason: captcha.reason }, { status: 400 })
+      }
+    }
+
     if (!name || !phone) {
       return Response.json({ error: 'Name and phone are required.' }, { status: 400 })
     }
-
-    const isChatbot = source === 'chatbot'
     if (!isChatbot) {
       const cleanPhone = String(phone).replace(/[\s\-()]/g, '')
       const phoneOk = /^(\+91)?[6-9]\d{9}$/.test(cleanPhone)

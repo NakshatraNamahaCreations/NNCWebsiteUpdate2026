@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { CASE_STUDIES, PROCESS_STEPS, TESTIMONIALS, CLIENTS, INDUSTRIES, TECH_STACK, FAQS, SITE, OFFICES } from '@/data/siteData'
-import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
+import { Honeypot, useRenderedAt, TurnstileWidget, readTurnstileToken } from '@/utils/formSpamProtection'
 
 /* ── CASE STUDIES ─────────────────────────────────────────────── */
 export function CaseStudies() {
@@ -562,6 +562,7 @@ export function FaqContact() {
           landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
           company_website: hp,
           renderedAt: renderedAt.current,
+          cfToken: readTurnstileToken(),
         }),
       });
       const data = await res.json();
@@ -713,6 +714,8 @@ export function FaqContact() {
 
                 {/* GENERAL ERROR (network/api) */}
                 {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10, marginTop: 2 }}>{error}</p>}
+
+                <TurnstileWidget theme="dark" />
 
                 {/* SUBMIT BUTTON */}
                 <button

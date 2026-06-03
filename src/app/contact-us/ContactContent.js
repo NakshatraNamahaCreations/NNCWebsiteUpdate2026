@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { SITE, OFFICES } from '@/data/siteData'
-import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
+import { Honeypot, useRenderedAt, TurnstileWidget, readTurnstileToken } from '@/utils/formSpamProtection'
 
 function Svg({ d, size = 16, color = 'currentColor', sw = 1.8 }) {
   return (
@@ -124,7 +124,7 @@ export default function ContactContent() {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, landingPage: '/contact-us', company_website: hp, renderedAt: renderedAt.current }),
+        body: JSON.stringify({ ...form, landingPage: '/contact-us', company_website: hp, renderedAt: renderedAt.current, cfToken: readTurnstileToken() }),
       });
       const data = await res.json();
       if (res.ok) {
@@ -358,6 +358,7 @@ export default function ContactContent() {
                     />
                     {errors.message && <div style={{ color: '#EF4444', fontSize: 11, marginTop: 4 }}>{errors.message}</div>}
                   </div>
+                  <TurnstileWidget theme="light" />
                   <button type="submit" disabled={sending || Object.values(errors).some(err => err !== '')} style={{ width: '100%', background: sending ? '#6B7A99' : '#2196F3', color: '#fff', fontFamily: 'inherit', fontSize: 15.5, fontWeight: 700, padding: '16px', borderRadius: 10, border: 'none', cursor: sending ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, marginBottom: 16, transition: 'all .2s' }}>
                     {sending ? 'Sending…' : (
                       <><Svg d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" size={16} color="#fff" sw={2} /> Send Message</>

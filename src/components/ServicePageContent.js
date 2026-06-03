@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { SITE } from '@/data/siteData'
-import { Honeypot, useRenderedAt } from '@/utils/formSpamProtection'
+import { Honeypot, useRenderedAt, TurnstileWidget, readTurnstileToken } from '@/utils/formSpamProtection'
 import CustomHero from './CustomHero'
 import PremiumCTA from './PremiumCTA'
 import ClientsAcross from './ClientsAcross'
@@ -586,6 +586,7 @@ export default function ServicePageContent({ data, customHero = false, showCTA =
           landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
           company_website: hp,
           renderedAt: renderedAt.current,
+          cfToken: readTurnstileToken(),
         }),
       });
       const responseData = await res.json();
@@ -1003,6 +1004,8 @@ export default function ServicePageContent({ data, customHero = false, showCTA =
                   {errors.message && <div style={{ color: '#EF4444', fontSize: 11, marginTop: -4, marginBottom: 6 }}>{errors.message}</div>}
 
                   {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10 }}>{error}</p>}
+
+                  <TurnstileWidget theme="light" />
 
                   <button
                     type="submit"
