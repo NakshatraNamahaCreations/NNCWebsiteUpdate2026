@@ -22,13 +22,18 @@ export default function QuoteModal() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', service: '', message: '', landingPage: '' })
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', service: '', message: '' });
   const [hp, setHp] = useState('')
+  const [cfToken, setCfToken] = useState('')
+  const [captchaKey, setCaptchaKey] = useState(0)
   const renderedAt = useRef(0)
+  const captchaPassed = cfToken === '__no_captcha__' || cfToken.length > 0
 
   const openModal = useCallback(() => {
     setOpen(true)
     setErrors({ name: '', phone: '', email: '', service: '', message: '' });
     setError('')
     setHp('')
+    setCfToken('')
+    setCaptchaKey(k => k + 1)
     renderedAt.current = Date.now()
     setForm({ name: '', phone: '', email: '', service: '', message: '', landingPage: typeof window !== 'undefined' ? window.location.pathname : '/' })
   }, [])
@@ -159,7 +164,7 @@ export default function QuoteModal() {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, company_website: hp, renderedAt: renderedAt.current, cfToken: readTurnstileToken() }),
+        body: JSON.stringify({ ...form, company_website: hp, renderedAt: renderedAt.current, cfToken: cfToken === '__no_captcha__' ? '' : (cfToken || readTurnstileToken()) }),
       })
       const data = await res.json()
       if (res.ok) {
@@ -298,12 +303,15 @@ export default function QuoteModal() {
               <p style={{ color: '#EF4444', fontSize: 13, marginTop: 10, marginBottom: 0 }}>{error}</p>
             )}
 
-            <TurnstileWidget theme="light" />
+            <TurnstileWidget key={captchaKey} theme="light" onVerify={setCfToken} />
+            {!captchaPassed && (
+              <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>Please complete the verification above to enable sending.</div>
+            )}
 
             <button
               type="submit"
-              disabled={loading || Object.values(errors).some(err => err !== '')}
-              style={{ marginTop: 18, width: '100%', background: loading ? '#93C5FD' : '#2196F3', color: '#fff', border: 'none', borderRadius: 8, padding: '14px', fontSize: 15, fontWeight: 700, cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, transition: 'background .2s' }}
+              disabled={loading || !captchaPassed || Object.values(errors).some(err => err !== '')}
+              style={{ marginTop: 18, width: '100%', background: (loading || !captchaPassed) ? '#93C5FD' : '#2196F3', color: '#fff', border: 'none', borderRadius: 8, padding: '14px', fontSize: 15, fontWeight: 700, cursor: (loading || !captchaPassed) ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, transition: 'background .2s' }}
             >
               {loading ? 'Sending…' : (
                 <>

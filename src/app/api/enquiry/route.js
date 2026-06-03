@@ -33,13 +33,15 @@ function getClientIp(request) {
 }
 
 async function verifyTurnstile(token, ip) {
-  const secret = process.env.TURNSTILE_SECRET
+  // Verifies a Google reCAPTCHA v2 token. Function name kept as
+  // verifyTurnstile so the existing call sites don't need to change.
+  const secret = process.env.RECAPTCHA_SECRET
   if (!secret) return { ok: true, skipped: true }
   if (!token) return { ok: false, reason: 'missing_token' }
   try {
     const params = new URLSearchParams({ secret, response: token })
     if (ip) params.append('remoteip', ip)
-    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    const res = await fetch('https://www.google.com/recaptcha/api/siteverify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: params,
@@ -48,7 +50,7 @@ async function verifyTurnstile(token, ip) {
     if (data.success) return { ok: true }
     return { ok: false, reason: (data['error-codes'] || []).join(',') || 'verify_failed' }
   } catch (err) {
-    console.error('[enquiry] Turnstile verify error:', err.message)
+    console.error('[enquiry] reCAPTCHA verify error:', err.message)
     return { ok: false, reason: 'verify_error' }
   }
 }

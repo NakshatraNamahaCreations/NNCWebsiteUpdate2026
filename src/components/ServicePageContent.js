@@ -483,7 +483,9 @@ export default function ServicePageContent({ data, customHero = false, showCTA =
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', message: '' })
   const [error, setError] = useState('')
   const [hp, setHp] = useState('')
+  const [cfToken, setCfToken] = useState('')
   const renderedAt = useRenderedAt()
+  const captchaPassed = cfToken === '__no_captcha__' || cfToken.length > 0
 
   const openQuote = () => window.dispatchEvent(new CustomEvent('open-quote'))
   // Validation helpers
@@ -586,7 +588,7 @@ export default function ServicePageContent({ data, customHero = false, showCTA =
           landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
           company_website: hp,
           renderedAt: renderedAt.current,
-          cfToken: readTurnstileToken(),
+          cfToken: cfToken === '__no_captcha__' ? '' : (cfToken || readTurnstileToken()),
         }),
       });
       const responseData = await res.json();
@@ -1005,12 +1007,15 @@ export default function ServicePageContent({ data, customHero = false, showCTA =
 
                   {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10 }}>{error}</p>}
 
-                  <TurnstileWidget theme="light" />
+                  <TurnstileWidget theme="light" onVerify={setCfToken} />
+                  {!captchaPassed && (
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}>Please complete the verification above to enable sending.</div>
+                  )}
 
                   <button
                     type="submit"
-                    disabled={sending || Object.values(errors).some(e => e !== '')}
-                    style={{ width: '100%', background: '#2196F3', color: '#fff', fontFamily: 'inherit', fontSize: 15, fontWeight: 700, padding: 14, borderRadius: 8, border: 'none', cursor: sending || Object.values(errors).some(e => e !== '') ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, marginBottom: 12, opacity: sending ? 0.7 : 1 }}
+                    disabled={sending || !captchaPassed || Object.values(errors).some(e => e !== '')}
+                    style={{ width: '100%', background: '#2196F3', color: '#fff', fontFamily: 'inherit', fontSize: 15, fontWeight: 700, padding: 14, borderRadius: 8, border: 'none', cursor: sending || !captchaPassed || Object.values(errors).some(e => e !== '') ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, marginBottom: 12, opacity: (sending || !captchaPassed) ? 0.7 : 1 }}
                   >
                     {sending ? 'Sending…' : <>Send Enquiry <Svg d="M5 12h14M12 5l7 7-7 7" size={13} color="#fff" sw={2.5} /></>}
                   </button>

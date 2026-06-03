@@ -559,7 +559,9 @@ function FaqContact() {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const [hp, setHp] = useState('')
+  const [cfToken, setCfToken] = useState('')
   const renderedAt = useRenderedAt()
+  const captchaPassed = cfToken === '__no_captcha__' || cfToken.length > 0
 
   const vName = v => { const t = v.trim(); if (!t) return 'Full name is required'; if (!/^[A-Za-z\s]+$/.test(t)) return 'Only alphabets and spaces'; if (t.length < 2) return 'At least 2 characters'; return '' }
   const vPhone = v => { const d = v.replace(/\D/g,''); if (!d) return 'Phone is required'; if (d.length !== 10) return 'Enter 10-digit number'; return '' }
@@ -583,7 +585,7 @@ function FaqContact() {
     if (Object.values(errs).some(Boolean)) { setErrors(errs); return }
     setErrors({ name: '', phone: '', email: '', message: '' }); setSending(true)
     try {
-      const res = await fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: form.name, phone: form.phone, email: form.email, service: `Mobile App ${form.app||''} | Budget: ${form.budget||''}`, message: form.message, landingPage: '/mobile-app-development-company-in-mysuru', company_website: hp, renderedAt: renderedAt.current, cfToken: readTurnstileToken() }) })
+      const res = await fetch('/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: form.name, phone: form.phone, email: form.email, service: `Mobile App ${form.app||''} | Budget: ${form.budget||''}`, message: form.message, landingPage: '/mobile-app-development-company-in-mysuru', company_website: hp, renderedAt: renderedAt.current, cfToken: cfToken === '__no_captcha__' ? '' : (cfToken || readTurnstileToken()) }) })
       const data = await res.json()
       if (res.ok) router.push('/thankyou'); else setError(data.error || 'Something went wrong.')
     } catch { setError('Network error.') } finally { setSending(false) }
@@ -645,8 +647,11 @@ function FaqContact() {
                 <textarea className="cc-ta d-block mb-2" rows="3" placeholder="Brief description of your app idea... (min 10 chars)" name="message" value={form.message} onChange={handleChange} onBlur={e => validateField(e.target.name, e.target.value)} style={{ borderColor: errors.message ? '#EF4444' : undefined }} />
                 {errors.message && <div style={{ color: '#EF4444', fontSize: 11, marginTop: -4, marginBottom: 6 }}>{errors.message}</div>}
                 {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10 }}>{error}</p>}
-                <TurnstileWidget theme="dark" />
-                <button type="submit" className="cc-submit mb-3" disabled={sending || Object.values(errors).some(Boolean)}>
+                <TurnstileWidget theme="dark" onVerify={setCfToken} />
+                {!captchaPassed && (
+                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,.45)', marginBottom: 8 }}>Please complete the verification above to enable sending.</div>
+                )}
+                <button type="submit" className="cc-submit mb-3" disabled={sending || !captchaPassed || Object.values(errors).some(Boolean)}>
                   {sending ? 'Sending…' : <>Get Free App Quote <Ico d="M5 12h14M12 5l7 7-7 7" color="#fff" size={13} sw={2.5} /></>}
                 </button>
                 <div className="d-flex justify-content-center gap-4 flex-wrap">

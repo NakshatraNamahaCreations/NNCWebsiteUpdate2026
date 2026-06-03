@@ -456,7 +456,9 @@ export function FaqContact() {
   const [error, setError] = useState('')
   const [errors, setErrors] = useState({ name: '', phone: '', email: '', message: '' })
   const [hp, setHp] = useState('')
+  const [cfToken, setCfToken] = useState('')
   const renderedAt = useRenderedAt()
+  const captchaPassed = cfToken === '__no_captcha__' || cfToken.length > 0
 
   const toggle = (i) => setOpen(open === i ? null : i)
 
@@ -562,7 +564,7 @@ export function FaqContact() {
           landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
           company_website: hp,
           renderedAt: renderedAt.current,
-          cfToken: readTurnstileToken(),
+          cfToken: cfToken === '__no_captcha__' ? '' : (cfToken || readTurnstileToken()),
         }),
       });
       const data = await res.json();
@@ -715,13 +717,16 @@ export function FaqContact() {
                 {/* GENERAL ERROR (network/api) */}
                 {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10, marginTop: 2 }}>{error}</p>}
 
-                <TurnstileWidget theme="dark" />
+                <TurnstileWidget theme="dark" onVerify={setCfToken} />
+                {!captchaPassed && (
+                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,.45)', marginBottom: 10 }}>Please complete the verification above to enable sending.</div>
+                )}
 
                 {/* SUBMIT BUTTON */}
                 <button
                   type="submit"
                   className="cc-submit mb-3"
-                  disabled={sending || Object.values(errors).some(e => e !== '')}
+                  disabled={sending || !captchaPassed || Object.values(errors).some(e => e !== '')}
                 >
                   {sending ? 'Sending…' : (
                     <>

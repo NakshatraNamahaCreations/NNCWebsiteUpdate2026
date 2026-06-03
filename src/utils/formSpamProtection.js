@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 export function useRenderedAt() {
   const ref = useRef(Date.now())
@@ -22,58 +22,113 @@ export function Honeypot({ value, onChange }) {
 }
 
 /**
- * Reads the latest Turnstile token at submit time.
- * Returns '' if Turnstile isn't loaded yet, no site key is configured,
- * or the widget hasn't been rendered. In all those cases the backend
- * will treat the submission as "no captcha attempted" and still process
- * it (the secret check is a no-op when TURNSTILE_SECRET is unset).
+ * Reads the latest reCAPTCHA token at submit time.
+ * Falls back to scanning the first non-empty g-recaptcha-response textarea
+ * (necessary when multiple widgets exist on the page — modal + inline form).
  */
 export function readTurnstileToken() {
-  if (typeof document === 'undefined') return ''
-  const input = document.querySelector('[name="cf-turnstile-response"]')
-  return input?.value || ''
+  if (typeof document === 'undefined' || typeof window === 'undefined') return ''
+  const inputs = document.querySelectorAll('textarea[name="g-recaptcha-response"]')
+  for (const el of inputs) {
+    if (el.value) return el.value
+  }
+  return ''
 }
 
 /**
- * Renders the Cloudflare Turnstile widget if the site key is configured.
- * When the key is missing (e.g. during local dev before keys are issued),
- * the widget is silently omitted so the form still works.
+ * Google reCAPTCHA v2 "I'm not a robot" checkbox.
  *
- * The widget injects a hidden <input name="cf-turnstile-response"> with the
- * token that readTurnstileToken() picks up at submit time.
+ * Handles multiple widgets on the same page (inline form + modal popup)
+ * by rendering each into its own container and tracking its widget ID.
+ *
+ * Props:
+ *   theme    — 'light' | 'dark'
+ *   onVerify — called with the token string when user passes, '' when expired/error
  */
-export function TurnstileWidget({ theme = 'light' }) {
-  const ref = useRef(null)
-  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+export function TurnstileWidget({ theme = 'light', onVerify }) {
+  const containerRef = useRef(null)
+  const widgetIdRef = useRef(null)
+  const onVerifyRef = useRef(onVerify)
+  const [errorMsg, setErrorMsg] = useState(null)
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
+  useEffect(() => { onVerifyRef.current = onVerify }, [onVerify])
 
   useEffect(() => {
-    if (!siteKey || !ref.current) return
+    if (!siteKey) {
+      if (onVerifyRef.current) onVerifyRef.current('__no_captcha__')
+      return
+    }
+    if (!containerRef.current) return
+
     let cancelled = false
-    let widgetId = null
-    const tryRender = () => {
+    let pollTimer = null
+
+    const renderWidget = () => {
       if (cancelled) return
-      const ts = typeof window !== 'undefined' ? window.turnstile : null
-      if (ts && ref.current) {
-        try {
-          ref.current.innerHTML = ''
-          widgetId = ts.render(ref.current, { sitekey: siteKey, theme })
-        } catch {
-          // ignore — widget already rendered or invalid key
+      const g = typeof window !== 'undefined' ? window.grecaptcha : null
+      if (!g || !g.render) {
+        pollTimer = setTimeout(renderWidget, 250)
+        return
+      }
+      if (!containerRef.current) return
+
+      // Create a fresh inner div for grecaptcha to render into. This avoids
+      // the "reCAPTCHA has already been rendered in this element" error when
+      // the component remounts (e.g. modal opens twice).
+      const inner = document.createElement('div')
+      containerRef.current.innerHTML = ''
+      containerRef.current.appendChild(inner)
+
+      try {
+        widgetIdRef.current = g.render(inner, {
+          sitekey: siteKey,
+          theme,
+          callback: (token) => {
+            if (cancelled) return
+            setErrorMsg(null)
+            if (onVerifyRef.current) onVerifyRef.current(token || '')
+          },
+          'expired-callback': () => {
+            if (cancelled) return
+            if (onVerifyRef.current) onVerifyRef.current('')
+          },
+          'error-callback': () => {
+            if (cancelled) return
+            setErrorMsg('Verification could not load. Refresh or disable ad-blockers.')
+            if (onVerifyRef.current) onVerifyRef.current('')
+          },
+        })
+        if (!cancelled) setErrorMsg(null)
+      } catch (e) {
+        // Most common cause: trying to render into a container that already
+        // has a widget. Wait a beat and try again with a fresh container.
+        if (!cancelled) {
+          console.warn('[recaptcha] render failed, retrying:', e?.message || e)
+          pollTimer = setTimeout(renderWidget, 400)
         }
-      } else {
-        setTimeout(tryRender, 300)
       }
     }
-    tryRender()
+
+    renderWidget()
+
     return () => {
       cancelled = true
-      const ts = typeof window !== 'undefined' ? window.turnstile : null
-      if (ts && widgetId != null) {
-        try { ts.remove(widgetId) } catch {}
+      if (pollTimer) clearTimeout(pollTimer)
+      if (containerRef.current) {
+        try { containerRef.current.innerHTML = '' } catch {}
       }
+      widgetIdRef.current = null
     }
   }, [siteKey, theme])
 
   if (!siteKey) return null
-  return <div ref={ref} style={{ margin: '12px 0' }} />
+  return (
+    <div style={{ margin: '14px 0', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <div ref={containerRef} />
+      {errorMsg && (
+        <div style={{ fontSize: 11, color: '#EF4444', marginTop: 6 }}>{errorMsg}</div>
+      )}
+    </div>
+  )
 }

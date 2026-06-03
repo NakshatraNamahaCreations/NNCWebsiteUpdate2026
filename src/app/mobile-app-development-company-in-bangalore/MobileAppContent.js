@@ -546,7 +546,9 @@ function FaqContact() {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const [hp, setHp] = useState('')
+  const [cfToken, setCfToken] = useState('')
   const renderedAt = useRenderedAt()
+  const captchaPassed = cfToken === '__no_captcha__' || cfToken.length > 0
 
   // Validation helpers
   const validateName = (value) => {
@@ -652,7 +654,7 @@ function FaqContact() {
           landingPage: '/mobile-app-development-company-in-bangalore',
           company_website: hp,
           renderedAt: renderedAt.current,
-          cfToken: readTurnstileToken(),
+          cfToken: cfToken === '__no_captcha__' ? '' : (cfToken || readTurnstileToken()),
         }),
       });
       const data = await res.json();
@@ -794,12 +796,15 @@ function FaqContact() {
 
                 {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10, marginTop: 2 }}>{error}</p>}
 
-                <TurnstileWidget theme="light" />
+                <TurnstileWidget theme="light" onVerify={setCfToken} />
+                {!captchaPassed && (
+                  <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 10 }}>Please complete the verification above to enable sending.</div>
+                )}
 
                 <button
                   type="submit"
                   className="cc-submit mb-3"
-                  disabled={sending || Object.values(errors).some(e => e !== '')}
+                  disabled={sending || !captchaPassed || Object.values(errors).some(e => e !== '')}
                 >
                   {sending ? 'Sending…' : (
                     <>
