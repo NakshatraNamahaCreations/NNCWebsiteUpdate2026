@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 
 const submissionLog = new Map()
 
-function rateLimited(ip, maxPerHour = 3) {
+function rateLimited(ip, maxPerHour = 10) {
   if (!ip) return false
   const now = Date.now()
   const windowMs = 60 * 60 * 1000
@@ -282,6 +282,7 @@ export async function POST(request) {
           service,
           requirements: message || '',
           landingPage: pagePath || '/',
+          site: 'nnc', // NNC main website → "Enquire NNC" tab in the CRM
         }),
       })
         .then(async (r) => {
