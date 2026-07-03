@@ -1,6 +1,11 @@
 'use client'
 import { useRef, useEffect, useState } from 'react'
 
+// reCAPTCHA "I'm not a robot" is DISABLED site-wide. The widget hides itself and
+// forms submit freely (honeypot + rate limit still guard spam). Set to false to
+// re-enable the checkbox everywhere.
+const CAPTCHA_DISABLED = true
+
 export function useRenderedAt() {
   const ref = useRef(Date.now())
   return ref
@@ -54,7 +59,46 @@ export function TurnstileWidget({ theme = 'light', onVerify }) {
 
   useEffect(() => { onVerifyRef.current = onVerify }, [onVerify])
 
+  // reCAPTCHA disabled site-wide → immediately mark as passed, render nothing.
   useEffect(() => {
+    if (CAPTCHA_DISABLED && onVerifyRef.current) onVerifyRef.current('__no_captcha__')
+  }, [])
+
+  // Google's reCAPTCHA script sometimes throws async errors like
+  // "reCAPTCHA Timeout" (token expired after ~2 min) that bubble up as an
+  // Unhandled Runtime Error and crash the page. The server-side captcha check
+  // is non-blocking, so these are harmless — swallow them here.
+  useEffect(() => {
+    const isRecaptchaError = (msg = '', src = '') =>
+      /recaptcha/i.test(String(src)) || /recaptcha\s*timeout|reCAPTCHA/i.test(String(msg))
+
+    const onError = (e) => {
+      const msg = e?.message || e?.error?.message || ''
+      const src = e?.filename || ''
+      if (isRecaptchaError(msg, src)) {
+        e.preventDefault?.()
+        e.stopImmediatePropagation?.()
+        // Token likely expired — clear it so the user re-ticks the box.
+        if (onVerifyRef.current) onVerifyRef.current('')
+        return false
+      }
+    }
+    const onRejection = (e) => {
+      const msg = e?.reason?.message || String(e?.reason || '')
+      if (isRecaptchaError(msg)) {
+        e.preventDefault?.()
+      }
+    }
+    window.addEventListener('error', onError, true)
+    window.addEventListener('unhandledrejection', onRejection)
+    return () => {
+      window.removeEventListener('error', onError, true)
+      window.removeEventListener('unhandledrejection', onRejection)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (CAPTCHA_DISABLED) return
     if (!siteKey) {
       if (onVerifyRef.current) onVerifyRef.current('__no_captcha__')
       return
@@ -122,7 +166,7 @@ export function TurnstileWidget({ theme = 'light', onVerify }) {
     }
   }, [siteKey, theme])
 
-  if (!siteKey) return null
+  if (CAPTCHA_DISABLED || !siteKey) return null
   return (
     <div style={{ margin: '14px 0', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
       <div ref={containerRef} />
