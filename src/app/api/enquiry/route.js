@@ -234,10 +234,13 @@ export async function POST(request) {
 
     const isChatbot = source === 'chatbot'
 
+    // reCAPTCHA is non-blocking: if it fails (expired/missing token, domain not
+    // registered, Google hiccup) we log it but still accept the enquiry so we
+    // never silently lose a real lead. Honeypot + rate limit still guard spam.
     if (!isChatbot) {
       const captcha = await verifyTurnstile(cfToken, ip)
       if (!captcha.ok) {
-        return Response.json({ error: 'challenge_failed', reason: captcha.reason }, { status: 400 })
+        console.warn(`[enquiry] captcha not verified (${captcha.reason}) — accepting anyway for ${name || 'unknown'}`)
       }
     }
 
