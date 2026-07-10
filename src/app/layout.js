@@ -88,7 +88,6 @@ const organizationSchema = {
   foundingDate: '2015',
   numberOfEmployees: { '@type': 'QuantitativeValue', value: 35 },
   legalName: 'Nakshatra Namaha Creations Private Limited',
-  taxID: 'U74999KA2015PTC082563',
   telephone: '+91-99005-66466',
   email: 'info@nakshatranamahacreations.com',
   sameAs: [

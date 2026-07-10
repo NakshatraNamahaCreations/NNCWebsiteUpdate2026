@@ -48,7 +48,7 @@ const sections = [
   },
   {
     title: '10. Contact',
-    body: `For questions about these terms, contact us at ${SITE.email} or call ${SITE.phone}. Registered office: Darshan Plaza, 1st Floor, Channasandra, Bengaluru 560 098. CIN: ${SITE.cin}.`,
+    body: `For questions about these terms, contact us at ${SITE.email} or call ${SITE.phone}. Registered office: Darshan Plaza, 1st Floor, Channasandra, Bengaluru 560 098.`,
   },
 ]
 

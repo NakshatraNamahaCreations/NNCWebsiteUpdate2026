@@ -1707,7 +1707,7 @@ export function Footer() {
 
         {/* ── BOTTOM BAR ── */}
         <div className="d-flex align-items-center justify-content-between flex-wrap gap-3" style={{ padding: '20px 0' }}>
-          <p className="ft-copy mb-0">© {new Date().getFullYear()} {SITE.name}. All rights reserved. CIN: {SITE.cin}</p>
+          <p className="ft-copy mb-0">© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p>
           <div className="d-flex align-items-center flex-wrap gap-3">
             <span className="ft-copy">Bengaluru</span>
             <span className="ft-copy">·</span>
