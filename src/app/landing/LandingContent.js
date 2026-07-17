@@ -135,8 +135,20 @@ export default function LandingContent({ page }) {
 
   const submit = async (e) => {
     e.preventDefault()
-    if (!form.name.trim() || !form.phone.trim()) {
-      setStatus({ sending: false, ok: false, err: 'Please enter your name and phone.' })
+    if (!form.name.trim()) {
+      setStatus({ sending: false, ok: false, err: 'Please enter your name.' })
+      return
+    }
+    // Indian mobiles: exactly 10 digits starting 6-9.
+    if (!/^[6-9]\d{9}$/.test(form.phone.trim())) {
+      setStatus({
+        sending: false, ok: false,
+        err: 'Please enter a valid 10-digit mobile number (starting with 6, 7, 8 or 9).',
+      })
+      return
+    }
+    if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      setStatus({ sending: false, ok: false, err: 'Please enter a valid email address.' })
       return
     }
     setStatus({ sending: true, ok: false, err: '' })
@@ -426,8 +438,15 @@ export default function LandingContent({ page }) {
                 <label className="lp-field"><span>Your name *</span>
                   <input value={form.name} onChange={(e) => setF('name', e.target.value)} placeholder="Priya Sharma" />
                 </label>
-                <label className="lp-field"><span>Phone *</span>
-                  <input value={form.phone} onChange={(e) => setF('phone', e.target.value)} placeholder="98765 43210" />
+                <label className="lp-field"><span>Phone (10 digits) *</span>
+                  <input
+                    type="tel"
+                    inputMode="numeric"
+                    maxLength={10}
+                    value={form.phone}
+                    onChange={(e) => setF('phone', e.target.value.replace(/\D/g, '').slice(0, 10))}
+                    placeholder="9876543210"
+                  />
                 </label>
                 <label className="lp-field"><span>Email</span>
                   <input type="email" value={form.email} onChange={(e) => setF('email', e.target.value)} placeholder="you@company.com" />
