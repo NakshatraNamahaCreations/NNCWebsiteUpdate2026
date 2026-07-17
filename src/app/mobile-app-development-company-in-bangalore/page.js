@@ -1,38 +1,9 @@
-import Navbar from '@/components/Navbar'
-import AnimObserver from '@/components/AnimObserver'
-import { SeoKeywords, Footer, WaFloat } from '@/components/Sections'
-import MobileAppContent from './MobileAppContent'
-import { metadata as pageMeta, serviceSchema, breadcrumbSchema, faqSchema } from './metadata'
+import LandingPageTemplate, { landingMetadata } from '@/app/landing/LandingPageTemplate'
 
-export const metadata = pageMeta
+const SLUG = 'mobile-app-development-company-in-bangalore'
 
-export default function MobileAppPage() {
-  return (
-    <>
-      {/* JSON-LD Schemas */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+export const metadata = landingMetadata(SLUG)
 
-      <Navbar />
-
-      <main>
-        <MobileAppContent />
-      </main>
-
-      <SeoKeywords />
-      <Footer />
-      <WaFloat />
-      <AnimObserver />
-    </>
-  )
+export default function Page() {
+  return <LandingPageTemplate slug={SLUG} />
 }

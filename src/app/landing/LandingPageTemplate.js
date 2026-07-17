@@ -1,24 +1,22 @@
 import { notFound } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import { Footer } from '@/components/Sections'
-import LandingContent from '../LandingContent'
-import '../landing.css'
-import {
-  getLandingPage,
-  LANDING_SLUGS,
-  LANDING_COMPANY,
-} from '@/data/landingPages'
+import LandingContent from './LandingContent'
+import './landing.css'
+import { getLandingPage, LANDING_COMPANY } from '@/data/landingPages'
 
-export const dynamicParams = false
+/**
+ * Shared landing-page template.
+ *
+ * Each service × location page lives at its own top-level URL
+ * (e.g. /website-development-company-in-bangalore) and simply renders this
+ * template with its slug, so the design and SEO stay in one place.
+ */
 
-export function generateStaticParams() {
-  return LANDING_SLUGS.map((slug) => ({ slug }))
-}
-
-export function generateMetadata({ params }) {
-  const page = getLandingPage(params.slug)
+export function landingMetadata(slug) {
+  const page = getLandingPage(slug)
   if (!page) return {}
-  const url = `${LANDING_COMPANY.siteUrl}/landing/${page.slug}`
+  const url = `${LANDING_COMPANY.siteUrl}/${page.slug}`
   const title = `${page.seo.title} | NNC`
   const s = page.service.name
   const l = page.location.name
@@ -53,13 +51,12 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function LandingPage({ params }) {
-  const page = getLandingPage(params.slug)
+export default function LandingPageTemplate({ slug }) {
+  const page = getLandingPage(slug)
   if (!page) notFound()
 
-  const url = `${LANDING_COMPANY.siteUrl}/landing/${page.slug}`
+  const url = `${LANDING_COMPANY.siteUrl}/${page.slug}`
 
-  /* JSON-LD: Service + FAQ + Breadcrumb for SEO */
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
