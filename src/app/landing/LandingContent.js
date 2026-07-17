@@ -1,5 +1,6 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { LANDING_COMPANY, DIFFERENTIATORS, PROCESS_STEPS, PORTFOLIO_CATEGORIES, PORTFOLIO_ITEMS, TESTIMONIALS, PROBLEM_CATEGORIES, TOTAL_PROBLEMS } from '@/data/landingPages'
 
 const HERO_STATS = [
@@ -46,9 +47,12 @@ const GRADS = ['lp-g1', 'lp-g2', 'lp-g3', 'lp-g4', 'lp-g5', 'lp-g6']
 const PROB_DOTS = ['#60b7fa', '#0ea5e9', '#10b981', '#f59e0b', '#f97316', '#93d0fd', '#7c3aed', '#ec4899', '#06b6d4', '#ef4444', '#22c55e', '#2196f3']
 
 export default function LandingContent({ page }) {
+  const router = useRouter()
   const { service, location, keyword, faqs } = page
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' })
   const [status, setStatus] = useState({ sending: false, ok: false, err: '' })
+  const [hp, setHp] = useState('')            // honeypot — bots fill this, humans don't
+  const renderedAt = useRef(Date.now())       // spam guard: too-fast submits are bots
   const [portfolioTab, setPortfolioTab] = useState('all')
   const shownWork = portfolioTab === 'all' ? PORTFOLIO_ITEMS : PORTFOLIO_ITEMS.filter((w) => w.cat === portfolioTab)
 
@@ -146,15 +150,19 @@ export default function LandingContent({ page }) {
           email: form.email,
           service: service.name,
           message: form.message,
-          landingPage: `/landing/${page.slug}`,
+          landingPage: `/${page.slug}`,
+          company_website: hp,          // honeypot
+          renderedAt: renderedAt.current,
         }),
       })
       const data = await res.json().catch(() => ({}))
       if (res.ok && data.success !== false) {
-        setStatus({ sending: false, ok: true, err: '' })
-        setForm({ name: '', phone: '', email: '', message: '' })
+        // Same as the site's other forms: go to the shared thank-you page.
+        router.push('/thankyou')
       } else {
-        setStatus({ sending: false, ok: false, err: 'Could not send. Please call ' + LANDING_COMPANY.phone })
+        setStatus({ sending: false, ok: false, err: data.error === 'invalid_contact'
+          ? 'Please enter a valid 10-digit mobile number.'
+          : 'Could not send. Please call ' + LANDING_COMPANY.phone })
       }
     } catch {
       setStatus({ sending: false, ok: false, err: 'Could not send. Please call ' + LANDING_COMPANY.phone })
@@ -399,34 +407,39 @@ export default function LandingContent({ page }) {
             </div>
 
             <div className="lp-cta-card">
-              {status.ok ? (
-                <div style={{ textAlign: 'center', padding: '30px 0', color: '#fff' }}>
-                  <div style={{ fontSize: 40, marginBottom: 10 }}>✓</div>
-                  <h3>Thank you!</h3>
-                  <p>We&apos;ve received your enquiry and will get back to you within one business day.</p>
-                </div>
-              ) : (
-                <form onSubmit={submit}>
-                  <h3>Get a free quote</h3>
-                  <p>Takes under a minute. No obligation.</p>
-                  <label className="lp-field"><span>Your name *</span>
-                    <input value={form.name} onChange={(e) => setF('name', e.target.value)} placeholder="Priya Sharma" />
-                  </label>
-                  <label className="lp-field"><span>Phone *</span>
-                    <input value={form.phone} onChange={(e) => setF('phone', e.target.value)} placeholder="98765 43210" />
-                  </label>
-                  <label className="lp-field"><span>Email</span>
-                    <input type="email" value={form.email} onChange={(e) => setF('email', e.target.value)} placeholder="you@company.com" />
-                  </label>
-                  <label className="lp-field"><span>What do you need?</span>
-                    <textarea rows={3} value={form.message} onChange={(e) => setF('message', e.target.value)} placeholder={`Tell us about your ${service.name.toLowerCase()} project`} />
-                  </label>
-                  {status.err && <div className="lp-form-msg err">{status.err}</div>}
-                  <button type="submit" className="lp-btn lp-btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: 6 }} disabled={status.sending}>
-                    {status.sending ? 'Sending…' : 'Get my free quote →'}
-                  </button>
-                </form>
-              )}
+              <form onSubmit={submit}>
+                <h3>Get a free quote</h3>
+                <p>Takes under a minute. No obligation.</p>
+
+                {/* honeypot: hidden from users, catches bots */}
+                <input
+                  type="text"
+                  name="company_website"
+                  value={hp}
+                  onChange={(e) => setHp(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+                />
+
+                <label className="lp-field"><span>Your name *</span>
+                  <input value={form.name} onChange={(e) => setF('name', e.target.value)} placeholder="Priya Sharma" />
+                </label>
+                <label className="lp-field"><span>Phone *</span>
+                  <input value={form.phone} onChange={(e) => setF('phone', e.target.value)} placeholder="98765 43210" />
+                </label>
+                <label className="lp-field"><span>Email</span>
+                  <input type="email" value={form.email} onChange={(e) => setF('email', e.target.value)} placeholder="you@company.com" />
+                </label>
+                <label className="lp-field"><span>What do you need?</span>
+                  <textarea rows={3} value={form.message} onChange={(e) => setF('message', e.target.value)} placeholder={`Tell us about your ${service.name.toLowerCase()} project`} />
+                </label>
+                {status.err && <div className="lp-form-msg err">{status.err}</div>}
+                <button type="submit" className="lp-btn lp-btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: 6 }} disabled={status.sending}>
+                  {status.sending ? 'Sending…' : 'Get my free quote →'}
+                </button>
+              </form>
             </div>
           </div>
         </div>
