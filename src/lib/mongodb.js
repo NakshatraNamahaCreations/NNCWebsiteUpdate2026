@@ -8,8 +8,17 @@ export async function connectDB() {
   if (!MONGODB_URI) throw new Error('MONGODB_URI env var is not set')
   if (cached.conn) return cached.conn
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, { bufferCommands: false })
+    cached.promise = mongoose.connect(MONGODB_URI, {
+      bufferCommands: false,
+      serverSelectionTimeoutMS: 5000,
+    })
   }
-  cached.conn = await cached.promise
+  try {
+    cached.conn = await cached.promise
+  } catch (err) {
+    // Drop the failed attempt so the next request retries instead of reusing it
+    cached.promise = null
+    throw err
+  }
   return cached.conn
 }

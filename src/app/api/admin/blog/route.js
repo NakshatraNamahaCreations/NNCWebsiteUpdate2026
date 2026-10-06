@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { connectDB } from '@/lib/mongodb'
 import Blog from '@/lib/BlogModel'
+import { clearPostsCache } from '@/lib/blogSource'
 
 export const dynamic = 'force-dynamic'
 
@@ -34,6 +35,7 @@ export async function POST(request) {
     }
 
     await Blog.create({ slug, title, category, date, readTime, description: description || '', body: bodyContent || '' })
+    clearPostsCache()
 
     return NextResponse.json({ success: true, message: `Blog post "${title}" added successfully`, slug, url: `/blog/${slug}` })
   } catch (err) {
@@ -88,6 +90,7 @@ export async function PUT(request) {
     post.description = description || ''
     post.body        = bodyContent || ''
     await post.save()
+    clearPostsCache()
 
     return NextResponse.json({ success: true, message: `Post "${title}" updated successfully` })
   } catch (err) {
@@ -111,6 +114,7 @@ export async function DELETE(request) {
     if (result.deletedCount === 0) {
       return NextResponse.json({ error: `Slug "${slug}" not found` }, { status: 404 })
     }
+    clearPostsCache()
 
     return NextResponse.json({ success: true, message: `Blog post "${slug}" deleted successfully` })
   } catch (err) {

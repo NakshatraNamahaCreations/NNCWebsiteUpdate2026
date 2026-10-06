@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { connectDB } from '@/lib/mongodb'
 import Blog from '@/lib/BlogModel'
+import { clearPostsCache } from '@/lib/blogSource'
 import fs from 'fs'
 import path from 'path'
 
@@ -43,6 +44,7 @@ export async function POST(request) {
       date: p.date, readTime: p.readTime,
       description: p.description || '', body: p.body || '',
     })), { ordered: false })
+    clearPostsCache()
 
     return NextResponse.json({ success: true, message: `Migrated ${posts.length} posts to MongoDB` })
   } catch (err) {

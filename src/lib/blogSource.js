@@ -29,8 +29,18 @@ function fileposts() {
     .sort((a, b) => new Date(b.date) - new Date(a.date))
 }
 
-/** All posts, newest first. Never throws. */
-export async function getAllPosts() {
+// Short-lived in-memory cache so every blog page view doesn't hit MongoDB.
+// Admin writes call clearPostsCache() so changes show up immediately.
+const CACHE_TTL_MS = 5 * 60 * 1000
+let cache = global._blogPostsCache || { posts: null, at: 0, pending: null }
+global._blogPostsCache = cache
+
+export function clearPostsCache() {
+  cache.posts = null
+  cache.at = 0
+}
+
+async function loadPosts() {
   try {
     await connectDB()
     const raw = await Blog.find({}).sort({ date: -1 }).lean()
@@ -39,6 +49,21 @@ export async function getAllPosts() {
     console.error('[blogSource] MongoDB unavailable, using JSON fallback:', err.message)
   }
   return fileposts()
+}
+
+/** All posts, newest first. Never throws. */
+export async function getAllPosts() {
+  if (cache.posts && Date.now() - cache.at < CACHE_TTL_MS) return cache.posts
+  if (!cache.pending) {
+    cache.pending = loadPosts()
+      .then(posts => {
+        cache.posts = posts
+        cache.at = Date.now()
+        return posts
+      })
+      .finally(() => { cache.pending = null })
+  }
+  return cache.pending
 }
 
 /** A single post by slug + up to 3 related posts. Never throws. */
