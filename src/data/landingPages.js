@@ -9,7 +9,7 @@ export const LANDING_COMPANY = {
   legalName: 'Nakshatra Namaha Creations',
   tagline: 'Your Digital Solutions Partner',
   siteUrl: 'https://www.nakshatranamahacreations.com',
-  logo: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
+  logo: '/assets/nnc-logo.png',
   foundedYear: 2015,
   phone: '+91 99005 66466',
   phoneDigits: '919900566466',

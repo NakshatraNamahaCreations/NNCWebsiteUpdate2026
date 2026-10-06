@@ -11,7 +11,7 @@ export const SITE = {
   whatsapp: 'https://wa.me/919900566466',
   email: 'info@nakshatranamahacreations.com',
   founded: '2015',
-  logo: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
+  logo: '/assets/nnc-logo.png',
   teamPhoto: '/nnc-team.jpg',
   social: {
     instagram: 'https://www.instagram.com/nnc.digitalbengaluru/',

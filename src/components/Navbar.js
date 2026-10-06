@@ -454,7 +454,7 @@ function OfficesDrop({ open }) {
 function NavTrigger({ label, open, onClick }) {
   return (
     <button onClick={onClick} style={{
-      display: 'flex', alignItems: 'center', gap: 5, height: 64,
+      display: 'flex', alignItems: 'center', gap: 5, height: 80,
       padding: '0 12px', fontSize: 13.5, fontWeight: 600,
       color: open ? '#2196F3' : '#475569',
       background: 'none', border: 'none',
@@ -549,11 +549,11 @@ useEffect(() => {
 
       {/* Main header */}
       <div style={{ background: 'rgba(255,255,255,.98)', borderBottom: '1.5px solid #E2E8F0' }}>
-        <div style={{ maxWidth: '100%', margin: '0 auto', padding: '0 clamp(16px,4vw,48px)', display: 'flex', alignItems: 'center', height: 64 }}>
+        <div style={{ maxWidth: '100%', margin: '0 auto', padding: '0 clamp(16px,4vw,48px)', display: 'flex', alignItems: 'center', height: 80 }}>
 
           {/* Logo */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', flexShrink: 0, marginRight: 16 }}>
-            <img src={SITE.logo} alt="NNC Digital Logo" width={46} height={46} style={{ borderRadius: 8, objectFit: 'contain' }} />
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', flexShrink: 0, marginRight: 16 }}>
+            <img src={SITE.logo} alt="NNC Digital Logo" width={65} height={72} style={{ objectFit: 'contain' }} />
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
               <span style={{ fontSize: 'clamp(11px,2.5vw,14px)', fontWeight: 800, color: '#0B1F4B', letterSpacing: '-.02em', whiteSpace: 'nowrap' }}>Nakshatra Namaha Creations</span>
               <span style={{ fontSize: 'clamp(9px,2vw,11px)', fontWeight: 500, color: '#94A3B8', letterSpacing: '.01em', whiteSpace: 'nowrap' }}>Your Digital Solutions Partner</span>
@@ -562,16 +562,16 @@ useEffect(() => {
 
           {/* Desktop nav */}
           <nav className="d-none d-xl-flex" style={{ alignItems: 'center', gap: 2, flex: 1, justifyContent: 'flex-end' }}>
-            <div style={{ position: 'relative', height: 72, display: 'flex', alignItems: 'center' }}>
+            <div style={{ position: 'relative', height: 80, display: 'flex', alignItems: 'center' }}>
               <NavTrigger label="Services" open={openMenu === 'svc'} onClick={() => tog('svc')} />
               <ServicesMega 
                 open={openMenu === 'svc'} 
                 setOpenMenu={setOpenMenu} 
               />
             </div>
-            <div style={{ position: 'relative', height: 72, display: 'flex', alignItems: 'center' }}>
+            <div style={{ position: 'relative', height: 80, display: 'flex', alignItems: 'center' }}>
               <Link href="/our-works" style={{
-                display: 'flex', alignItems: 'center', height: 64,
+                display: 'flex', alignItems: 'center', height: 80,
                 padding: '0 12px', fontSize: 13.5, fontWeight: 600,
                 color: pathname === '/our-works' ? '#2196F3' : '#475569',
                 textDecoration: 'none',
@@ -582,16 +582,16 @@ useEffect(() => {
                 Our Works
               </Link>
             </div>
-            <div style={{ position: 'relative', height: 72, display: 'flex', alignItems: 'center' }}>
+            <div style={{ position: 'relative', height: 80, display: 'flex', alignItems: 'center' }}>
               <NavTrigger label="Company" open={openMenu === 'co'} onClick={() => tog('co')} />
               <CompanyDrop open={openMenu === 'co'} />
             </div>
-            <div style={{ position: 'relative', height: 72, display: 'flex', alignItems: 'center' }}>
+            <div style={{ position: 'relative', height: 80, display: 'flex', alignItems: 'center' }}>
               <NavTrigger label="Case Studies" open={openMenu === 'ind'} onClick={() => tog('ind')} />
               <IndustriesDrop open={openMenu === 'ind'} />
             </div>
             <Link href="/about-us" style={{
-              display: 'flex', alignItems: 'center', height: 64,
+              display: 'flex', alignItems: 'center', height: 80,
               padding: '0 12px', fontSize: 13.5, fontWeight: 600,
               color: pathname === '/about-us' ? '#2196F3' : '#475569',
               textDecoration: 'none',
@@ -602,7 +602,7 @@ useEffect(() => {
               About Us
             </Link>
             <Link href="/contact-us" style={{
-              display: 'flex', alignItems: 'center', height: 64,
+              display: 'flex', alignItems: 'center', height: 80,
               padding: '0 12px', fontSize: 13.5, fontWeight: 600,
               color: pathname === '/contact-us' ? '#2196F3' : '#475569',
               textDecoration: 'none',

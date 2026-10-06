@@ -8,9 +8,9 @@ import CallFloat from '@/components/CallFloat'
 export const metadata = {
   title: 'Website & App Development Company in Bangalore | NNC',
   icons: {
-    icon: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
-    apple: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
-    shortcut: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
+    icon: '/assets/nnc-logo.png',
+    apple: '/assets/nnc-logo.png',
+    shortcut: '/assets/nnc-logo.png',
   },
   description:
     'Build your digital presence with a Website & App Development Company creating custom websites, mobile apps, UI/UX, and scalable business solutions.',

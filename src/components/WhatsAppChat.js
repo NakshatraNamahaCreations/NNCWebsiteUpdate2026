@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 
 const PHONE = '919900566466'
-const LOGO = 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png'
+const LOGO = '/assets/nnc-logo.png'
 
 /* ── 10 questions with selectable answers ──────────────── */
 const QUESTIONS = [

@@ -212,7 +212,7 @@ export default function AdminBlogPage() {
           <div className="lg-left">
             <div className="lg-left-logo">
               <a href="/" className="lg-left-logo-img">
-                <img src="https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png" alt="NNC" />
+                <img src="/assets/nnc-logo.png" alt="NNC" />
               </a>
               <div className="lg-left-logo-text">
                 <div className="lg-left-logo-name">Nakshatra Namaha Creations</div>
@@ -524,7 +524,7 @@ export default function AdminBlogPage() {
         <div className="tb">
           <div className="tb-l">
             <a href="/" className="tb-logo">
-              <img src="https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png" alt="NNC" />
+              <img src="/assets/nnc-logo.png" alt="NNC" />
             </a>
             <div className="tb-divider" />
             <div>
