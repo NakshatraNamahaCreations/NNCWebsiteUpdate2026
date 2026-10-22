@@ -1,0 +1,1036 @@
+'use client'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { SITE } from '@/data/siteData'
+import { Honeypot, useRenderedAt, TurnstileWidget, readTurnstileToken } from '@/utils/formSpamProtection'
+import CustomHero from './CustomHero'
+import PremiumCTA from './PremiumCTA'
+import ClientsAcross from './ClientsAcross'
+
+function Svg({ d, size = 16, color = 'currentColor', sw = 1.8 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+      strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"><path d={d} /></svg>
+  )
+}
+
+function ServiceIllustration({ badge = '', stat1, stat1Label, image }) {
+  const b = badge.toLowerCase()
+
+  // Pick illustration based on service type — specific checks first
+  const isReactNative = b.includes('react native') || (b.includes('react') && b.includes('native'))
+  const isFlutter = !isReactNative && (b.includes('flutter') || b.includes('dart'))
+  const isAndroid = !isFlutter && !isReactNative && (b.includes('android') || b.includes('kotlin'))
+  const isIos = !isFlutter && !isAndroid && !isReactNative && (b.includes('ios') || b.includes('iphone') || b.includes('ipad') || b.includes('swift') || b.includes('apple'))
+  const isEcom = b.includes('ecommerce') || b.includes('e-commerce') || b.includes('shop') || b.includes('store')
+  const isApp = !isFlutter && !isAndroid && !isIos && !isEcom && !isReactNative && (b.includes('app') || b.includes('mobile'))
+  const isCustomCrm = b.includes('custom') && b.includes('crm')
+  const isCrm = !isCustomCrm && (b.includes('crm') || b.includes('software') || b.includes('saas') || b.includes('erp'))
+  const isMarketing = b.includes('marketing') || b.includes('seo') || b.includes('ads') || b.includes('social')
+  const isVideo = b.includes('video') || b.includes('animation') || b.includes('production')
+  const isWebsite = !isEcom && !isApp && !isFlutter && !isAndroid && !isIos && !isCrm && !isMarketing && !isVideo && (b.includes('website') || b.includes('web ') || b.includes('corporate') || b.includes('landing'))
+  const isLanding = b.includes('landing')
+  const isPwa = b.includes('progressive') || b.includes('pwa')
+
+  return (
+    <div style={{ position: 'relative', borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.1)', padding: 32 }}>
+      {/* Glow accent */}
+      <div style={{ position: 'absolute', top: -60, right: -60, width: 220, height: 220, borderRadius: '50%', background: 'radial-gradient(circle, rgba(33,150,243,.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
+
+      {/* Illustration */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 28 }}>
+          {image ? (
+          <img
+            src={image}
+            alt="Web Development Company in Bangalore"
+            style={{
+              width: '100%',
+              maxWidth: '420px',
+              borderRadius: '12px'
+            }}
+          />
+        ) : isReactNative ? (
+          // React Native — phone + web browser sharing code
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            {/* Phone */}
+            <rect x="10" y="20" width="80" height="155" rx="16" fill="rgba(33,150,243,.1)" stroke="rgba(33,150,243,.35)" strokeWidth="1.5" />
+            <rect x="20" y="36" width="60" height="105" rx="5" fill="rgba(33,150,243,.07)" />
+            <rect x="27" y="43" width="46" height="8" rx="2" fill="rgba(33,150,243,.4)" />
+            <rect x="27" y="56" width="32" height="5" rx="2" fill="rgba(255,255,255,.18)" />
+            <rect x="27" y="65" width="46" height="5" rx="2" fill="rgba(255,255,255,.12)" />
+            <rect x="27" y="78" width="46" height="24" rx="5" fill="rgba(33,150,243,.12)" stroke="rgba(33,150,243,.2)" strokeWidth="1" />
+            <rect x="27" y="108" width="21" height="18" rx="4" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.25)" strokeWidth="1" />
+            <rect x="52" y="108" width="21" height="18" rx="4" fill="rgba(245,158,11,.12)" stroke="rgba(245,158,11,.2)" strokeWidth="1" />
+            <circle cx="50" cy="160" r="4" fill="rgba(255,255,255,.15)" />
+            <text x="18" y="190" fontSize="7.5" fill="rgba(33,150,243,.7)" fontWeight="700">Android + iOS</text>
+            {/* Web browser */}
+            <rect x="110" y="30" width="105" height="90" rx="10" fill="rgba(124,58,237,.06)" stroke="rgba(124,58,237,.25)" strokeWidth="1.5" />
+            <rect x="110" y="30" width="105" height="20" rx="10" fill="rgba(124,58,237,.15)" />
+            <circle cx="122" cy="40" r="3" fill="rgba(239,68,68,.4)" />
+            <circle cx="132" cy="40" r="3" fill="rgba(245,158,11,.4)" />
+            <circle cx="142" cy="40" r="3" fill="rgba(16,185,129,.4)" />
+            <rect x="120" y="58" width="52" height="7" rx="2" fill="rgba(124,58,237,.35)" />
+            <rect x="120" y="70" width="36" height="5" rx="2" fill="rgba(255,255,255,.18)" />
+            <rect x="120" y="79" width="44" height="5" rx="2" fill="rgba(255,255,255,.12)" />
+            <rect x="120" y="92" width="85" height="18" rx="4" fill="rgba(124,58,237,.1)" stroke="rgba(124,58,237,.18)" strokeWidth="1" />
+            <text x="117" y="135" fontSize="7.5" fill="rgba(124,58,237,.7)" fontWeight="700">React JS Web</text>
+            {/* Shared code connection */}
+            <line x1="90" y1="85" x2="110" y2="75" stroke="rgba(33,150,243,.25)" strokeWidth="1.5" strokeDasharray="4,4" />
+            <line x1="90" y1="100" x2="110" y2="100" stroke="rgba(33,150,243,.25)" strokeWidth="1.5" strokeDasharray="4,4" />
+            {/* Center badge */}
+            <rect x="85" y="145" width="62" height="28" rx="8" fill="rgba(33,150,243,.15)" stroke="rgba(33,150,243,.3)" strokeWidth="1.5" />
+            <text x="93" y="157" fontSize="7.5" fill="rgba(33,150,243,.9)" fontWeight="800">React Native</text>
+            <text x="93" y="168" fontSize="6.5" fill="rgba(255,255,255,.4)">Shared JS Code</text>
+            {/* npm badge */}
+            <rect x="155" y="145" width="55" height="28" rx="8" fill="rgba(239,68,68,.1)" stroke="rgba(239,68,68,.2)" strokeWidth="1" />
+            <text x="163" y="157" fontSize="7" fill="rgba(239,68,68,.8)" fontWeight="700">npm</text>
+            <text x="163" y="168" fontSize="6" fill="rgba(255,255,255,.35)">2M+ packages</text>
+          </svg>
+         ) : isFlutter ? (
+          // Flutter — two phones with shared codebase
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            {/* Left phone (Android) */}
+            <rect x="20" y="20" width="70" height="140" rx="14" fill="rgba(16,185,129,.1)" stroke="rgba(16,185,129,.35)" strokeWidth="1.5" />
+            <rect x="30" y="36" width="50" height="95" rx="5" fill="rgba(16,185,129,.08)" />
+            <rect x="36" y="42" width="38" height="8" rx="2" fill="rgba(16,185,129,.4)" />
+            <rect x="36" y="55" width="28" height="5" rx="2" fill="rgba(255,255,255,.18)" />
+            <rect x="36" y="64" width="38" height="5" rx="2" fill="rgba(255,255,255,.12)" />
+            <rect x="36" y="76" width="38" height="22" rx="4" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.25)" strokeWidth="1" />
+            <rect x="36" y="104" width="17" height="17" rx="4" fill="rgba(245,158,11,.15)" stroke="rgba(245,158,11,.25)" strokeWidth="1" />
+            <rect x="57" y="104" width="17" height="17" rx="4" fill="rgba(33,150,243,.15)" stroke="rgba(33,150,243,.25)" strokeWidth="1" />
+            <circle cx="55" cy="150" r="4" fill="rgba(255,255,255,.15)" />
+            <text x="30" y="175" fontSize="8" fill="rgba(16,185,129,.8)" fontWeight="700">Android</text>
+            {/* Right phone (iOS) */}
+            <rect x="130" y="20" width="70" height="140" rx="14" fill="rgba(33,150,243,.1)" stroke="rgba(33,150,243,.35)" strokeWidth="1.5" />
+            <rect x="140" y="36" width="50" height="95" rx="5" fill="rgba(33,150,243,.08)" />
+            <rect x="146" y="42" width="38" height="8" rx="2" fill="rgba(33,150,243,.4)" />
+            <rect x="146" y="55" width="28" height="5" rx="2" fill="rgba(255,255,255,.18)" />
+            <rect x="146" y="64" width="38" height="5" rx="2" fill="rgba(255,255,255,.12)" />
+            <rect x="146" y="76" width="38" height="22" rx="4" fill="rgba(33,150,243,.15)" stroke="rgba(33,150,243,.25)" strokeWidth="1" />
+            <rect x="146" y="104" width="17" height="17" rx="4" fill="rgba(124,58,237,.15)" stroke="rgba(124,58,237,.25)" strokeWidth="1" />
+            <rect x="167" y="104" width="17" height="17" rx="4" fill="rgba(239,68,68,.12)" stroke="rgba(239,68,68,.2)" strokeWidth="1" />
+            <rect x="155" y="137" width="20" height="5" rx="3" fill="rgba(255,255,255,.12)" />
+            <text x="143" y="175" fontSize="8" fill="rgba(33,150,243,.8)" fontWeight="700">iOS</text>
+            {/* Center connection — Dart/Flutter */}
+            <line x1="90" y1="90" x2="130" y2="90" stroke="rgba(6,182,212,.3)" strokeWidth="1.5" strokeDasharray="4,4" />
+            <rect x="93" y="78" width="34" height="24" rx="8" fill="rgba(6,182,212,.15)" stroke="rgba(6,182,212,.35)" strokeWidth="1.5" />
+            <text x="99" y="88" fontSize="7" fill="rgba(6,182,212,.9)" fontWeight="800">Flutter</text>
+            <text x="102" y="98" fontSize="6" fill="rgba(255,255,255,.4)">Dart</text>
+          </svg>
+         ) : isAndroid ? (
+          // Android — phone with Play Store + Kotlin badge
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="50" y="8" width="100" height="175" rx="18" fill="rgba(16,185,129,.1)" stroke="rgba(16,185,129,.35)" strokeWidth="2" />
+            <rect x="62" y="28" width="76" height="120" rx="6" fill="rgba(16,185,129,.08)" />
+            <rect x="70" y="36" width="60" height="10" rx="3" fill="rgba(16,185,129,.45)" />
+            <rect x="70" y="52" width="40" height="6" rx="2" fill="rgba(255,255,255,.18)" />
+            <rect x="70" y="62" width="56" height="6" rx="2" fill="rgba(255,255,255,.12)" />
+            {/* Chart */}
+            <rect x="70" y="76" width="56" height="30" rx="5" fill="rgba(16,185,129,.12)" stroke="rgba(16,185,129,.2)" strokeWidth="1" />
+            <polyline points="76,100 86,92 96,95 106,85 116,88 120,82" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+            {/* Grid items */}
+            <rect x="70" y="112" width="26" height="22" rx="5" fill="rgba(33,150,243,.15)" stroke="rgba(33,150,243,.25)" strokeWidth="1" />
+            <rect x="100" y="112" width="26" height="22" rx="5" fill="rgba(245,158,11,.12)" stroke="rgba(245,158,11,.25)" strokeWidth="1" />
+            <circle cx="100" cy="165" r="5" fill="rgba(255,255,255,.15)" />
+            {/* Floating badges */}
+            <rect x="0" y="40" width="44" height="24" rx="7" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.3)" strokeWidth="1" />
+            <text x="8" y="50" fontSize="7" fill="rgba(16,185,129,.9)" fontWeight="700">Kotlin</text>
+            <text x="8" y="60" fontSize="6" fill="rgba(255,255,255,.4)">Native</text>
+            <rect x="158" y="60" width="58" height="24" rx="7" fill="rgba(52,211,153,.12)" stroke="rgba(52,211,153,.25)" strokeWidth="1" />
+            <text x="166" y="70" fontSize="7" fill="rgba(52,211,153,.9)" fontWeight="700">Play Store</text>
+            <text x="166" y="80" fontSize="6" fill="rgba(255,255,255,.4)">Published</text>
+            <rect x="160" y="120" width="55" height="24" rx="7" fill="rgba(239,68,68,.12)" stroke="rgba(239,68,68,.25)" strokeWidth="1" />
+            <text x="168" y="130" fontSize="7" fill="rgba(239,68,68,.8)" fontWeight="700">Firebase</text>
+            <text x="168" y="140" fontSize="6" fill="rgba(255,255,255,.4)">Analytics</text>
+          </svg>
+         ) : isIos ? (
+          // iOS — iPhone with App Store + Swift badge
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="50" y="8" width="100" height="175" rx="20" fill="rgba(167,139,250,.08)" stroke="rgba(167,139,250,.3)" strokeWidth="2" />
+            {/* Notch */}
+            <rect x="80" y="12" width="40" height="10" rx="5" fill="rgba(167,139,250,.15)" />
+            <rect x="62" y="28" width="76" height="120" rx="6" fill="rgba(167,139,250,.06)" />
+            <rect x="70" y="38" width="60" height="10" rx="3" fill="rgba(167,139,250,.4)" />
+            <rect x="70" y="54" width="42" height="6" rx="2" fill="rgba(255,255,255,.18)" />
+            <rect x="70" y="64" width="54" height="6" rx="2" fill="rgba(255,255,255,.12)" />
+            {/* Card UI */}
+            <rect x="70" y="78" width="56" height="28" rx="6" fill="rgba(167,139,250,.12)" stroke="rgba(167,139,250,.25)" strokeWidth="1" />
+            <rect x="78" y="84" width="30" height="5" rx="2" fill="rgba(167,139,250,.45)" />
+            <rect x="78" y="93" width="22" height="4" rx="2" fill="rgba(255,255,255,.15)" />
+            {/* Tab bar */}
+            <rect x="70" y="112" width="56" height="24" rx="5" fill="rgba(167,139,250,.1)" stroke="rgba(167,139,250,.18)" strokeWidth="1" />
+            {[78,92,106].map((x,i) => <circle key={i} cx={x} cy={124} r="4" fill={['rgba(167,139,250,.4)','rgba(33,150,243,.3)','rgba(245,158,11,.3)'][i]} />)}
+            {/* Home indicator */}
+            <rect x="88" y="160" width="24" height="4" rx="2" fill="rgba(255,255,255,.15)" />
+            {/* Floating badges */}
+            <rect x="0" y="40" width="44" height="24" rx="7" fill="rgba(167,139,250,.15)" stroke="rgba(167,139,250,.3)" strokeWidth="1" />
+            <text x="8" y="50" fontSize="7" fill="rgba(167,139,250,.9)" fontWeight="700">Swift</text>
+            <text x="8" y="60" fontSize="6" fill="rgba(255,255,255,.4)">Native</text>
+            <rect x="158" y="50" width="58" height="24" rx="7" fill="rgba(167,139,250,.12)" stroke="rgba(167,139,250,.25)" strokeWidth="1" />
+            <text x="166" y="60" fontSize="7" fill="rgba(167,139,250,.9)" fontWeight="700">App Store</text>
+            <text x="166" y="70" fontSize="6" fill="rgba(255,255,255,.4)">Published</text>
+            <rect x="0" y="100" width="44" height="24" rx="7" fill="rgba(33,150,243,.12)" stroke="rgba(33,150,243,.25)" strokeWidth="1" />
+            <text x="8" y="110" fontSize="7" fill="rgba(33,150,243,.8)" fontWeight="700">SwiftUI</text>
+            <text x="8" y="120" fontSize="6" fill="rgba(255,255,255,.4)">Modern</text>
+            <rect x="160" y="110" width="55" height="24" rx="7" fill="rgba(245,158,11,.12)" stroke="rgba(245,158,11,.25)" strokeWidth="1" />
+            <text x="168" y="120" fontSize="7" fill="rgba(245,158,11,.8)" fontWeight="700">TestFlight</text>
+            <text x="168" y="130" fontSize="6" fill="rgba(255,255,255,.4)">Beta</text>
+          </svg>
+         ) : isEcom ? (
+          // E-commerce — storefront with cart
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            {/* Browser frame */}
+            <rect x="10" y="10" width="200" height="150" rx="12" fill="rgba(245,158,11,.06)" stroke="rgba(245,158,11,.25)" strokeWidth="1.5" />
+            <rect x="10" y="10" width="200" height="26" rx="12" fill="rgba(245,158,11,.15)" />
+            <circle cx="28" cy="23" r="4" fill="rgba(239,68,68,.45)" />
+            <circle cx="42" cy="23" r="4" fill="rgba(245,158,11,.45)" />
+            <circle cx="56" cy="23" r="4" fill="rgba(16,185,129,.45)" />
+            {/* Product grid */}
+            <rect x="24" y="46" width="54" height="50" rx="6" fill="rgba(245,158,11,.1)" stroke="rgba(245,158,11,.2)" strokeWidth="1" />
+            <rect x="30" y="52" width="42" height="24" rx="4" fill="rgba(245,158,11,.15)" />
+            <rect x="30" y="82" width="28" height="5" rx="2" fill="rgba(255,255,255,.2)" />
+            <rect x="30" y="90" width="18" height="4" rx="2" fill="rgba(245,158,11,.5)" />
+            <rect x="86" y="46" width="54" height="50" rx="6" fill="rgba(33,150,243,.08)" stroke="rgba(33,150,243,.18)" strokeWidth="1" />
+            <rect x="92" y="52" width="42" height="24" rx="4" fill="rgba(33,150,243,.12)" />
+            <rect x="92" y="82" width="28" height="5" rx="2" fill="rgba(255,255,255,.2)" />
+            <rect x="92" y="90" width="18" height="4" rx="2" fill="rgba(33,150,243,.5)" />
+            <rect x="148" y="46" width="54" height="50" rx="6" fill="rgba(16,185,129,.08)" stroke="rgba(16,185,129,.18)" strokeWidth="1" />
+            <rect x="154" y="52" width="42" height="24" rx="4" fill="rgba(16,185,129,.12)" />
+            <rect x="154" y="82" width="28" height="5" rx="2" fill="rgba(255,255,255,.2)" />
+            <rect x="154" y="90" width="18" height="4" rx="2" fill="rgba(16,185,129,.5)" />
+            {/* Cart bar */}
+            <rect x="24" y="108" width="178" height="38" rx="8" fill="rgba(245,158,11,.08)" stroke="rgba(245,158,11,.15)" strokeWidth="1" />
+            <rect x="36" y="118" width="70" height="7" rx="3" fill="rgba(245,158,11,.35)" />
+            <rect x="36" y="130" width="50" height="5" rx="2" fill="rgba(255,255,255,.15)" />
+            <rect x="146" y="116" width="44" height="22" rx="6" fill="rgba(245,158,11,.45)" />
+            <text x="155" y="131" fontSize="8" fill="rgba(255,255,255,.9)" fontWeight="700">Buy</text>
+            {/* Floating badges */}
+            <rect x="0" y="168" width="56" height="22" rx="6" fill="rgba(245,158,11,.15)" stroke="rgba(245,158,11,.3)" strokeWidth="1" />
+            <text x="8" y="183" fontSize="7" fill="rgba(245,158,11,.9)" fontWeight="700">Razorpay</text>
+            <rect x="164" y="168" width="52" height="22" rx="6" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.3)" strokeWidth="1" />
+            <text x="176" y="183" fontSize="7" fill="rgba(16,185,129,.9)" fontWeight="700">UPI</text>
+          </svg>
+         ) : isApp ? (
+          // Mobile app illustration (generic)
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="60" y="10" width="100" height="180" rx="18" fill="rgba(33,150,243,.12)" stroke="rgba(33,150,243,.4)" strokeWidth="2" />
+            <rect x="72" y="30" width="76" height="120" rx="6" fill="rgba(33,150,243,.15)" />
+            <rect x="80" y="38" width="60" height="10" rx="3" fill="rgba(33,150,243,.5)" />
+            <rect x="80" y="54" width="40" height="7" rx="3" fill="rgba(255,255,255,.2)" />
+            <rect x="80" y="66" width="56" height="7" rx="3" fill="rgba(255,255,255,.15)" />
+            <rect x="80" y="80" width="60" height="28" rx="6" fill="rgba(33,150,243,.25)" stroke="rgba(33,150,243,.4)" strokeWidth="1" />
+            <circle cx="100" cy="94" r="6" fill="rgba(33,150,243,.6)" />
+            <rect x="111" y="89" width="22" height="4" rx="2" fill="rgba(255,255,255,.3)" />
+            <rect x="111" y="96" width="14" height="3" rx="1.5" fill="rgba(255,255,255,.2)" />
+            <rect x="80" y="115" width="28" height="24" rx="5" fill="rgba(16,185,129,.2)" stroke="rgba(16,185,129,.4)" strokeWidth="1" />
+            <rect x="114" y="115" width="26" height="24" rx="5" fill="rgba(245,158,11,.15)" stroke="rgba(245,158,11,.35)" strokeWidth="1" />
+            <circle cx="110" cy="168" r="5" fill="rgba(255,255,255,.2)" />
+            {/* Floating badges */}
+            <rect x="0" y="50" width="52" height="28" rx="8" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.35)" strokeWidth="1" />
+            <text x="10" y="59" fontSize="7" fill="rgba(16,185,129,.9)" fontWeight="700">React</text>
+            <text x="10" y="70" fontSize="7" fill="rgba(255,255,255,.5)">Native</text>
+            <rect x="168" y="80" width="50" height="28" rx="8" fill="rgba(124,58,237,.15)" stroke="rgba(124,58,237,.35)" strokeWidth="1" />
+            <text x="176" y="89" fontSize="7" fill="rgba(167,139,250,.9)" fontWeight="700">Flutter</text>
+            <text x="176" y="100" fontSize="7" fill="rgba(255,255,255,.5)">iOS/Android</text>
+          </svg>
+         ) : isCustomCrm ? (
+          // Custom/Bespoke CRM — industry panels
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            {/* Main dashboard frame */}
+            <rect x="10" y="10" width="200" height="140" rx="12" fill="rgba(124,58,237,.06)" stroke="rgba(124,58,237,.2)" strokeWidth="1.5" />
+            <rect x="10" y="10" width="200" height="26" rx="12" fill="rgba(124,58,237,.18)" />
+            <circle cx="28" cy="23" r="4" fill="rgba(239,68,68,.45)" />
+            <circle cx="42" cy="23" r="4" fill="rgba(245,158,11,.45)" />
+            <circle cx="56" cy="23" r="4" fill="rgba(16,185,129,.45)" />
+            <text x="70" y="27" fontSize="7" fill="rgba(255,255,255,.4)">Custom CRM Dashboard</text>
+            {/* Left sidebar */}
+            <rect x="10" y="36" width="48" height="114" fill="rgba(124,58,237,.08)" />
+            {[42,56,70,84,98].map((y, i) => <rect key={i} x="18" y={y} width="32" height="6" rx="2" fill={i === 0 ? 'rgba(124,58,237,.5)' : 'rgba(255,255,255,.1)'} />)}
+            {/* Pipeline columns */}
+            {[
+              { x: 66, label: 'New', color: '33,150,243', items: 3 },
+              { x: 114, label: 'Qualified', color: '245,158,11', items: 2 },
+              { x: 162, label: 'Won', color: '16,185,129', items: 2 },
+            ].map((col, ci) => (
+              <g key={ci}>
+                <rect x={col.x} y="42" width="42" height="10" rx="3" fill={`rgba(${col.color},.3)`} />
+                <text x={col.x + 4} y="50" fontSize="6" fill={`rgba(${col.color},.9)`} fontWeight="700">{col.label}</text>
+                {Array.from({ length: col.items }).map((_, i) => (
+                  <rect key={i} x={col.x} y={58 + i * 22} width="42" height="18" rx="4" fill={`rgba(${col.color},.08)`} stroke={`rgba(${col.color},.18)`} strokeWidth="1" />
+                ))}
+              </g>
+            ))}
+            {/* Bottom stats */}
+            <rect x="66" y="124" width="138" height="20" rx="5" fill="rgba(124,58,237,.06)" stroke="rgba(124,58,237,.12)" strokeWidth="1" />
+            <text x="74" y="138" fontSize="6.5" fill="rgba(124,58,237,.7)" fontWeight="700">Leads: 142</text>
+            <text x="122" y="138" fontSize="6.5" fill="rgba(16,185,129,.7)" fontWeight="700">Won: 38</text>
+            <text x="162" y="138" fontSize="6.5" fill="rgba(245,158,11,.7)" fontWeight="700">₹24.5L</text>
+            {/* Industry badges */}
+            <rect x="0" y="158" width="62" height="22" rx="6" fill="rgba(239,68,68,.12)" stroke="rgba(239,68,68,.2)" strokeWidth="1" />
+            <text x="8" y="173" fontSize="7" fill="rgba(239,68,68,.8)" fontWeight="700">Real Estate</text>
+            <rect x="68" y="158" width="58" height="22" rx="6" fill="rgba(16,185,129,.12)" stroke="rgba(16,185,129,.2)" strokeWidth="1" />
+            <text x="76" y="173" fontSize="7" fill="rgba(16,185,129,.8)" fontWeight="700">Healthcare</text>
+            <rect x="132" y="158" width="72" height="22" rx="6" fill="rgba(245,158,11,.12)" stroke="rgba(245,158,11,.2)" strokeWidth="1" />
+            <text x="140" y="173" fontSize="7" fill="rgba(245,158,11,.8)" fontWeight="700">Manufacturing</text>
+          </svg>
+         ) : isCrm ? (
+          // CRM / Software illustration
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="20" y="20" width="180" height="130" rx="12" fill="rgba(33,150,243,.08)" stroke="rgba(33,150,243,.25)" strokeWidth="1.5" />
+            <rect x="20" y="20" width="180" height="28" rx="12" fill="rgba(33,150,243,.2)" />
+            <circle cx="38" cy="34" r="5" fill="rgba(239,68,68,.5)" />
+            <circle cx="53" cy="34" r="5" fill="rgba(245,158,11,.5)" />
+            <circle cx="68" cy="34" r="5" fill="rgba(16,185,129,.5)" />
+            <rect x="36" y="60" width="72" height="72" rx="8" fill="rgba(33,150,243,.12)" stroke="rgba(33,150,243,.25)" strokeWidth="1" />
+            <rect x="44" y="68" width="56" height="8" rx="3" fill="rgba(33,150,243,.4)" />
+            <rect x="44" y="82" width="40" height="6" rx="2" fill="rgba(255,255,255,.2)" />
+            <rect x="44" y="92" width="48" height="6" rx="2" fill="rgba(255,255,255,.15)" />
+            <rect x="44" y="102" width="35" height="6" rx="2" fill="rgba(255,255,255,.12)" />
+            <rect x="44" y="112" width="45" height="12" rx="4" fill="rgba(16,185,129,.25)" stroke="rgba(16,185,129,.4)" strokeWidth="1" />
+            <rect x="120" y="60" width="68" height="30" rx="8" fill="rgba(124,58,237,.15)" stroke="rgba(124,58,237,.3)" strokeWidth="1" />
+            <rect x="128" y="70" width="35" height="5" rx="2" fill="rgba(167,139,250,.5)" />
+            <rect x="128" y="79" width="25" height="5" rx="2" fill="rgba(255,255,255,.2)" />
+            <rect x="120" y="98" width="68" height="34" rx="8" fill="rgba(245,158,11,.12)" stroke="rgba(245,158,11,.3)" strokeWidth="1" />
+            <rect x="128" y="106" width="20" height="5" rx="2" fill="rgba(245,158,11,.5)" />
+            {[0, 1, 2].map(i => <rect key={i} x={128} y={115 + i * 5} width={[42, 28, 36][i]} height="4" rx="2" fill="rgba(255,255,255,.15)" />)}
+            {/* Connection lines */}
+            <line x1="110" y1="100" x2="120" y2="80" stroke="rgba(33,150,243,.3)" strokeWidth="1" strokeDasharray="3,3" />
+            <line x1="110" y1="115" x2="120" y2="118" stroke="rgba(245,158,11,.3)" strokeWidth="1" strokeDasharray="3,3" />
+            {/* Bottom stats */}
+            <rect x="36" y="148" width="148" height="0" rx="0" fill="none" />
+            {[['CRM', '#2196F3'], ['SaaS', '#7C3AED'], ['ERP', '#10B981']].map(([l, c], i) => (
+              <g key={l}>
+                <rect x={36 + i * 56} y={148} width={48} height={20} rx={5} fill={`${c}22`} stroke={`${c}44`} strokeWidth="1" />
+                <text x={36 + i * 56 + 14} y={162} fontSize="9" fill={c} fontWeight="700">{l}</text>
+              </g>
+            ))}
+          </svg>
+         ) : isMarketing ? (
+          // Digital Marketing / SEO illustration
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="20" y="30" width="180" height="130" rx="12" fill="rgba(33,150,243,.06)" stroke="rgba(33,150,243,.2)" strokeWidth="1.5" />
+            {/* Bar chart */}
+            <rect x="40" y="120" width="20" height="25" rx="4" fill="rgba(33,150,243,.4)" />
+            <rect x="68" y="100" width="20" height="45" rx="4" fill="rgba(33,150,243,.55)" />
+            <rect x="96" y="80" width="20" height="65" rx="4" fill="rgba(33,150,243,.7)" />
+            <rect x="124" y="60" width="20" height="85" rx="4" fill="rgba(16,185,129,.6)" />
+            <rect x="152" y="40" width="20" height="105" rx="4" fill="rgba(16,185,129,.8)" />
+            {/* Trend line */}
+            <polyline points="50,118 78,98 106,78 134,58 162,38" stroke="#10B981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            {[50, 78, 106, 134, 162].map((x, i) => <circle key={i} cx={x} cy={[118, 98, 78, 58, 38][i]} r="4" fill="#10B981" stroke="rgba(255,255,255,.3)" strokeWidth="1.5" />)}
+            {/* Floating metric cards */}
+            <rect x="130" y="8" width="78" height="26" rx="7" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.35)" strokeWidth="1" />
+            <text x="140" y="18" fontSize="8" fill="rgba(16,185,129,.9)" fontWeight="700">↑ 143%</text>
+            <text x="140" y="28" fontSize="7" fill="rgba(255,255,255,.4)">Organic Traffic</text>
+            <rect x="8" y="55" width="70" height="26" rx="7" fill="rgba(33,150,243,.15)" stroke="rgba(33,150,243,.35)" strokeWidth="1" />
+            <text x="18" y="65" fontSize="8" fill="rgba(33,150,243,.9)" fontWeight="700">4.9★ Ads</text>
+            <text x="18" y="75" fontSize="7" fill="rgba(255,255,255,.4)">Quality Score</text>
+            {/* Bottom labels */}
+            {['Jan', 'Mar', 'May', 'Jul', 'Sep'].map((l, i) => (
+              <text key={l} x={46 + i * 28} y="172" fontSize="8" fill="rgba(255,255,255,.3)" textAnchor="middle">{l}</text>
+            ))}
+          </svg>
+         ) : isVideo ? (
+          // Video / Animation illustration
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="20" y="30" width="130" height="100" rx="10" fill="rgba(124,58,237,.12)" stroke="rgba(124,58,237,.35)" strokeWidth="1.5" />
+            <circle cx="85" cy="80" r="28" fill="rgba(124,58,237,.2)" stroke="rgba(124,58,237,.4)" strokeWidth="1.5" />
+            <polygon points="78,68 78,92 102,80" fill="rgba(167,139,250,.8)" />
+            {/* Film strip right */}
+            <rect x="160" y="20" width="40" height="160" rx="6" fill="rgba(33,150,243,.1)" stroke="rgba(33,150,243,.25)" strokeWidth="1" />
+            {[0, 1, 2, 3, 4].map(i => <rect key={i} x="165" y={28 + i * 30} width="30" height="20" rx="3" fill={`rgba(33,150,243,${0.1 + i * 0.05})`} />)}
+            {/* Bottom timeline */}
+            <rect x="20" y="142" width="130" height="22" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
+            <rect x="26" y="148" width="50" height="10" rx="3" fill="rgba(124,58,237,.4)" />
+            <rect x="82" y="148" width="30" height="10" rx="3" fill="rgba(245,158,11,.3)" />
+            <rect x="118" y="148" width="25" height="10" rx="3" fill="rgba(16,185,129,.3)" />
+            {/* Labels */}
+            <rect x="20" y="170" width="55" height="20" rx="5" fill="rgba(124,58,237,.15)" stroke="rgba(124,58,237,.3)" strokeWidth="1" />
+            <text x="30" y="183" fontSize="8" fill="rgba(167,139,250,.9)" fontWeight="700">2D/3D Anim</text>
+            <rect x="83" y="170" width="55" height="20" rx="5" fill="rgba(33,150,243,.15)" stroke="rgba(33,150,243,.3)" strokeWidth="1" />
+            <text x="93" y="183" fontSize="8" fill="rgba(147,197,253,.9)" fontWeight="700">4K Video</text>
+          </svg>
+         ) : isEcom ? (
+          // E-commerce illustration
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="20" y="20" width="180" height="140" rx="12" fill="rgba(33,150,243,.07)" stroke="rgba(33,150,243,.2)" strokeWidth="1.5" />
+            <rect x="20" y="20" width="180" height="24" rx="12" fill="rgba(33,150,243,.18)" />
+            <circle cx="38" cy="32" r="4" fill="rgba(239,68,68,.5)" />
+            <circle cx="51" cy="32" r="4" fill="rgba(245,158,11,.5)" />
+            <circle cx="64" cy="32" r="4" fill="rgba(16,185,129,.5)" />
+            {/* Product cards */}
+            {[[36, 52], [114, 52], [36, 120], [114, 120]].map(([x, y], i) => (
+              <g key={i}>
+                <rect x={x} y={y} width="72" height="60" rx="7" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
+                <rect x={x + 8} y={y + 8} width="56" height="30" rx="4" fill={['rgba(33,150,243,.2)', 'rgba(16,185,129,.2)', 'rgba(245,158,11,.2)', 'rgba(124,58,237,.2)'][i]} />
+                <rect x={x + 8} y={y + 44} width="36" height="5" rx="2" fill="rgba(255,255,255,.25)" />
+                <rect x={x + 8} y={y + 52} width="22" height="4" rx="2" fill="rgba(33,150,243,.5)" />
+                <rect x={x + 46} y={y + 44} width="18" height="14" rx="4" fill="rgba(33,150,243,.35)" />
+              </g>
+            ))}
+            {/* Cart badge */}
+            <rect x="145" y="8" width="55" height="26" rx="8" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.4)" strokeWidth="1" />
+            <text x="155" y="18" fontSize="8" fill="rgba(16,185,129,.9)" fontWeight="700">Cart: ₹4,299</text>
+            <text x="155" y="28" fontSize="7" fill="rgba(255,255,255,.4)">Razorpay Ready</text>
+          </svg>
+        ) : isLanding ? (
+          // Landing page / conversion illustration
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="30" y="10" width="160" height="175" rx="10" fill="rgba(33,150,243,.07)" stroke="rgba(33,150,243,.2)" strokeWidth="1.5" />
+            <rect x="30" y="10" width="160" height="18" rx="10" fill="rgba(33,150,243,.2)" />
+            <rect x="50" y="38" width="120" height="12" rx="4" fill="rgba(255,255,255,.2)" />
+            <rect x="65" y="54" width="90" height="8" rx="3" fill="rgba(255,255,255,.1)" />
+            <rect x="75" y="70" width="70" height="22" rx="6" fill="rgba(33,150,243,.6)" />
+            <text x="95" y="85" fontSize="9" fill="white" fontWeight="700">Get Quote</text>
+            <line x1="50" y1="105" x2="170" y2="105" stroke="rgba(255,255,255,.08)" strokeWidth="1" />
+            {/* Feature row */}
+            {[50, 100, 150].map((x, i) => (
+              <g key={i}>
+                <circle cx={x} cy="120" r="10" fill={['rgba(33,150,243,.2)', 'rgba(16,185,129,.2)', 'rgba(245,158,11,.2)'][i]} />
+                <rect x={x - 18} y="135" width="36" height="5" rx="2" fill="rgba(255,255,255,.15)" />
+                <rect x={x - 12} y="143" width="24" height="4" rx="2" fill="rgba(255,255,255,.08)" />
+              </g>
+            ))}
+            {/* Conversion arrow */}
+            <path d="M100 160 L100 175 L110 168 M100 175 L90 168" stroke="rgba(16,185,129,.6)" strokeWidth="2" strokeLinecap="round" />
+            <text x="76" y="190" fontSize="8" fill="rgba(16,185,129,.7)" fontWeight="700">High Conversion</text>
+          </svg>
+        ) : isPwa ? (
+          // PWA illustration
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="40" y="20" width="140" height="100" rx="10" fill="rgba(33,150,243,.1)" stroke="rgba(33,150,243,.3)" strokeWidth="1.5" />
+            <rect x="55" y="35" width="110" height="70" rx="6" fill="rgba(33,150,243,.08)" />
+            <rect x="63" y="43" width="70" height="8" rx="3" fill="rgba(33,150,243,.4)" />
+            <rect x="63" y="55" width="50" height="6" rx="2" fill="rgba(255,255,255,.2)" />
+            <rect x="63" y="65" width="60" height="20" rx="4" fill="rgba(16,185,129,.25)" stroke="rgba(16,185,129,.4)" strokeWidth="1" />
+            <text x="73" y="78" fontSize="8" fill="rgba(16,185,129,.9)" fontWeight="700">Install App</text>
+            {/* Mobile below */}
+            <rect x="85" y="128" width="50" height="60" rx="8" fill="rgba(124,58,237,.12)" stroke="rgba(124,58,237,.35)" strokeWidth="1.5" />
+            <rect x="92" y="138" width="36" height="36" rx="4" fill="rgba(124,58,237,.15)" />
+            <circle cx="110" cy="176" r="3" fill="rgba(255,255,255,.2)" />
+            {/* Badges */}
+            <rect x="0" y="40" width="60" height="22" rx="6" fill="rgba(16,185,129,.15)" stroke="rgba(16,185,129,.3)" strokeWidth="1" />
+            <text x="10" y="50" fontSize="7" fill="rgba(16,185,129,.9)" fontWeight="700">Offline Ready</text>
+            <text x="10" y="60" fontSize="6" fill="rgba(255,255,255,.4)">Service Worker</text>
+            <rect x="158" y="90" width="58" height="22" rx="6" fill="rgba(245,158,11,.15)" stroke="rgba(245,158,11,.3)" strokeWidth="1" />
+            <text x="168" y="100" fontSize="7" fill="rgba(245,158,11,.9)" fontWeight="700">PageSpeed</text>
+            <text x="168" y="110" fontSize="7" fill="rgba(255,255,255,.4)">90+ Score</text>
+          </svg>
+        ) : (
+          // Default: Website Development illustration
+          <svg width="220" height="200" viewBox="0 0 220 200" fill="none">
+            <rect x="15" y="20" width="190" height="130" rx="12" fill="rgba(33,150,243,.08)" stroke="rgba(33,150,243,.25)" strokeWidth="1.5" />
+            <rect x="15" y="20" width="190" height="28" rx="12" fill="rgba(33,150,243,.2)" />
+            <circle cx="33" cy="34" r="5" fill="rgba(239,68,68,.5)" />
+            <circle cx="48" cy="34" r="5" fill="rgba(245,158,11,.5)" />
+            <circle cx="63" cy="34" r="5" fill="rgba(16,185,129,.5)" />
+            {/* URL bar */}
+            <rect x="78" y="27" width="110" height="14" rx="4" fill="rgba(255,255,255,.08)" />
+            <text x="85" y="38" fontSize="7.5" fill="rgba(255,255,255,.35)">nakshatranamahacreations.com</text>
+            {/* Hero area */}
+            <rect x="28" y="58" width="80" height="75" rx="6" fill="rgba(33,150,243,.12)" />
+            <rect x="36" y="66" width="64" height="9" rx="3" fill="rgba(33,150,243,.5)" />
+            <rect x="36" y="80" width="50" height="6" rx="2" fill="rgba(255,255,255,.2)" />
+            <rect x="36" y="90" width="58" height="6" rx="2" fill="rgba(255,255,255,.15)" />
+            <rect x="36" y="104" width="46" height="16" rx="5" fill="rgba(33,150,243,.5)" />
+            {/* Right content */}
+            <rect x="118" y="58" width="74" height="34" rx="6" fill="rgba(16,185,129,.12)" stroke="rgba(16,185,129,.25)" strokeWidth="1" />
+            <rect x="126" y="66" width="40" height="6" rx="2" fill="rgba(16,185,129,.4)" />
+            <rect x="126" y="76" width="30" height="5" rx="2" fill="rgba(255,255,255,.15)" />
+            <rect x="118" y="100" width="34" height="33" rx="6" fill="rgba(245,158,11,.12)" stroke="rgba(245,158,11,.25)" strokeWidth="1" />
+            <rect x="126" y="108" width="18" height="5" rx="2" fill="rgba(245,158,11,.4)" />
+            <rect x="126" y="117" width="14" height="5" rx="2" fill="rgba(255,255,255,.12)" />
+            <rect x="160" y="100" width="32" height="33" rx="6" fill="rgba(124,58,237,.12)" stroke="rgba(124,58,237,.25)" strokeWidth="1" />
+            <rect x="167" y="108" width="18" height="5" rx="2" fill="rgba(167,139,250,.4)" />
+            {/* Code lines at bottom */}
+            <rect x="28" y="142" width="164" height="0" rx="0" />
+            {/* Stand */}
+            <rect x="95" y="150" width="30" height="8" rx="2" fill="rgba(33,150,243,.25)" />
+            <rect x="80" y="158" width="60" height="6" rx="3" fill="rgba(33,150,243,.2)" />
+          </svg>
+        )}
+      </div>
+
+      {/* Stats row */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
+        {[
+          { n: stat1, l: stat1Label },
+          { n: '4.9★', l: 'Google Rating' },
+          { n: '8+', l: 'Years Operating' },
+          { n: '35+', l: 'In-house Team' },
+        ].map(s => (
+          <div key={s.l} style={{ textAlign: 'center', padding: '14px 10px', background: 'rgba(255,255,255,.04)', borderRadius: 10, border: '1px solid rgba(255,255,255,.06)' }}>
+            <div style={{ fontSize: 24, fontWeight: 800, color: '#2196F3', letterSpacing: '-.06em', lineHeight: 1, marginBottom: 4 }}>{s.n}</div>
+            <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)' }}>{s.l}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Office tag */}
+      <div style={{ padding: '12px 14px', background: 'rgba(16,185,129,.08)', border: '1px solid rgba(16,185,129,.2)', borderRadius: 10 }}>
+        <div style={{ fontSize: 10, fontWeight: 700, color: '#10B981', textTransform: 'uppercase', letterSpacing: '.08em', marginBottom: 3 }}>Bengaluru Head Office</div>
+        <div style={{ fontSize: 12, color: 'rgba(255,255,255,.45)', lineHeight: 1.5 }}>Darshan Plaza, 1st Floor, Channasandra, Bengaluru – 560 098</div>
+      </div>
+    </div>
+  )
+}
+
+export default function ServicePageContent({ data, customHero = false, showCTA = false, cta = {} }) {
+  const router = useRouter()
+  const [openFaq, setOpenFaq] = useState(null)
+  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' })
+  const [sending, setSending] = useState(false)
+  const [errors, setErrors] = useState({ name: '', phone: '', email: '', message: '' })
+  const [error, setError] = useState('')
+  const [hp, setHp] = useState('')
+  const [cfToken, setCfToken] = useState('')
+  const renderedAt = useRenderedAt()
+  const captchaPassed = cfToken === '__no_captcha__' || cfToken.length > 0
+
+  const openQuote = () => window.dispatchEvent(new CustomEvent('open-quote'))
+  // Validation helpers
+  const validateName = (value) => {
+    const trimmed = value.trim();
+    if (!trimmed) return 'Full name is required';
+    if (!/^[A-Za-z\s]+$/.test(trimmed)) return 'Only alphabets and spaces allowed';
+    if (trimmed.length < 2) return 'At least 2 characters';
+    return '';
+  };
+
+  const validatePhone = (value) => {
+    const digits = value.replace(/\D/g, '');
+    if (!digits) return 'Phone number is required';
+    if (digits.length !== 10) return 'Enter a valid 10-digit mobile number';
+    return '';
+  };
+
+  const validateEmail = (value) => {
+    const trimmed = value.trim();
+    if (!trimmed) return 'Email is required';
+    const re = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+    if (!re.test(trimmed)) return 'Enter a valid email (e.g., name@domain.com)';
+    if (trimmed.includes(' ')) return 'Email cannot contain spaces';
+    return '';
+  };
+
+  const validateMessage = (value) => {
+    const trimmed = value.trim();
+    if (!trimmed) return `Please tell us about your ${data.serviceName} requirements`;
+    if (trimmed.length < 10) return 'Please provide at least 10 characters';
+    if (!/[A-Za-z]/.test(trimmed)) return 'Please include meaningful text (letters required)';
+    return '';
+  };
+
+  const validateField = (name, value) => {
+    let errorMsg = '';
+    switch (name) {
+      case 'name': errorMsg = validateName(value); break;
+      case 'phone': errorMsg = validatePhone(value); break;
+      case 'email': errorMsg = validateEmail(value); break;
+      case 'message': errorMsg = validateMessage(value); break;
+      default: return;
+    }
+    setErrors(prev => ({ ...prev, [name]: errorMsg }));
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let filteredValue = value;
+    if (name === 'name') {
+      filteredValue = value.replace(/[^A-Za-z\s]/g, '');
+    } else if (name === 'phone') {
+      filteredValue = value.replace(/\D/g, '').slice(0, 10);
+    } else if (name === 'message') {
+      filteredValue = value.replace(/\s+/g, ' ').trimStart();
+    }
+    setForm(prev => ({ ...prev, [name]: filteredValue }));
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    validateField(name, value);
+  };
+  const submit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    const nameErr = validateName(form.name);
+    const phoneErr = validatePhone(form.phone);
+    const emailErr = validateEmail(form.email);
+    const messageErr = validateMessage(form.message);
+
+    if (nameErr || phoneErr || emailErr || messageErr) {
+      setErrors({
+        name: nameErr,
+        phone: phoneErr,
+        email: emailErr,
+        message: messageErr,
+      });
+      return;
+    }
+
+    setErrors({ name: '', phone: '', email: '', message: '' });
+    setSending(true);
+
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          service: data.serviceName,
+          message: form.message,
+          landingPage: typeof window !== 'undefined' ? window.location.pathname : '/',
+          company_website: hp,
+          renderedAt: renderedAt.current,
+          cfToken: cfToken === '__no_captcha__' ? '' : (cfToken || readTurnstileToken()),
+        }),
+      });
+      const responseData = await res.json();
+      if (res.ok) {
+        router.push('/thankyou');
+      } else {
+        setError(responseData.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setError('Network error. Please try again.');
+    } finally {
+      setSending(false);
+    }
+  };
+
+  return (
+    <>
+      {/* BREADCRUMB */}
+      <nav style={{ background: '#071435', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,.06)' }}>
+        <div style={{ maxWidth: 1220, margin: '0 auto', padding: '0 24px', display: 'flex', gap: 6, fontSize: 12.5, flexWrap: 'wrap' }}>
+          <a href="/" style={{ color: 'rgba(255,255,255,.45)', textDecoration: 'none' }}>Home</a>
+          <span style={{ color: 'rgba(255,255,255,.2)' }}>›</span>
+          <a href="/services" style={{ color: 'rgba(255,255,255,.45)', textDecoration: 'none' }}>Services</a>
+          <span style={{ color: 'rgba(255,255,255,.2)' }}>›</span>
+          <span style={{ color: '#2196F3', fontWeight: 600 }}>{data.badge}</span>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      
+      {customHero ? (
+        <CustomHero {...customHero} />
+      ) : (
+        <section
+          style={{
+            background:
+              'linear-gradient(135deg,#040E25 0%,#0a2055 55%,#0e2d6a 100%)',
+            padding: '72px 0 64px',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Background grid */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              backgroundImage:
+                'radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px)',
+              backgroundSize: '28px 28px',
+            }}
+          />
+
+          <div
+            style={{
+              maxWidth: 1220,
+              margin: '0 auto',
+              padding: '0 24px',
+              position: 'relative',
+              zIndex: 1,
+            }}
+          >
+            <div className="row align-items-center g-5">
+              
+              {/* LEFT CONTENT */}
+              <div className="col-lg-7">
+                <h1
+                  style={{
+                    fontSize: 'clamp(28px,4.5vw,52px)',
+                    fontWeight: 800,
+                    color: '#fff',
+                    letterSpacing: '-.05em',
+                    lineHeight: 1.06,
+                    marginBottom: 18,
+                  }}
+                >
+                  {data.h1}
+                  <br />
+                  <span style={{ color: '#2196F3' }}>{data.h1Accent}</span>
+                </h1>
+
+                <p
+                  style={{
+                    fontSize: 16,
+                    color: 'rgba(255,255,255,.55)',
+                    lineHeight: 1.72,
+                    marginBottom: 14,
+                    maxWidth: 540,
+                  }}
+                >
+                  {data.tagline}
+                </p>
+
+                <p
+                  style={{
+                    fontSize: 14.5,
+                    color: 'rgba(255,255,255,.42)',
+                    lineHeight: 1.74,
+                    marginBottom: 32,
+                    maxWidth: 520,
+                  }}
+                >
+                  {data.desc}
+                </p>
+
+                {/* CTA BUTTONS */}
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: 12,
+                    flexWrap: 'wrap',
+                    marginBottom: 28,
+                  }}
+                >
+                  <button
+                    onClick={openQuote}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      background: '#2196F3',
+                      color: '#fff',
+                      border: 'none',
+                      padding: '14px 28px',
+                      borderRadius: 8,
+                      fontSize: 14.5,
+                      fontWeight: 700,
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Get Free Quote
+                    <Svg d="M5 12h14M12 5l7 7-7 7" size={13} color="#fff" sw={2.5} />
+                  </button>
+
+                  <a
+                    href={SITE.phoneHref}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 7,
+                      color: 'rgba(255,255,255,.7)',
+                      border: '1.5px solid rgba(255,255,255,.22)',
+                      padding: '13px 22px',
+                      borderRadius: 8,
+                      fontSize: 14,
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                    }}
+                  >
+                    <Svg
+                      d="M22 16.92v3a2 2 0 01-2.18 2..."
+                      size={13}
+                      color="currentColor"
+                      sw={2}
+                    />
+                    {SITE.phone}
+                  </a>
+                </div>
+
+                {/* FEATURES */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14 }}>
+                  {[
+                    'PageSpeed 90+ Guaranteed',
+                    'Source Code Yours',
+                    'Fixed Price',
+                    'Zero Outsourcing',
+                  ].map((t) => (
+                    <div
+                      key={t}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 7,
+                        fontSize: 13,
+                        color: 'rgba(255,255,255,.5)',
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: 18,
+                          height: 18,
+                          borderRadius: '50%',
+                          background: 'rgba(33,150,243,.2)',
+                          border: '1px solid rgba(33,150,243,.35)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <Svg d="M20 6 9 17 4 12" size={9} color="#2196F3" sw={3} />
+                      </div>
+                      {t}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* RIGHT SIDE IMAGE */}
+              <div className="col-lg-5 d-none d-lg-block">
+                <ServiceIllustration
+                  badge={data.badge}
+                  stat1={data.stat1}
+                  stat1Label={data.stat1Label}
+                  image={data.heroImage}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FEATURES GRID */}
+      <section style={{ background: '#fff', padding: '72px 0', borderBottom: '1px solid #E2E8F0' }}>
+        <div style={{ maxWidth: 1220, margin: '0 auto', padding: '0 24px' }}>
+          <div className="row g-5 mb-5 anim">
+            <div className="col-lg-5">
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: 'rgba(33,150,243,.09)', border: '1px solid rgba(33,150,243,.18)', color: '#2196F3', fontSize: 11, fontWeight: 700, padding: '4px 14px', borderRadius: 30, letterSpacing: '.09em', textTransform: 'uppercase', marginBottom: 12 }}>
+                What&apos;s Included
+              </div>
+              <h2 style={{ fontSize: 'clamp(24px,3.2vw,36px)', fontWeight: 800, color: '#0B1F4B', letterSpacing: '-.04em', lineHeight: 1.12 }}>
+                {data.h2Features}
+              </h2>
+            </div>
+            <div className="col-lg-7 d-flex align-items-end">
+              <p style={{ fontSize: 16, color: '#6B7A99', lineHeight: 1.74 }}>
+                Every project from NNC includes these capabilities delivered by permanent in-house specialists with no outsourcing and no compromises.
+              </p>
+            </div>
+          </div>
+          <div className="row g-3">
+            {data.features.map((f, i) => (
+              <div key={i} className="col-12 col-sm-6 col-lg-4">
+                <div className="anim" style={{ transitionDelay: `${i * .06}s`, background: '#F8FAFC', border: '1.5px solid #E2E8F0', borderRadius: 12, padding: '22px 20px', height: '100%' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 13 }}>
+                    <div style={{ width: 32, height: 32, borderRadius: 8, background: 'rgba(33,150,243,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
+                      <Svg d="M20 6 9 17 4 12" size={14} color="#2196F3" sw={2.5} />
+                    </div>
+                    <div>
+                      <h3 style={{ fontSize: 14.5, fontWeight: 700, color: '#0B1F4B', marginBottom: 6, lineHeight: 1.3 }}>{f.h3}</h3>
+                      <p style={{ fontSize: 13, color: '#6B7A99', lineHeight: 1.6, margin: 0 }}>{f.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY NNC */}
+      <section style={{ background: '#071435', padding: '72px 0' }}>
+        <div style={{ maxWidth: 1220, margin: '0 auto', padding: '0 24px' }}>
+          <div className="row g-5 mb-5 anim">
+            <div className="col-lg-6">
+              <h2 style={{ fontSize: 'clamp(24px,3.2vw,36px)', fontWeight: 800, color: '#fff', letterSpacing: '-.04em', lineHeight: 1.1 }}>
+                {data.h2Why}
+              </h2>
+            </div>
+            <div className="col-lg-6 d-flex align-items-end">
+              <p style={{ fontSize: 15.5, color: 'rgba(255,255,255,.42)', lineHeight: 1.7 }}>
+                These are the reasons businesses across India choose NNC Digital over other agencies and freelancers.
+              </p>
+            </div>
+          </div>
+          <div className="row g-0">
+            {data.why.map((w, i) => (
+              <div key={i} className="col-12 col-md-6 col-lg-4 anim" style={{ transitionDelay: `${i * .07}s` }}>
+                <div style={{ background: 'rgba(255,255,255,.025)', border: '1px solid rgba(255,255,255,.06)', padding: 28, height: '100%' }}>
+                  <div style={{ fontSize: 44, fontWeight: 800, color: 'rgba(255,255,255,.06)', letterSpacing: '-.07em', marginBottom: 4 }}>{w.n}</div>
+                  <h3 style={{ fontSize: 15.5, fontWeight: 700, color: '#fff', marginBottom: 9, lineHeight: 1.3 }}>{w.h3}</h3>
+                  <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,.4)', lineHeight: 1.65, marginBottom: 0 }}>{w.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TECH STACK */}
+      <section style={{ background: '#F8FAFC', padding: '64px 0', borderBottom: '1px solid #E2E8F0' }}>
+        <div style={{ maxWidth: 1220, margin: '0 auto', padding: '0 24px' }}>
+          <div className="text-center mb-4 anim">
+            <h2 style={{ fontSize: 'clamp(22px,3vw,32px)', fontWeight: 800, color: '#0B1F4B', letterSpacing: '-.04em', marginBottom: 10 }}>
+              {data.h2Tech}
+            </h2>
+            <p style={{ fontSize: 15, color: '#6B7A99', maxWidth: 480, margin: '0 auto' }}>
+              Industry-standard tools chosen for performance, scalability and long-term maintainability.
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
+            {data.techStack.map(t => (
+              <span key={t} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '10px 18px', background: '#fff', border: '1.5px solid #E2E8F0', borderRadius: 30, fontSize: 13.5, fontWeight: 700, color: '#0B1F4B' }}>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#2196F3', display: 'inline-block' }} />
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+     {showCTA && (
+ 
+    <PremiumCTA
+      title={cta?.title}
+      highlight={cta?.highlight}
+      description={cta?.description}
+    />
+    )}
+
+<ClientsAcross/>
+
+      {/* FAQ + CONTACT */}
+      <section style={{ background: '#fff', padding: '80px 0' }}>
+        <div style={{ maxWidth: 1220, margin: '0 auto', padding: '0 24px' }}>
+          <div className="row g-5">
+            {/* FAQ */}
+            <div className="col-lg-6 anim-l">
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: 'rgba(33,150,243,.09)', border: '1px solid rgba(33,150,243,.18)', color: '#2196F3', fontSize: 11, fontWeight: 700, padding: '4px 14px', borderRadius: 30, letterSpacing: '.09em', textTransform: 'uppercase', marginBottom: 12 }}>
+                FAQ
+              </div>
+              <h2 style={{ fontSize: 'clamp(20px,2.8vw,30px)', fontWeight: 800, color: '#0B1F4B', letterSpacing: '-.04em', marginBottom: 14, lineHeight: 1.2 }}>
+                {data.h2Faq}
+              </h2>
+              <div style={{ borderTop: '1px solid #E2E8F0' }}>
+                {data.faqs.map((f, i) => (
+                  <div key={i} style={{ borderBottom: '1px solid #E2E8F0' }}>
+                    <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '17px 0', background: 'none', border: 'none', textAlign: 'left', gap: 14, cursor: 'pointer', fontFamily: 'inherit' }}>
+                      <h3 style={{ fontSize: 14.5, fontWeight: 700, color: '#2C3E6B', letterSpacing: '-.01em', lineHeight: 1.3, margin: 0 }}>{f.q}</h3>
+                      <div style={{ width: 26, height: 26, borderRadius: '50%', border: '1.5px solid', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, background: openFaq === i ? '#2196F3' : '#fff', borderColor: openFaq === i ? '#2196F3' : '#C5D0E4', transform: openFaq === i ? 'rotate(45deg)' : 'none', transition: 'all .22s' }}>
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={openFaq === i ? '#fff' : '#9BA8C0'} strokeWidth="2" strokeLinecap="round">
+                          <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                      </div>
+                    </button>
+                    {openFaq === i && <p style={{ fontSize: 14, color: '#6B7A99', lineHeight: 1.75, paddingBottom: 16, margin: 0 }}>{f.a}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact form */}
+            <div className="col-lg-6 anim-r">
+              <div style={{ background: '#071435', borderRadius: 16, padding: 40 }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: '#2196F3', letterSpacing: '.2em', textTransform: 'uppercase', marginBottom: 14, display: 'flex', alignItems: 'center', gap: 9 }}>
+                  <div style={{ width: 20, height: 1.5, background: '#2196F3' }} />
+                  Get a Free Quote
+                </div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#fff', letterSpacing: '-.04em', lineHeight: 1.1, marginBottom: 8 }}>
+                  {data.badge}
+                </div>
+                <p style={{ fontSize: 14, color: 'rgba(255,255,255,.38)', lineHeight: 1.68, marginBottom: 24 }}>
+                  Tell us your requirements. We&apos;ll respond within 24 hours with scope, timeline and fixed price.
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 7, marginBottom: 20 }}>
+                  <a href={SITE.phoneHref} style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '11px 14px', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 8, fontSize: 13.5, fontWeight: 600, color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>
+                    <Svg d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" size={14} color="currentColor" sw={2} />
+                    {SITE.phone}
+                  </a>
+                  <a href={`mailto:${SITE.email}`} style={{ display: 'flex', alignItems: 'center', gap: 9, padding: '11px 14px', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 8, fontSize: 13.5, fontWeight: 600, color: 'rgba(255,255,255,.55)', textDecoration: 'none' }}>
+                    <Svg d="M2 4h20v16H2zM22 7l-10 6.5L2 7" size={14} color="currentColor" sw={2} />
+                    {SITE.email}
+                  </a>
+                </div>
+
+                <form onSubmit={submit} noValidate>
+                  <Honeypot value={hp} onChange={setHp} />
+                  <div className="row g-2 mb-2">
+                    <div className="col-6">
+                      <input
+                        style={{ width: '100%', background: 'rgba(255,255,255,.07)', border: `1px solid ${errors.name ? '#EF4444' : 'rgba(255,255,255,.1)'}`, borderRadius: 8, padding: '12px 14px', fontFamily: 'inherit', fontSize: 14, color: '#fff', outline: 'none' }}
+                        placeholder="Your name *"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        maxLength={100}
+                      />
+                      {errors.name && <div style={{ color: '#EF4444', fontSize: 11, marginTop: 4 }}>{errors.name}</div>}
+                    </div>
+                    <div className="col-6">
+                      <input
+                        style={{ width: '100%', background: 'rgba(255,255,255,.07)', border: `1px solid ${errors.phone ? '#EF4444' : 'rgba(255,255,255,.1)'}`, borderRadius: 8, padding: '12px 14px', fontFamily: 'inherit', fontSize: 14, color: '#fff', outline: 'none' }}
+                        type="tel"
+                        placeholder="Phone *"
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      {errors.phone && <div style={{ color: '#EF4444', fontSize: 11, marginTop: 4 }}>{errors.phone}</div>}
+                    </div>
+                  </div>
+
+                  <input
+                    style={{ width: '100%', background: 'rgba(255,255,255,.07)', border: `1px solid ${errors.email ? '#EF4444' : 'rgba(255,255,255,.1)'}`, borderRadius: 8, padding: '12px 14px', fontFamily: 'inherit', fontSize: 14, color: '#fff', outline: 'none', marginBottom: 9, display: 'block' }}
+                    type="email"
+                    placeholder="Email address *"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.email && <div style={{ color: '#EF4444', fontSize: 11, marginTop: -4, marginBottom: 6 }}>{errors.email}</div>}
+
+                  <textarea
+                    style={{ width: '100%', background: 'rgba(255,255,255,.07)', border: `1px solid ${errors.message ? '#EF4444' : 'rgba(255,255,255,.1)'}`, borderRadius: 8, padding: '12px 14px', fontFamily: 'inherit', fontSize: 14, color: '#fff', outline: 'none', marginBottom: 9, resize: 'vertical', minHeight: 80 }}
+                    rows="3"
+                    placeholder={`Tell us about your ${data.serviceName} requirements... (minimum 10 characters)`}
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.message && <div style={{ color: '#EF4444', fontSize: 11, marginTop: -4, marginBottom: 6 }}>{errors.message}</div>}
+
+                  {error && <p style={{ color: '#EF4444', fontSize: 12.5, marginBottom: 10 }}>{error}</p>}
+
+                  <TurnstileWidget theme="light" onVerify={setCfToken} />
+                  {!captchaPassed && (
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}>Please complete the verification above to enable sending.</div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={sending || !captchaPassed || Object.values(errors).some(e => e !== '')}
+                    style={{ width: '100%', background: '#2196F3', color: '#fff', fontFamily: 'inherit', fontSize: 15, fontWeight: 700, padding: 14, borderRadius: 8, border: 'none', cursor: sending || !captchaPassed || Object.values(errors).some(e => e !== '') ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 9, marginBottom: 12, opacity: (sending || !captchaPassed) ? 0.7 : 1 }}
+                  >
+                    {sending ? 'Sending…' : <>Send Enquiry <Svg d="M5 12h14M12 5l7 7-7 7" size={13} color="#fff" sw={2.5} /></>}
+                  </button>
+
+                  <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+                    {['✓ No spam', '✓ 24hr response', '✓ Fixed price'].map(t => (
+                      <span key={t} style={{ fontSize: 11, color: 'rgba(255,255,255,.22)' }}>{t}</span>
+                    ))}
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
