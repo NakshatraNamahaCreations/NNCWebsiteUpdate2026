@@ -5,8 +5,8 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'React Native App Development Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Top React Native app development company in Mysuru. Cross-platform Android & iOS apps from one JavaScript codebase. 150+ apps delivered. 4.9★ Google. Walk-in Mysuru office. Fixed price. Source code yours. Call +91 99005 66466.',
+  title: 'React Native App Development Company in Mysuru',
+  description: 'Top React Native app development company in Mysuru for Android & iOS apps. 150+ apps delivered, 4.9★ Google rating. Fixed pricing. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/react-native-app-development-company-in-mysuru` },
   keywords: [
     'react native app development company in mysuru',
@@ -17,7 +17,7 @@ export const metadata = {
     'react native agency mysuru',
   ].join(', '),
   openGraph: {
-    title: 'React Native App Development Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'React Native App Development Company in Mysuru',
     description: 'Cross-platform React Native apps for Android & iOS. Walk-in Mysuru office. Fixed price. Source code yours.',
     url: `${SITE.url}/react-native-app-development-company-in-mysuru`,
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'React Native App Development Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'React Native App Development Company in Mysuru',
     description: 'Cross-platform React Native apps in Mysuru. Android & iOS from one codebase. Walk-in office.',
   },
 }

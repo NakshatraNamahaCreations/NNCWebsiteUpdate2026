@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'CRM Software Development Company in Mumbai | NNC Digital',
   description:
-    'Top CRM software development company in Mumbai. Custom CRM development, sales CRM, SaaS CRM, lead management, real estate CRM, healthcare CRM, manufacturing CRM — Zoho & Salesforce alternative. Office in Thane West. Fixed price.',
+    'Top CRM software development company in Mumbai offering custom CRM, sales CRM, SaaS CRM and lead management solutions. Thane West office. Fixed pricing.',
   alternates: {
     canonical: `${SITE.url}/crm-software-development-company-in-mumbai`,
   },

@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Android App Development Company in Mumbai | NNC Digital',
   description:
-    'Top Android app development company in Mumbai. Native Android app development, Kotlin & Java apps, Play Store deployment, enterprise Android apps. Hire Android developers in Mumbai — office in Thane West. Fixed price.',
+    'Top Android app development company in Mumbai. Expert Kotlin & Java developers for native apps, Play Store deployment and enterprise solutions. Fixed pricing.',
   alternates: {
     canonical: `${SITE.url}/android-app-development-company-in-mumbai`,
   },

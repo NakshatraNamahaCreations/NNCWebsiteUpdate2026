@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'SEO Services Company in Mumbai | NNC Digital',
   description:
-    'Top SEO services company in Mumbai. SEO agency, best SEO company, local SEO services, technical SEO, on page SEO, ecommerce SEO, SEO experts & SEO consultants for Mumbai businesses. Office in Thane West. Fixed price.',
+    'Top SEO services company in Mumbai offering local SEO, technical SEO, on-page SEO and ecommerce SEO to improve Google rankings. Thane West office.',
   alternates: {
     canonical: `${SITE.url}/seo-services-company-in-mumbai`,
   },
@@ -183,7 +183,7 @@ const data = {
   h1: 'SEO Services Company',
   h1Accent: 'in Mumbai',
   tagline:
-    'Top SEO services company in Mumbai — local SEO services, technical SEO, on page SEO, ecommerce SEO, SEO experts, SEO consultants & affordable SEO services. Office in Thane West. Fixed price.',
+    'Top SEO services company in Mumbai offering local SEO, technical SEO, on-page SEO and ecommerce SEO to improve Google rankings. Thane West office',
   desc:
     'NNC Digital is a full-service SEO company in Mumbai helping businesses rank higher on Google and drive qualified organic traffic. From technical SEO audits and on page SEO optimisation to local SEO, ecommerce SEO and link building — every SEO campaign is managed by our in-house SEO experts and SEO consultants with transparent monthly reporting on rankings, traffic and leads. Our branch office in Thane West means Mumbai clients can review SEO performance and strategy face-to-face.',
   stat1: '565+',

@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'Custom CRM Development in Mysuru | Nakshatra Namaha Creations',
-  description: 'Custom CRM development company in Mysuru. Bespoke CRM software tailored to your industry — real estate, healthcare, manufacturing. No per-user fees. Walk-in Mysuru office. Fixed price. Source code yours. Call +91 99005 66466.',
+  description: 'Custom CRM development company in Mysuru offering tailored CRM software for real estate, healthcare and manufacturing. No per-user fees. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/custom-crm-development-mysuru` },
   keywords: [
     'custom crm development mysuru',

@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'iOS App Development Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Leading iOS app development company in Mysuru. Custom iPhone & iPad apps on Swift & React Native. App Store deployment included. 150+ apps delivered. 4.9★ Google. Walk-in Mysuru office. Fixed price. Call +91 99005 66466.',
+  description: 'Leading iOS app development company in Mysuru for Swift & React Native apps. 150+ apps delivered, 4.9★ Google rating. Fixed pricing. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/ios-app-development-company-in-mysuru` },
   keywords: [
     'ios app development company in mysuru',

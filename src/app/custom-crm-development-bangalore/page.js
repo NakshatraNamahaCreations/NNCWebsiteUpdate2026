@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Custom CRM Development Bangalore | NNC Digital',
   description:
-    'Custom CRM development in Bangalore — bespoke CRM, tailored CRM software, custom CRM solutions, industry specific CRM, real estate CRM development, healthcare CRM development & manufacturing CRM. Headquartered in Whitefield, Bangalore. Fixed price.',
+    'Custom CRM development in Bangalore offering tailored CRM software for real estate, healthcare and manufacturing. Whitefield-based team with fixed pricing.',
   alternates: {
     canonical: `${SITE.url}/custom-crm-development-bangalore`,
   },
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Custom CRM Development Bangalore | NNC Digital',
     description:
-      'Custom CRM development Bangalore — bespoke CRM, real estate CRM, healthcare CRM, manufacturing CRM. Headquartered in Whitefield. Fixed price.',
+      'Custom CRM development in Bangalore offering tailored CRM software for real estate, healthcare and manufacturing. Whitefield-based team with fixed pricing.',
     images: [SITE.teamPhoto],
   },
 }

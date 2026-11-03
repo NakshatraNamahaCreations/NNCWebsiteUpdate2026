@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Flutter App Development in Mumbai | Cross Platform App',
   description:
-    'Choose Flutter app development in Mumbai to build fast and scalable cross platform apps, with NNC delivering high performance mobile solution for your business.',
+    'Choose Flutter app development in Mumbai for fast, scalable cross-platform Android and iOS apps. NNC Digital delivers high-performance mobile solutions.',
   alternates: {
     canonical: `${SITE.url}/flutter-app-development-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Flutter App Development in Mumbai | Cross Platform App',
     description:
-      'Choose Flutter app development in Mumbai to build fast and scalable cross platform apps, with NNC delivering high performance mobile solution for your business.',
+      'Choose Flutter app development in Mumbai for fast, scalable cross-platform Android and iOS apps. NNC Digital delivers high-performance mobile solutions.',
     url: `${SITE.url}/flutter-app-development-in-mumbai`,
     type: 'website',
     images: [

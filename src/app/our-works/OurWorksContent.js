@@ -5,6 +5,13 @@ import Link from 'next/link'
 // ─── Project Data ─────────────────────────────────────────────────────────────
 const WORKS = [
   // ── Website Development ──
+  { name: 'Dermfit Clinic', type: 'Clinical Dermetology Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/dermfit-logo.webp' },
+  { name: 'Eliteinteriorz', type: 'Interior Design Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/elite-logo.webp' },
+  { name: 'Beyond Boundaries', type: 'Education Consulting Services', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/beyond-boundaries-logo.webp' },
+  { name: 'Navkar Global Sourcing', type: 'Global Sourcing Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/navkar-logo.png' },
+  { name: 'Griffin Solutions', type: 'Corporate Gifting Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/griffin-logo.png' },
+  { name: 'Tinysmiles', type: 'Photography Portfolio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/tinysmiles-logo.webp' },
+  { name: 'Armedex', type: 'Drug Safety Services Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/armedex-logo.png' },
   { name: 'Puran Interiors', type: 'Corporate Website & SEO', category: 'Website Development', tech: ['Next JS', 'SEO', 'CMS'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/puraninteriors.png' },
   { name: 'Brainwave Consultancy', type: 'Education Consultancy Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 5 Google ranking', resultColor: '#4F46E5', logo: '/assets/bc-logo.webp' },
   { name: 'Novus', type: 'Corporate Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: '95 PageSpeed Score', resultColor: '#2563EB', bg: 'linear-gradient(135deg,#1E40AF,#2563EB)' },
@@ -26,6 +33,9 @@ const WORKS = [
   { name: 'Studio99', type: 'Creative Studio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: 'Premium brand presence', resultColor: '#7C3AED', logo: '/assets/st99.webp' },
 
   // ── Mobile Apps ──
+  { name: 'Dhoond', type: 'Energy Ecosystem App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Maps API'], result: '500+ daily searches', resultColor: '#2563EB', logo: '/assets/dhoond-logo.jpeg' },
+  { name: "3040 Property", type: 'Real Estate Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'AWS'], result: '1,000+ property listings', resultColor: '#D97706', logo: '/assets/30-40logo.jpeg' },
+  { name: "Salil Javeri", type: 'Library App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Firebase'], result: '100+ books available', resultColor: '#7C3AED', logo: '' },
   { name: 'Homjee', type: 'Home Services App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Firebase'], result: '5,000+ service bookings', resultColor: '#2563EB', logo: '/assets/logo.png' },
   { name: 'Rent Angadi', type: 'Rental Marketplace App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'Maps API'], result: '1,200+ active listings', resultColor: '#D97706', logo: '/assets/rent-logo.jpg' },
   { name: 'Novus', type: 'Business Management App', category: 'Mobile Apps', tech: ['Flutter', 'Firebase', 'REST API'], result: '95 performance score', resultColor: '#6366F1', logo: '/assets/novus-logo.webp' },
@@ -34,6 +44,7 @@ const WORKS = [
   { name: 'Vijay Home Services', type: 'On-demand Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'AWS'], result: '340% booking growth', resultColor: '#059669', logo: '/assets/vhs-logo.png' },
   { name: 'Think It', type: 'Productivity & Ideas App', category: 'Mobile Apps', tech: ['Flutter', 'Firebase', 'Hive DB'], result: '10,000+ active users', resultColor: '#7C3AED', logo: '/assets/th-logo.png' },
   { name: 'Make My Documents', type: 'Document Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'MySQL'], result: '200+ daily document requests', resultColor: '#DC2626', logo: '/assets/md.png' },
+  
 
   // ── CRM & Web Apps ──
   { name: 'Vijay Home Services', type: 'Service Booking CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'MySQL'], result: '340% booking growth', resultColor: '#059669', logo: '/assets/vhs-logo.png' },

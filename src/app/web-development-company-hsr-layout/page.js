@@ -9,7 +9,7 @@ export const metadata = {
   title: 'Web Development Company in HSR Layout for Business Growth',
 
   description:
-    'Top web development company HSR Layout offering fast, scalable and responsive websites for startups, SMEs and enterprises, built for performance and growth.',
+    'Top web development company in HSR Layout offering fast, responsive and scalable websites for startups, SMEs and enterprises to drive business growth.',
 
   alternates: {
     canonical: `${SITE.url}/web-development-company-hsr-layout`,

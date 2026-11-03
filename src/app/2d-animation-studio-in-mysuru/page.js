@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: '2D Animation Studio in Mysuru | Nakshatra Namaha Creations',
-  description: 'Leading 2D animation studio in Mysuru. Explainer videos, character animation, whiteboard animations, motion graphics & product explainer videos. Script to delivery in-house. Walk-in Mysuru office. Fixed price. Call +91 99005 66466.',
+  description: 'NNC Digital, a 2D animation company in Mysuru, creates explainer videos, character animations and reels. 565+ projects, 4.9★ Google. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/2d-animation-studio-in-mysuru` },
   keywords: [
     '2d animation studio in mysuru',

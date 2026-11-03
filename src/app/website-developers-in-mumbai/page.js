@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Website Developers in Mumbai | High Performance Websites',
   description:
-    'Choose our website developers in Mumbai to build fast and scalable websites, with NNC delivering modern development solutions tailored to your business needs.',
+    'Choose our website developers in Mumbai for fast, scalable and modern websites. NNC Digital delivers custom web solutions tailored to your business needs.',
   alternates: {
     canonical: `${SITE.url}/website-developers-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Website Developers in Mumbai | High Performance Websites',
     description:
-      'Choose our website developers in Mumbai to build fast and scalable websites, with NNC delivering modern development solutions tailored to your business needs.',
+      'Choose our website developers in Mumbai for fast, scalable and modern websites. NNC Digital delivers custom web solutions tailored to your business needs.',
     url: `${SITE.url}/website-developers-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Website Developers in Mumbai | High Performance Websites',
     description:
-      'Choose our website developers in Mumbai to build fast and scalable websites, with NNC delivering modern development solutions tailored to your business needs.',
+      'Choose our website developers in Mumbai for fast, scalable and modern websites. NNC Digital delivers custom web solutions tailored to your business needs.',
     images: [SITE.teamPhoto],
   },
 }

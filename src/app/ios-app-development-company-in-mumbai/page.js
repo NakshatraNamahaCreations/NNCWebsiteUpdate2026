@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'iOS App Development Company in Mumbai | NNC Digital',
   description:
-    'Top iOS app development company in Mumbai. Native iPhone & iPad app development in Swift, App Store deployment, enterprise iOS apps. Hire iOS developers in Mumbai — office in Thane West. Fixed price.',
+    'Top iOS app development company in Mumbai offering Swift-based iPhone, iPad and enterprise apps. Hire expert iOS developers in Thane West at fixed prices.',
   alternates: {
     canonical: `${SITE.url}/ios-app-development-company-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'iOS App Development Company in Mumbai | NNC Digital',
     description:
-      'Native iPhone & iPad app development in Mumbai — Swift, App Store deployment, enterprise iOS apps. Hire iOS developers with office in Thane West. Fixed price.',
+      'Top iOS app development company in Mumbai offering Swift-based iPhone, iPad and enterprise apps. Hire expert iOS developers in Thane West at fixed prices.',
     url: `${SITE.url}/ios-app-development-company-in-mumbai`,
     type: 'website',
     images: [
@@ -74,7 +74,7 @@ const schema = {
     'App Store Deployment',
   ],
   description:
-    'Native iOS app development for Mumbai businesses — Swift, iPhone & iPad apps, App Store deployment and enterprise iOS platforms. Branch office in Thane West.',
+    'Top iOS app development company in Mumbai offering Swift-based iPhone, iPad and enterprise apps. Hire expert iOS developers in Thane West at fixed prices.',
   url: `${SITE.url}/ios-app-development-company-in-mumbai`,
   offers: [
     {
@@ -183,7 +183,7 @@ const data = {
   h1: 'iOS App Development',
   h1Accent: 'Company in Mumbai',
   tagline:
-    'Native iPhone & iPad app development in Mumbai — Swift, App Store deployment, enterprise iOS platforms and custom iOS application development. Hire iOS developers with office in Thane West. Fixed price.',
+    'Top iOS app development company in Mumbai offering Swift-based iPhone, iPad and enterprise apps. Hire expert iOS developers in Thane West at fixed prices.',
   desc:
     'NNC Digital is a dedicated iOS app development company in Mumbai building native iPhone and iPad applications in Swift for startups, SMEs and enterprises across Mumbai, Thane and Navi Mumbai. From App Store MVP apps and custom iOS application development to enterprise iOS platforms — every app is built by our in-house iOS developers with zero outsourcing, full App Store submission, TestFlight beta builds and complete source code ownership on delivery.',
   stat1: '100+',

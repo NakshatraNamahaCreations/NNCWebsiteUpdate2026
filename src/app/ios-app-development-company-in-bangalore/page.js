@@ -181,7 +181,7 @@ const data = {
   h1: 'iOS App Development Company',
   h1Accent: 'in Bangalore',
   tagline:
-    'Top iOS app development company in Bangalore — iPhone app development, iPad app development, Swift app development, native iOS app development, hire iOS developers, Apple app development & iOS application development. Fixed price.',
+    'Top iOS app development company in Bangalore. iPhone app development, iPad app development, Swift app development, hire iOS developers, native iOS app development, Apple app development & iOS application development for Bangalore businesses. Fixed price.',
   desc:
     'NNC Digital is a specialist iOS app development company in Bangalore building native iPhone and iPad applications in Swift and SwiftUI for startups, SMEs and enterprise clients. From consumer iPhone apps and iPad enterprise tools to App Store-ready products — every iOS app is built by our in-house Bangalore iOS developers with full source code ownership, zero outsourcing and fixed-price delivery.',
   stat1: '565+',

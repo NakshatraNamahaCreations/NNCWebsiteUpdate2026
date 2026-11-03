@@ -5,8 +5,8 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Ecommerce Website Development Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Top ecommerce website development company in Mysuru. Custom online stores on React JS & Next JS — Razorpay, UPI, product catalogues, order management. PageSpeed 90+ guaranteed. Walk-in Mysuru office. Fixed price. Call +91 99005 66466.',
+  title: 'Ecommerce Website Development Company in Mysuru',
+  description: 'Top ecommerce website development company in Mysuru offering React, Next.js, Razorpay, UPI and order management. Fixed pricing. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/ecommerce-website-development-mysuru` },
   keywords: [
     'ecommerce website development company mysuru',
@@ -23,7 +23,7 @@ export const metadata = {
     'marketplace development company mysuru',
   ].join(', '),
   openGraph: {
-    title: 'Ecommerce Website Development Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'Ecommerce Website Development Company in Mysuru',
     description: 'Custom e-commerce stores for Mysuru businesses. Razorpay, UPI, order management, PageSpeed 90+. Walk-in office. Fixed price.',
     url: `${SITE.url}/ecommerce-website-development-mysuru`,
     type: 'website',

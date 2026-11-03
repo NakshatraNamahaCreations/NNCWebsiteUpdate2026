@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Node JS Development Company in Mumbai | Backend Development',
   description:
-    'Choose a Node JS development company in Mumbai to build scalable backend systems, with NNC delivering high performance APIs and web applications for business.',
+    'Choose NNC Digital, a Node JS development company in Mumbai, for scalable backend systems, high-performance APIs and custom web applications.',
   alternates: {
     canonical: `${SITE.url}/node-js-development-company-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Node JS Development Company in Mumbai | Backend Development',
     description:
-      'Choose a Node JS development company in Mumbai to build scalable backend systems, with NNC delivering high performance APIs and web applications for business.',
+      'Choose NNC Digital, a Node JS development company in Mumbai, for scalable backend systems, high-performance APIs and custom web applications.',
     url: `${SITE.url}/node-js-development-company-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Node JS Development Company in Mumbai | Backend Development',
     description:
-      'Choose a Node JS development company in Mumbai to build scalable backend systems, with NNC delivering high performance APIs and web applications for business.',
+      'Choose NNC Digital, a Node JS development company in Mumbai, for scalable backend systems, high-performance APIs and custom web applications.',
     images: [SITE.teamPhoto],
   },
 }

@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'SEO Services in Mumbai | Organic Traffic Growth',
   description:
-    'Choose our SEO services in Mumbai to improve rankings and organic traffic, with NNC delivering data driven strategies that generate leads and business growth.',
+    'Choose our SEO services in Mumbai to improve Google rankings, increase organic traffic and generate quality leads with NNC Digitals proven SEO strategies.',
   alternates: {
     canonical: `${SITE.url}/seo-services-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'SEO Services in Mumbai | Organic Traffic Growth',
     description:
-      'Choose our SEO services in Mumbai to improve rankings and organic traffic, with NNC delivering data driven strategies that generate leads and business growth.',
+      'Choose our SEO services in Mumbai to improve Google rankings, increase organic traffic and generate quality leads with NNC Digitals proven SEO strategies.',
     url: `${SITE.url}/seo-services-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'SEO Services in Mumbai | Organic Traffic Growth',
     description:
-      'Choose our SEO services in Mumbai to improve rankings and organic traffic, with NNC delivering data driven strategies that generate leads and business growth.',
+      'Choose our SEO services in Mumbai to improve Google rankings, increase organic traffic and generate quality leads with NNC Digitals proven SEO strategies.',
     images: [SITE.teamPhoto],
   },
 }

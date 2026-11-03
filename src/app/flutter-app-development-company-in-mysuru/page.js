@@ -5,8 +5,8 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Flutter App Development Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Top Flutter app development company in Mysuru. Custom Android & iOS apps from one codebase using Flutter & Dart. 150+ apps delivered. 4.9★ Google. Walk-in Mysuru office. Fixed price. Source code yours. Call +91 99005 66466.',
+  title: 'Flutter App Development Company in Mysuru',
+  description: 'Top Flutter app development company in Mysuru for Android & iOS apps. 150+ apps delivered, 4.9★ Google rating. Fixed pricing. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/flutter-app-development-company-in-mysuru` },
   keywords: [
     'flutter app development company in mysuru',
@@ -18,7 +18,7 @@ export const metadata = {
     'flutter web development mysuru',
   ].join(', '),
   openGraph: {
-    title: 'Flutter App Development Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'Flutter App Development Company in Mysuru',
     description: 'Custom Flutter apps for Android & iOS from one codebase. Walk-in Mysuru office. Fixed price. Source code yours.',
     url: `${SITE.url}/flutter-app-development-company-in-mysuru`,
     type: 'website',

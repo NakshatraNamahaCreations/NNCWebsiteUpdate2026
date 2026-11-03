@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Google Ads Agency in Bangalore | NNC Digital',
   description:
-    'Top Google Ads agency in Bangalore. Google Ads management, PPC agency, PPC services, Google Adwords agency, Google Ads experts, Adwords management, Google Ads consultants & pay per click agency for Bangalore businesses. Headquartered in Whitefield. Fixed price.',
+    'Top Google Ads agency in Bangalore offering PPC management, Google Ads campaigns and expert consulting. Whitefield-based team with fixed pricing.',
   alternates: {
     canonical: `${SITE.url}/google-ads-agency-in-bangalore`,
   },
@@ -182,7 +182,7 @@ const data = {
   h1: 'Google Ads Agency',
   h1Accent: 'in Bangalore',
   tagline:
-    'Top Google Ads agency in Bangalore — Google Ads management, PPC agency, PPC services, Google Adwords agency, Google Ads experts, Adwords management, Google Ads consultants & pay per click agency. Headquartered in Whitefield.',
+    'Top Google Ads agency in Bangalore offering PPC management, Google Ads campaigns and expert consulting. Whitefield-based team with fixed pricing.',
   desc:
     'NNC Digital is a specialist Google Ads agency in Bangalore managing Search, Display, Shopping, YouTube and Remarketing campaigns for businesses across Bangalore, Whitefield and Electronic City. From PPC agency services and Google Adwords management to pay per click strategy and Google Ads consultancy — every campaign is run by our certified Google Ads experts with weekly reporting on leads, revenue and cost per acquisition.',
   stat1: '565+',

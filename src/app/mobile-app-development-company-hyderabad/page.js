@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Mobile App Development Company Hyderabad | Enterprise Apps',
   description:
-    'Choose our  mobile app development company Hyderabad to build scalable apps, with NNC delivering high performance Android and iOS solutions for business growth.',
+    'Choose our mobile app development company in Hyderabad for scalable, high-performance Android and iOS apps that drive business growth.',
   alternates: {
     canonical: `${SITE.url}/mobile-app-development-company-hyderabad`,
   },
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Mobile App Development Company Hyderabad | Enterprise Apps',
     description:
-      'Choose our  mobile app development company Hyderabad to build scalable apps, with NNC delivering high performance Android and iOS solutions for business growth.',
+      'Choose our mobile app development company in Hyderabad for scalable, high-performance Android and iOS apps that drive business growth.',
     images: [SITE.teamPhoto],
   },
 }

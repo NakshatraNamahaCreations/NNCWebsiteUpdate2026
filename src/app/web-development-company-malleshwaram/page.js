@@ -8,7 +8,7 @@ export const metadata = {
   title: 'Web Development Company in Malleshwaram for Business Growth',
 
   description:
-    'Web Development Company in Malleshwaram offering fast, scalable and responsive websites and web applications for startups, SMEs and growing businesses.',
+    'Best website development company in Malleshwaram offering fast, scalable websites with modern design and business-focused solutions from NNC Digital.',
 
   alternates: {
     canonical: `${SITE.url}/web-development-company-malleshwaram`,

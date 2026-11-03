@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Android App Development Company in Bangalore | NNC Digital',
   description:
-    'Top Android app development company in Bangalore. Android app developers, native Android development, Kotlin app development, Java Android development, hire Android developers, Play Store app development, Android application development & enterprise Android app development. Fixed price.',
+    'Top Android app development company in Bangalore offering Kotlin, Java, native Android and Play Store app development with expert developers at fixed prices.',
   alternates: {
     canonical: `${SITE.url}/android-app-development-company-in-bangalore`,
   },
@@ -181,7 +181,7 @@ const data = {
   h1: 'Android App Development Company',
   h1Accent: 'in Bangalore',
   tagline:
-    'Top Android app development company in Bangalore — native Android development, Android app developers, Kotlin app development, Java Android development, hire Android developers, Play Store app development, enterprise Android app development & Android application development. Fixed price.',
+    'Top Android app development company in Bangalore offering Kotlin, Java, native Android and Play Store app development with expert developers at fixed prices.',
   desc:
     'NNC Digital is a specialist Android app development company in Bangalore building native Android applications in Kotlin and Java for startups, SMEs and enterprise clients. From consumer Android apps and on-demand platforms to enterprise mobility solutions and Play Store-ready products — every Android app is built by our in-house Bangalore Android developers with full source code ownership, zero outsourcing and fixed-price delivery.',
   stat1: '565+',

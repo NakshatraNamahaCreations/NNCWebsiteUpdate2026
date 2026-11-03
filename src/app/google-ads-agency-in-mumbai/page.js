@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Google Ads Agency in Mumbai | NNC Digital',
   description:
-    'Top Google Ads agency in Mumbai. Google Ads management, PPC agency, PPC services, Google Adwords agency, Google Ads experts, Adwords management, Google Ads consultants & pay per click agency for Mumbai businesses. Office in Thane West.',
+    'Top Google Ads agency in Mumbai offering PPC management, Google Ads campaigns and expert consulting to generate quality leads. Visit our Thane West office.',
   alternates: {
     canonical: `${SITE.url}/google-ads-agency-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Google Ads Agency in Mumbai | NNC Digital',
     description:
-      'Google Ads agency in Mumbai — Google Ads management, PPC agency, PPC services, Adwords management & pay per click campaigns for Mumbai businesses. Office in Thane West.',
+      'Top Google Ads agency in Mumbai offering PPC management, Google Ads campaigns and expert consulting to generate quality leads. Visit our Thane West office.',
     url: `${SITE.url}/google-ads-agency-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Google Ads Agency in Mumbai | NNC Digital',
     description:
-      'Google Ads agency in Mumbai — PPC agency, Google Ads management, Adwords management & pay per click services. Office in Thane West.',
+      'Top Google Ads agency in Mumbai offering PPC management, Google Ads campaigns and expert consulting to generate quality leads. Visit our Thane West office.',
     images: [SITE.teamPhoto],
   },
 }

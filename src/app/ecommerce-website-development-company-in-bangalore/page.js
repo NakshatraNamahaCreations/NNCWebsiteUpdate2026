@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Ecommerce Website Development Company in Bangalore | NNC Digital',
   description:
-    'Top ecommerce website development company in Bangalore. Ecommerce development company, ecommerce website design, online store development, Shopify development, WooCommerce development, Magento development, B2B ecommerce, D2C website development & marketplace development. Fixed price.',
+    'Top ecommerce website development company in Bangalore offering Shopify, WooCommerce, Magento, B2B, D2C and custom online stores at fixed prices.',
   alternates: {
     canonical: `${SITE.url}/ecommerce-website-development-company-in-bangalore`,
   },
@@ -183,7 +183,7 @@ const data = {
   h1: 'Ecommerce Website Development Company',
   h1Accent: 'in Bangalore',
   tagline:
-    'Top ecommerce website development company in Bangalore — Shopify development, WooCommerce development, Magento development, custom ecommerce platform, D2C website development, B2B ecommerce development, marketplace development & online store development. Fixed price.',
+    'Top ecommerce website development company in Bangalore offering Shopify, WooCommerce, Magento, B2B, D2C and custom online stores at fixed prices.',
   desc:
     'NNC Digital is a full-service ecommerce website development company in Bangalore building Shopify stores, WooCommerce stores, Magento websites, custom ecommerce platforms, D2C websites, B2B ecommerce portals and multi-vendor marketplaces for Bangalore businesses. Every online store is built by our in-house ecommerce development team — bespoke design, payment gateway integration, inventory management, shipping setup and full source code ownership. Fixed-price projects with transparent timelines.',
   stat1: '565+',
