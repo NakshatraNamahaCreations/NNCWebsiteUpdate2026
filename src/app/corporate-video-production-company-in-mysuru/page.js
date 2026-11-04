@@ -5,8 +5,8 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Corporate Video Production Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Top corporate video production company in Mysuru. Brand films, ad films, drone videography, product shoots & commercial video production. 4K delivery. In-house studio. Walk-in Mysuru office. Call +91 99005 66466.',
+  title: 'Corporate Video Production Company in Mysuru',
+  description: 'Top corporate video production company in Mysuru offering brand films, ad films, drone shoots and 4K videos. In-house studio. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/corporate-video-production-company-in-mysuru` },
   keywords: [
     'corporate video production company in mysuru',
@@ -20,7 +20,7 @@ export const metadata = {
     'commercial video production mysuru',
   ].join(', '),
   openGraph: {
-    title: 'Corporate Video Production Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'Corporate Video Production Company in Mysuru',
     description: 'Brand films, ad films, drone videography & product shoots for Mysuru businesses. In-house 4K studio. Walk-in office. Fixed price.',
     url: `${SITE.url}/corporate-video-production-company-in-mysuru`,
     type: 'website',
@@ -31,7 +31,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Corporate Video Production Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'Corporate Video Production Company in Mysuru',
     description: 'Brand films, ad films & drone videos in Mysuru. In-house 4K studio. Walk-in office.',
   },
 }

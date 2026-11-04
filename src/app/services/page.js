@@ -5,8 +5,8 @@ import { SERVICES, SITE } from '@/data/siteData'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Our Services | Website Development, Mobile Apps, CRM, Digital Marketing | NNC Digital Bangalore',
-  description: 'NNC Digital offers website development, mobile app development, CRM & custom software, digital marketing & SEO, corporate video production, 2D animation, graphic design and B2B marketing. 35+ in-house specialists. Zero outsourcing. 565+ projects since 2015.',
+  title: 'Our Services | Web, App, CRM & Digital Marketing | NNC Digital',
+  description: 'NNC Digital offers website and app development, CRM, SEO, digital marketing, video production and graphic design. 35+ experts, 565+ projects delivered.',
   alternates: { canonical: 'https://www.nakshatranamahacreations.com/services' },
 }
 

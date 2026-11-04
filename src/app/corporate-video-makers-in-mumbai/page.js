@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Corporate Video Makers in Mumbai | Promotional Video',
   description:
-    'Choose corporate video makers in Mumbai to create impactful brand videos, with NNC delivering professional video production for marketing and business growth.',
+    'Choose corporate video makers in Mumbai for impactful brand videos. NNC Digital delivers professional video production for marketing and business growth.',
   alternates: {
     canonical: `${SITE.url}/corporate-video-makers-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Corporate Video Makers in Mumbai | Promotional Video',
     description:
-      'Choose corporate video makers in Mumbai to create impactful brand videos, with NNC delivering professional video production for marketing and business growth.',
+      'Choose corporate video makers in Mumbai for impactful brand videos. NNC Digital delivers professional video production for marketing and business growth.',
     url: `${SITE.url}/corporate-video-makers-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Corporate Video Makers in Mumbai | Promotional Video',
     description:
-      'Choose corporate video makers in Mumbai to create impactful brand videos, with NNC delivering professional video production for marketing and business growth.',
+      'Choose corporate video makers in Mumbai for impactful brand videos. NNC Digital delivers professional video production for marketing and business growth.',
     images: [SITE.teamPhoto],
   },
 }

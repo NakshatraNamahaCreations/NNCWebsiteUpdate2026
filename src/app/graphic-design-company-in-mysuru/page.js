@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'Graphic Design Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Top graphic design company in Mysuru. Logo design, brand identity, UI/UX design, packaging, brochures & creative design. 35+ in-house designers. Walk-in Mysuru office. Fixed price. Call +91 99005 66466.',
+  description: 'Top graphic design company in Mysuru offering logo design, branding, UI/UX, packaging and brochures. 35+ in-house designers. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/graphic-design-company-in-mysuru` },
   keywords: [
     'graphic design company in mysuru',

@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Social Media Marketing Agency in Mumbai | NNC Digital',
   description:
-    'Top social media marketing agency in Mumbai. Instagram marketing, Facebook Ads, Meta Ads, LinkedIn marketing agency, social media management & social media services for Mumbai businesses. Office in Thane West. Transparent reporting.',
+    'Top social media marketing agency in Mumbai offering Instagram, Facebook Ads, Meta Ads and LinkedIn marketing. Thane West office. Transparent reporting.',
   alternates: {
     canonical: `${SITE.url}/social-media-marketing-agency-mumbai`,
   },

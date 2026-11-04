@@ -5,32 +5,41 @@ import Link from 'next/link'
 // ─── Project Data ─────────────────────────────────────────────────────────────
 const WORKS = [
   // ── Website Development ──
-  { name: 'Dermfit Clinic', type: 'Clinical Dermetology Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/dermfit-logo.webp' },
-  { name: 'Eliteinteriorz', type: 'Interior Design Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/elite-logo.webp' },
-  { name: 'Beyond Boundaries', type: 'Education Consulting Services', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/beyond-boundaries-logo.webp' },
-  { name: 'Navkar Global Sourcing', type: 'Global Sourcing Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/navkar-logo.png' },
-  { name: 'Griffin Solutions', type: 'Corporate Gifting Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/griffin-logo.png' },
-  { name: 'Tinysmiles', type: 'Photography Portfolio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/tinysmiles-logo.webp' },
-  { name: 'Armedex', type: 'Drug Safety Services Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/armedex-logo.png' },
-  { name: 'Puran Interiors', type: 'Corporate Website & SEO', category: 'Website Development', tech: ['Next JS', 'SEO', 'CMS'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/puraninteriors.png' },
-  { name: 'Brainwave Consultancy', type: 'Education Consultancy Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 5 Google ranking', resultColor: '#4F46E5', logo: '/assets/bc-logo.webp' },
-  { name: 'Novus', type: 'Corporate Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: '95 PageSpeed Score', resultColor: '#2563EB', bg: 'linear-gradient(135deg,#1E40AF,#2563EB)' },
-  { name: 'Avyakth', type: 'E-commerce Platform', category: 'Website Development', tech: ['React JS', 'Node JS', 'Razorpay'], result: '3× faster checkout', resultColor: '#7C3AED', bg: 'linear-gradient(135deg,#6D28D9,#8B5CF6)' },
-  { name: 'Make My Documents', type: 'Service Portal', category: 'Website Development', tech: ['Next JS', 'Node JS', 'MySQL'], result: '200+ daily enquiries', resultColor: '#059669', logo: '/assets/md.png' },
-  { name: 'CND Play', type: 'Entertainment Portal', category: 'Website Development', tech: ['React JS', 'CMS', 'AWS S3'], result: '500+ uploads/month', resultColor: '#DC2626', bg: 'linear-gradient(135deg,#991B1B,#DC2626)' },
-  { name: 'Rent Angadi', type: 'Rental Listing Website', category: 'Website Development', tech: ['Next JS', 'Maps API', 'Node JS'], result: '1,200+ active listings', resultColor: '#D97706', logo: '/assets/rent-logo.jpg' },
-  { name: 'Avyakth Roofing Solutions', type: 'Corporate Website', category: 'Website Development', tech: ['React JS', 'CMS', 'SEO'], result: '3× more lead enquiries', resultColor: '#2563EB', logo: '/assets/avyakth-logo.webp' },
-  { name: 'Ganesh Interiors', type: 'Portfolio & Lead Gen', category: 'Website Development', tech: ['Next JS', 'CMS', 'Google Ads'], result: 'Top 3 local search rank', resultColor: '#059669', logo: '/assets/gd.webp' },
-  { name: 'Perar Infotech', type: 'IT Services Website', category: 'Website Development', tech: ['Next JS', 'SEO', 'Node JS'], result: '40% growth in organic traffic', resultColor: '#7C3AED', logo: '/assets/pi-logo.png' },
-  { name: 'Anuflow Controls', type: 'Industrial Corporate Site', category: 'Website Development', tech: ['React JS', 'CMS', 'SEO'], result: 'Page 1 for 12 keywords', resultColor: '#D97706', logo: '/assets/afc-logo.jpeg' },
-  { name: 'Learn Telugu Now', type: 'EdTech Learning Platform', category: 'Website Development', tech: ['Next JS', 'Node JS', 'MySQL'], result: '2,000+ enrolled learners', resultColor: '#F97316', logo: '/assets/lt-logo.png' },
-  { name: 'Kulkarni Housing', type: 'Real Estate Website', category: 'Website Development', tech: ['Next JS', 'Maps API', 'CMS'], result: '500+ property enquiries/mo', resultColor: '#0284C7', logo: '/assets/kh-logo.webp' },
-  { name: 'Destination Wedding', type: 'Wedding Portfolio Site', category: 'Website Development', tech: ['Next JS', 'CMS', 'Gallery'], result: '120+ booking enquiries', resultColor: '#DB2777', logo: '/assets/dh-logo.jpeg' },
-  { name: 'CarePro', type: 'Healthcare Service Website', category: 'Website Development', tech: ['React JS', 'Node JS', 'SEO'], result: '80+ daily appointment requests', resultColor: '#059669', logo: '/assets/cr-logo.jpeg' },
-  { name: 'Kangrow Health', type: 'Health & Wellness Platform', category: 'Website Development', tech: ['Next JS', 'Node JS', 'CMS'], result: '4.9★ customer satisfaction', resultColor: '#16A34A', logo: '/assets/kg-logo.png' },
-  { name: 'Rent Your PC', type: 'Tech Rental Platform', category: 'Website Development', tech: ['React JS', 'Node JS', 'Razorpay'], result: '300+ rentals processed/mo', resultColor: '#6366F1', logo: '/assets/rent-logo.webp' },
-  { name: 'Chiru Holidays', type: 'Tour & Travel Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Google Maps'], result: '250+ tour bookings/month', resultColor: '#D97706', logo: '/assets/chiru-logo.webp' },
-  { name: 'Studio99', type: 'Creative Studio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: 'Premium brand presence', resultColor: '#7C3AED', logo: '/assets/st99.webp' },
+  { name: 'V-Do Creatives', type: 'Cinematic Video & Production Studio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '3× more client enquiries', resultColor: '#059669', logo: '/assets/vdo-logo.png', url: 'https://www.v-do.in/' },
+  { name: 'VRS Water Purifiers', type: 'E-commerce Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '100+ online orders/mo', resultColor: '#059669', logo: '/assets/vrs-logo.png', url: 'https://vrswaterpurifiersalesandservices.com/' },
+  { name: '3M Carcare Studio', type: 'Car Care Services Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '60% rise in booking enquiries', resultColor: '#059669', logo: '/assets/3m-logo.webp', url: 'https://3mcarcarestudiosarjapur.com/' },
+  { name: 'Saltech', type: '', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '2× qualified B2B leads', resultColor: '#059669', logo: '/assets/saltech-logo.png', url: 'https://saltech.ltd/' },
+  { name: "Werner Electrics", type: 'Industrial Control Components Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/werner-logo.png', url: 'https://www.wernerelektrik.com/' },
+  { name: 'Thridhavarnam', type: 'E-commerce Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '200+ sales', resultColor: '#059669', logo: '/assets/thridhavarnam-logo.png', url: 'https://www.thridhavarnam.com/' },
+  { name: 'Cycraft', type: 'Cybersecurity Education Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '3× more lead enquiries', resultColor: '@2563EB', logo: '/assets/cycraft-logo.webp', url: 'https://cycraft.in/' },
+  { name: 'Decor N Art', type: 'E-Commerce Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/decor-logo.png', url: 'https://decornart.in/' },
+  { name: 'Universal Language Translations', type: 'Translation Services Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '2× client enquiries', resultColor: '#059669', logo: '/assets/ult-logo.webp', url: 'https://ultlingua.com/' },
+  { name: 'Dermfit Clinic', type: 'Clinical Dermatology Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '150+ monthly consultations', resultColor: '#059669', logo: '/assets/dermfit-logo.webp', url: 'https://dermfitclinic.com/' },
+  { name: 'Eliteinteriorz', type: 'Interior Design Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/elite-logo.webp', url: 'https://www.eliteinteriorz.com/' },
+  { name: 'Beyond Boundaries', type: 'Education Consulting Services', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/beyond-boundaries-logo.webp', url: 'https://beyondbic.com/' },
+  { name: 'Navkar Global Sourcing', type: 'Global Sourcing Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/navkar-logo.png', url: 'https://www.navkarglobalsourcing.com/' },
+  { name: 'Griffin Solutions', type: 'Corporate Gifting Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/griffin-logo.png', url: 'https://griffinsolutions.in/' },
+  { name: 'Tinysmiles', type: 'Photography Portfolio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/tinysmiles-logo.webp', url: 'https://tinysmilesphotography.in/' },
+  { name: 'Armedex', type: 'Drug Safety Services Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/armedex-logo.png', url: 'https://armedexglobal.com/' },
+  { name: 'Puran Interiors', type: 'Corporate Website & SEO', category: 'Website Development', tech: ['Next JS', 'SEO', 'CMS'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/puraninteriors.png', url: 'https://www.puraninteriors.com/' },
+  { name: 'Brainwave Consultancy', type: 'Education Consultancy Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 5 Google ranking', resultColor: '#4F46E5', logo: '/assets/bc-logo.webp', url: 'https://www.brainwaveconsultancy.in/' },
+  { name: 'Novus', type: 'Corporate Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: '95 PageSpeed Score', resultColor: '#2563EB', bg: 'linear-gradient(135deg,#1E40AF,#2563EB)', url: 'https://novushealth.in/' },
+  { name: 'Avyakth', type: 'E-commerce Platform', category: 'Website Development', tech: ['React JS', 'Node JS', 'Razorpay'], result: '3× faster checkout', resultColor: '#7C3AED', bg: 'linear-gradient(135deg,#6D28D9,#8B5CF6)', url: '' },
+  { name: 'Make My Documents', type: 'Service Portal', category: 'Website Development', tech: ['Next JS', 'Node JS', 'MySQL'], result: '200+ daily enquiries', resultColor: '#059669', logo: '/assets/md.png', url: 'https://www.makemydocuments.com/' },
+  { name: 'CND Play', type: 'Entertainment Portal', category: 'Website Development', tech: ['React JS', 'CMS', 'AWS S3'], result: '500+ uploads/month', resultColor: '#DC2626', bg: 'linear-gradient(135deg,#991B1B,#DC2626)', url: '' },
+  { name: 'Rent Angadi', type: 'Rental Listing Website', category: 'Website Development', tech: ['Next JS', 'Maps API', 'Node JS'], result: '1,200+ active listings', resultColor: '#D97706', logo: '/assets/rent-logo.jpg', url: 'https://rentangadi.in/' },
+  { name: 'Avyakth Roofing Solutions', type: 'Corporate Website', category: 'Website Development', tech: ['React JS', 'CMS', 'SEO'], result: '3× more lead enquiries', resultColor: '#2563EB', logo: '/assets/avyakth-logo.webp', url: 'https://avyakthroofing.com/' },
+  { name: 'Ganesh Interiors', type: 'Portfolio & Lead Gen', category: 'Website Development', tech: ['Next JS', 'CMS', 'Google Ads'], result: 'Top 3 local search rank', resultColor: '#059669', logo: '/assets/gd.webp', url: 'https://www.ganeshinteriordesigns.com/' },
+  { name: 'Perar Infotech', type: 'IT Services Website', category: 'Website Development', tech: ['Next JS', 'SEO', 'Node JS'], result: '40% growth in organic traffic', resultColor: '#7C3AED', logo: '/assets/pi-logo.png', url: 'https://perarinfotech.com/' },
+  { name: 'Anuflow Controls', type: 'Industrial Corporate Site', category: 'Website Development', tech: ['React JS', 'CMS', 'SEO'], result: 'Page 1 for 12 keywords', resultColor: '#D97706', logo: '/assets/afc-logo.jpeg', url: 'https://www.anuflowcontrols.com/' },
+  { name: 'Learn Telugu Now', type: 'EdTech Learning Platform', category: 'Website Development', tech: ['Next JS', 'Node JS', 'MySQL'], result: '2,000+ enrolled learners', resultColor: '#F97316', logo: '/assets/lt-logo.png', url: 'https://www.learntelugunow.com/' },
+  { name: 'Kulkarni Housing', type: 'Real Estate Website', category: 'Website Development', tech: ['Next JS', 'Maps API', 'CMS'], result: '500+ property enquiries/mo', resultColor: '#0284C7', logo: '/assets/kh-logo.webp', url: 'https://www.kulkarnihousing.com/' },
+  { name: 'Destination Wedding', type: 'Wedding Portfolio Site', category: 'Website Development', tech: ['Next JS', 'CMS', 'Gallery'], result: '120+ booking enquiries', resultColor: '#DB2777', logo: '/assets/dh-logo.jpeg', url: 'https://destinationweddingcompany.in/' },
+  { name: 'CarePro', type: 'Healthcare Service Website', category: 'Website Development', tech: ['React JS', 'Node JS', 'SEO'], result: '80+ daily appointment requests', resultColor: '#059669', logo: '/assets/cr-logo.jpeg', url: '' },
+  { name: 'Kangrow Health', type: 'Health & Wellness Platform', category: 'Website Development', tech: ['Next JS', 'Node JS', 'CMS'], result: '4.9★ customer satisfaction', resultColor: '#16A34A', logo: '/assets/kg-logo.png', url: 'https://svkangrowhealth.com/' },
+  { name: 'Rent Your PC', type: 'Tech Rental Platform', category: 'Website Development', tech: ['React JS', 'Node JS', 'Razorpay'], result: '300+ rentals processed/mo', resultColor: '#6366F1', logo: '/assets/rent-logo.webp', url: 'https://www.rentyourpc.com/' },
+  { name: 'Chiru Holidays', type: 'Tour & Travel Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Google Maps'], result: '250+ tour bookings/month', resultColor: '#D97706', logo: '/assets/chiru-logo.webp', url: 'https://www.chiruholidays.com/' },
+  { name: 'Studio99', type: 'Creative Studio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: 'Premium brand presence', resultColor: '#7C3AED', logo: '/assets/st99.webp', url: 'https://studio99rrnagar.com/' },
 
   // ── Mobile Apps ──
   { name: 'Dhoond', type: 'Energy Ecosystem App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Maps API'], result: '500+ daily searches', resultColor: '#2563EB', logo: '/assets/dhoond-logo.jpeg' },
@@ -414,8 +423,9 @@ function BtsCard({ w, index }) {
 function WorkCard({ w }) {
   const [hovered, setHovered] = useState(false)
   const meta = CAT_META[w.category] || CAT_META['All']
+  const hasLink = Boolean(w.url)
 
-  return (
+  const cardInner = (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -433,7 +443,8 @@ function WorkCard({ w }) {
           : '0 2px 10px rgba(11,31,75,.05)',
         transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
         transition: 'all .28s cubic-bezier(.16,1,.3,1)',
-        cursor: 'default',
+        cursor: hasLink ? 'pointer' : 'default',
+        position: 'relative',
       }}
     >
       {/* Top row: icon + category badge */}
@@ -543,12 +554,48 @@ function WorkCard({ w }) {
           fontSize: 12.5, fontWeight: 700,
           color: meta.color,
           lineHeight: 1.3,
+          flex: 1,
         }}>
           {w.result}
         </span>
+        {hasLink && (
+          <div style={{
+            width: 26, height: 26,
+            borderRadius: 8,
+            background: hovered ? meta.color : '#fff',
+            border: `1.5px solid ${meta.color}${hovered ? '00' : '55'}`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            flexShrink: 0,
+            transition: 'all .25s cubic-bezier(.16,1,.3,1)',
+            transform: hovered ? 'translate(2px,-2px)' : 'translate(0,0)',
+            boxShadow: hovered ? `0 4px 12px ${meta.color}55` : 'none',
+          }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+              stroke={hovered ? '#fff' : meta.color}
+              strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </div>
+        )}
       </div>
     </div>
   )
+
+  if (hasLink) {
+    return (
+      <a
+        href={w.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Visit ${w.name} website`}
+        style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}
+      >
+        {cardInner}
+      </a>
+    )
+  }
+  return cardInner
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────

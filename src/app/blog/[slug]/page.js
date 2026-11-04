@@ -11,12 +11,13 @@ export async function generateMetadata({ params }) {
   const { post } = await getPost(params.slug)
   if (!post) return { title: 'Blog | NNC Digital' }
   const description = post.description || `${post.title} practical insights from NNC Digital's in-house team in Bengaluru. Expert guide on ${post.category.toLowerCase()} for businesses in India.`
+  const metaTitle = (post.metaTitle && post.metaTitle.trim()) || `${post.title} | NNC Digital Blog`
   return {
-    title: `${post.title} | NNC Digital Blog`,
+    title: metaTitle,
     description,
     alternates: { canonical: `${SITE.url}/blog/${post.slug}` },
     openGraph: {
-      title: post.title,
+      title: metaTitle,
       description,
       type: 'article',
       publishedTime: post.date,
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: 'summary_large_image',
       site: '@nncbengaluru',
-      title: post.title,
+      title: metaTitle,
       description,
       images: [SITE.teamPhoto],
     },

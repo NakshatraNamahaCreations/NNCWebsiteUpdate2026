@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'React Native App Development Company in Mumbai | NNC Digital',
   description:
-    'Top React Native app development company in Mumbai. Cross-platform iOS & Android apps in React Native & JavaScript, hire React Native developers — office in Thane West. Fixed price. 100+ apps delivered.',
+    'Top React Native app development company in Mumbai for cross-platform Android and iOS apps. 100+ apps delivered. Thane West office. Fixed pricing.',
   alternates: {
     canonical: `${SITE.url}/react-native-app-development-company-in-mumbai`,
   },

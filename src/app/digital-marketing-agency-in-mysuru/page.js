@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'Digital Marketing Agency in Mysuru | Nakshatra Namaha Creations',
-  description: 'Top digital marketing agency in Mysuru. Google Ads, SEO, social media marketing, lead generation & performance marketing. Real leads, not vanity metrics. Walk-in Mysuru office. Fixed price. Call +91 99005 66466.',
+  description: 'Top digital marketing agency in Mysuru offering SEO, Google Ads, social media and lead generation services. Fixed pricing. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/digital-marketing-agency-in-mysuru` },
   keywords: [
     'digital marketing agency in mysuru',

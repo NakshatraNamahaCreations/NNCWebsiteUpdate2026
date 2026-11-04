@@ -4,9 +4,9 @@ import { SITE } from '@/data/siteData'
 const SLUG = '/mobile-app-development-company-in-mysuru'
 
 export const metadata = {
-  title: 'Mobile App Development Company in Mysuru | Nakshatra Namaha Creations',
+  title: 'Mobile App Development Company in Mysuru | NNC',
   description:
-    'Top mobile app development company in Mysuru. Custom Android & iOS apps on React Native & Flutter. 150+ apps delivered. 4.9★ Google. Walk-in Mysuru office. Fixed price. Source code yours. Call +91 99005 66466.',
+    'Top mobile app development company in Mysuru for Android and iOS apps using Flutter and React Native. 150+ apps delivered. Call +91 99005 66466.',
   keywords: [
     'mobile app development company in mysuru',
     'app development company in mysuru',
@@ -39,9 +39,9 @@ export const metadata = {
     locale: 'en_IN',
     url: `${SITE.url}${SLUG}`,
     siteName: 'Nakshatra Namaha Creations',
-    title: 'Mobile App Development Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'Mobile App Development Company in Mysuru | NNC',
     description:
-      'Top mobile app development company in Mysuru. Custom Android & iOS apps on React Native & Flutter. Walk-in office. Fixed price. Source code yours.',
+      'Top mobile app development company in Mysuru for Android and iOS apps using Flutter and React Native. 150+ apps delivered. Call +91 99005 66466.',
     images: [
       {
         url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
@@ -54,7 +54,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: 'Mobile App Development Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'Mobile App Development Company in Mysuru | NNC',
     description:
       'Custom Android & iOS apps in Mysuru. React Native & Flutter. Walk-in office. Fixed price.',
   },

@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'SEO Services Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Best SEO services company in Mysuru. Technical SEO, on-page optimisation, local SEO, ecommerce SEO & link building. Page 1 Google rankings. Walk-in Mysuru office. Transparent monthly reporting. Call +91 99005 66466.',
+  description: 'Best SEO services company in Mysuru offering technical SEO, on-page SEO, local SEO and link building. Transparent reporting. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/seo-services-company-in-mysuru` },
   keywords: [
     'seo services in mysuru',

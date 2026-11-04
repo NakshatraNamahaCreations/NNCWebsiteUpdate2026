@@ -15,6 +15,7 @@ function normalize(p) {
   return {
     slug: p.slug,
     title: p.title,
+    metaTitle: p.metaTitle || '',
     category: p.category,
     date: p.date,
     readTime: p.readTime,

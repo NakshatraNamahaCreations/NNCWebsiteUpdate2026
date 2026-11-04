@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Custom CRM Development Mumbai | NNC Digital',
   description:
-    'Custom CRM development in Mumbai — bespoke CRM, tailored CRM software, custom CRM solutions, industry specific CRM, real estate CRM development, healthcare CRM development & manufacturing CRM. Office in Thane West. Fixed price.',
+    'Custom CRM development in Mumbai offering tailored CRM software for real estate, healthcare and manufacturing. Thane West office. Fixed pricing.',
   alternates: {
     canonical: `${SITE.url}/custom-crm-development-mumbai`,
   },
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Custom CRM Development Mumbai | NNC Digital',
     description:
-      'Custom CRM development Mumbai — bespoke CRM, real estate CRM, healthcare CRM, manufacturing CRM. Office in Thane West. Fixed price.',
+      'Custom CRM development in Mumbai offering tailored CRM software for real estate, healthcare and manufacturing. Thane West office. Fixed pricing.',
     images: [SITE.teamPhoto],
   },
 }

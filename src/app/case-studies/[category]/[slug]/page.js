@@ -18,7 +18,8 @@ export async function generateMetadata({ params }) {
   if (!cs) return { title: 'Case Study | NNC Digital' }
   return {
     title: `${cs.title} | Case Study | NNC Digital`,
-    description: `${cs.challenge} NNC Digital delivered: ${cs.result}`,
+    // description: `${cs.challenge} NNC Digital delivered: ${cs.result}`,
+    description: `${cs.challenge} ${cs.result}`,
     alternates: { canonical: `${SITE.url}/case-studies/${params.category}/${params.slug}` },
   }
 }

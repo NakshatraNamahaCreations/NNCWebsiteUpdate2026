@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'E-commerce Website Development Company in Bangalore | NNC Digital',
-  description: 'Custom e-commerce website development in Bangalore. Full-featured online stores with Razorpay, product catalogues, order management and PageSpeed 90+ on React JS & Next JS. Fixed price. 60+ delivered.',
+  description: 'Custom e-commerce website development in Bangalore with React, Next.js, Razorpay, product catalogues and order management. 60+ stores delivered.',
   alternates: { canonical: `${SITE.url}/ecommerce-website-development-company` },
   keywords: 'ecommerce website development company bangalore, online store development bangalore, ecommerce website design bangalore, react js ecommerce development, next js ecommerce',
   openGraph: {
@@ -24,7 +24,7 @@ const schema = {
   name: 'E-commerce Website Development',
   provider: { '@type': 'Organization', name: SITE.name, url: SITE.url, telephone: SITE.phone },
   areaServed: 'India',
-  description: 'Custom e-commerce websites for D2C brands, retailers and B2B sellers. Razorpay, product catalogues, inventory management and PageSpeed 90+.',
+  description: 'Custom e-commerce website development in Bangalore with React, Next.js, Razorpay, product catalogues and order management. 60+ stores delivered.',
   url: `${SITE.url}/ecommerce-website-development-company`,
 }
 

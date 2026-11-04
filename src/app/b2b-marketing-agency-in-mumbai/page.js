@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'B2B Marketing Agency in Mumbai | Lead Generation Services',
   description:
-    'Choose a B2B marketing agency in Mumbai to drive qualified leads and growth, with NNC delivering result focused campaigns and high ROI marketing strategies.',
+    'Choose a B2B marketing agency in Mumbai for qualified leads and business growth. NNC Digital delivers ROI-focused campaigns and marketing strategies.',
   alternates: {
     canonical: `${SITE.url}/b2b-marketing-agency-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'B2B Marketing Agency in Mumbai | Lead Generation Services',
     description:
-      'Choose a B2B marketing agency in Mumbai to drive qualified leads and growth, with NNC delivering result focused campaigns and high ROI marketing strategies.',
+      'Choose a B2B marketing agency in Mumbai for qualified leads and business growth. NNC Digital delivers ROI-focused campaigns and marketing strategies.',
     url: `${SITE.url}/b2b-marketing-agency-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'B2B Marketing Agency in Mumbai | Lead Generation Services',
     description:
-      'Choose a B2B marketing agency in Mumbai to drive qualified leads and growth, with NNC delivering result focused campaigns and high ROI marketing strategies.',
+      'Choose a B2B marketing agency in Mumbai for qualified leads and business growth. NNC Digital delivers ROI-focused campaigns and marketing strategies.',
     images: [SITE.teamPhoto],
   },
 }

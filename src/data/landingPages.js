@@ -105,6 +105,40 @@ const LOCATIONS = {
   hyderabad: { name: 'Hyderabad', region: 'Telangana' },
 }
 
+/**
+ * Per-slug SEO overrides.
+ * Any key you add here overrides the auto-generated title/description for that
+ * exact landing-page slug. Leave the whole map empty to use the template defaults.
+ * Example:
+ *   'website-development-company-in-bangalore': {
+ *     title: 'Custom title here',
+ *     description: 'Custom description here',
+ *   },
+ */
+const SEO_OVERRIDES = {
+  'crm-software-development-company-in-bangalore': {
+    description: 'Best CRM & Custom Software Company in Bangalore. Get SaaS, dashboards and automation solutions from our expert team. Call +91 99005 66466 for a free quote.',
+  },
+  'website-development-company-in-bangalore': {
+    description: 'Best website development company in Bangalore for corporate websites, ecommerce and React/Next.js web apps. Call +91 99005 66466 for a free quote.',
+  },
+  'corporate-video-production-company-in-bangalore': {
+    description: 'Best Corporate Video & Animation Company in Bangalore offering brand films, 2D animation and drone videos. Expert in-house team. Call +91 99005 66466.'
+  },
+  'website-development-company-in-hyderabad': {
+    description: 'Best website development company in Hyderabad for corporate websites, ecommerce and React/Next.js web apps. Call +91 99005 66466 for a free quote.'
+  },
+  'website-development-company-in-mysuru': {
+    description: 'Best website development company in Mysuru for corporate websites, ecommerce and React/Next.js web apps. Call +91 99005 66466 for a free quote.'
+  },
+  'digital-marketing-agency-in-bangalore': {
+    description: 'Best digital marketing & SEO company in Bangalore offering SEO, Google Ads and Meta campaigns focused on revenue growth. Call +91 99005 66466.'
+  },
+  'website-development-company-in-mumbai': {
+    description: 'Best website development company in Mumbai for corporate websites, ecommerce and React/Next.js web apps. Call +91 99005 66466 for a free quote.'
+  }
+}
+
 /* Which service/location combos are published (opted in explicitly). */
 const PUBLISHED = [
   { service: 'website-development', locations: ['bangalore', 'mumbai', 'mysuru', 'hyderabad'] },
@@ -194,6 +228,7 @@ function buildPage(serviceId, locationId) {
     seo: {
       title: keyword,
       description: `${keyword}. ${service.summary} In house team in ${location.name}, delivering since ${LANDING_COMPANY.foundedYear}. Call ${LANDING_COMPANY.phone} for a free quote.`,
+      ...(SEO_OVERRIDES[slug] || {}),
     },
     faqs: buildFaqs(service.name, location.name, keyword),
   }

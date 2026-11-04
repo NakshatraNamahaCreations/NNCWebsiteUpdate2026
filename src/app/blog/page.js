@@ -8,8 +8,8 @@ import { getAllPosts } from '@/lib/blogSource'
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: 'Blog & Insights | Website Development, SEO & Digital Marketing Tips | NNC Digital',
-  description: 'Expert articles on website development, mobile app development, SEO, digital marketing, React JS, Next JS and business growth strategies from NNC Digital a top-rated agency in Bangalore with 565+ projects delivered.',
+  title: 'Blog & Insights | SEO & Digital Marketing Tips | NNC Digital',
+  description: 'Explore expert insights on website development, mobile apps, SEO, digital marketing, React JS, Next.js and business growth from NNC Digital in Bangalore.',
   alternates: { canonical: `${SITE.url}/blog` },
 }
 

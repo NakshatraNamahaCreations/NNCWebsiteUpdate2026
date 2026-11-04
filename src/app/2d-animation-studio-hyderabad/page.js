@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: '2D Animation Studio Hyderabad | Creative Animation Studio',
   description:
-    'Choose our 2D animation studio Hyderabad to create engaging animated videos, with NNC delivering creative animation solutions for branding, marketing.',
+    'NNC Digital, a 2D animation company in Hyderabad, creates explainer videos, character animations and reels. 565+ projects, 4.9★ Google. Call +91 99005 66466.',
   alternates: {
     canonical: `${SITE.url}/2d-animation-studio-hyderabad`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: '2D Animation Studio Hyderabad | Creative Animation Studio',
     description:
-      'Choose our 2D animation studio Hyderabad to create engaging animated videos, with NNC delivering creative animation solutions for branding, marketing.',
+      'NNC Digital, a 2D animation company in Hyderabad, creates explainer videos, character animations and reels. 565+ projects, 4.9★ Google. Call +91 99005 66466.',
     url: `${SITE.url}/2d-animation-studio-hyderabad`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: '2D Animation Studio Hyderabad | Creative Animation Studio',
     description:
-      'Choose our 2D animation studio Hyderabad to create engaging animated videos, with NNC delivering creative animation solutions for branding, marketing.',
+      'NNC Digital, a 2D animation company in Hyderabad, creates explainer videos, character animations and reels. 565+ projects, 4.9★ Google. Call +91 99005 66466.',
     images: [SITE.teamPhoto],
   },
 }

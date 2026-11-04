@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'SEO Services Company in Bangalore | NNC Digital',
   description:
-    'Top SEO services company in Bangalore. SEO agency, best SEO company, local SEO services, technical SEO, on page SEO, SEO experts, SEO consultants, ecommerce SEO, hire SEO expert & affordable SEO services for Bangalore businesses. Headquartered in Whitefield. Fixed price.',
+    'Top SEO services company in Bangalore offering local SEO, technical SEO, on-page SEO and ecommerce SEO. Whitefield-based team with fixed pricing.',
   alternates: {
     canonical: `${SITE.url}/seo-services-company-in-bangalore`,
   },

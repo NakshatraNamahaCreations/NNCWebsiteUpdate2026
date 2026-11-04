@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Mobile App Development Company in RR Nagar | Business Apps',
   description:
-    'Choose a mobile app development company in RR Nagar to build scalable Android and iOS apps, with NNC delivering high performance and user friendly solutions.',
+    'Choose NNC Digital, a mobile app development company in RR Nagar, for scalable, user-friendly Android and iOS apps that drive business growth.',
   alternates: {
     canonical: `${SITE.url}/mobile-app-development-company-in-rr-nagar`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Mobile App Development Company in RR Nagar | Business Apps',
     description:
-      'Choose a mobile app development company in RR Nagar to build scalable Android and iOS apps, with NNC delivering high performance and user friendly solutions.',
+      'Choose NNC Digital, a mobile app development company in RR Nagar, for scalable, user-friendly Android and iOS apps that drive business growth.',
     url: `${SITE.url}/mobile-app-development-company-in-rr-nagar`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Mobile App Development Company in RR Nagar | Business Apps',
     description:
-      'Choose a mobile app development company in RR Nagar to build scalable Android and iOS apps, with NNC delivering high performance and user friendly solutions.',
+      'Choose NNC Digital, a mobile app development company in RR Nagar, for scalable, user-friendly Android and iOS apps that drive business growth.',
     images: [SITE.teamPhoto],
   },
 }

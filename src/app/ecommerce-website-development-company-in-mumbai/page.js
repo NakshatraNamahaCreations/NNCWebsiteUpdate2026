@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Ecommerce Website Development Company in Mumbai | Shopping',
   description:
-    'We are the Best ecommerce website development company in Mumbai to build high converting online stores, with NNC delivering user friendly ecommerce solutions.',
+    'Best ecommerce website development company in Mumbai offering high-converting, user-friendly online stores. NNC Digital builds scalable ecommerce solutions.',
   alternates: {
     canonical: `${SITE.url}/ecommerce-website-development-company-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Ecommerce Website Development Company in Mumbai | Shopping',
     description:
-      'We are the Best ecommerce website development company in Mumbai to build high converting online stores, with NNC delivering user friendly ecommerce solutions.',
+      'Best ecommerce website development company in Mumbai offering high-converting, user-friendly online stores. NNC Digital builds scalable ecommerce solutions.',
     url: `${SITE.url}/ecommerce-website-development-company-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Ecommerce Website Development Company in Mumbai | Shopping',
     description:
-      'We are the Best ecommerce website development company in Mumbai to build high converting online stores, with NNC delivering user friendly ecommerce solutions.',
+      'Best ecommerce website development company in Mumbai offering high-converting, user-friendly online stores. NNC Digital builds scalable ecommerce solutions.',
     images: [SITE.teamPhoto],
   },
 }

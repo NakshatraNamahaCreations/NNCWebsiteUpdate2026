@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Software Development Company in Bangalore | IT Softwares',
   description:
-    'We are the best software development company in Bangalore to build scalable web and mobile solutions, with NNC delivering secure, high performance applications.',
+    'Best software development company in Bangalore offering secure, scalable web and mobile applications. NNC Digital delivers high-performance solutions.',
   alternates: {
     canonical: `${SITE.url}/software-development-company-in-bangalore`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Software Development Company in Bangalore | IT Softwares',
     description:
-      'We are the best software development company in Bangalore to build scalable web and mobile solutions, with NNC delivering secure, high performance applications.',
+      'Best software development company in Bangalore offering secure, scalable web and mobile applications. NNC Digital delivers high-performance solutions.',
     url: `${SITE.url}/software-development-company-in-bangalore`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Software Development Company in Bangalore | IT Softwares',
     description:
-      'We are the best software development company in Bangalore to build scalable web and mobile solutions, with NNC delivering secure, high performance applications.',
+      'Best software development company in Bangalore offering secure, scalable web and mobile applications. NNC Digital delivers high-performance solutions.',
     images: [SITE.teamPhoto],
   },
 }

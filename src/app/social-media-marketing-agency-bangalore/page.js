@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Social Media Marketing Agency in Bangalore | NNC Digital',
   description:
-    'Top social media marketing agency in Bangalore. Instagram marketing, Facebook Ads, Meta Ads, LinkedIn marketing agency, social media management & social media services for Bangalore businesses. Headquartered in Whitefield. Transparent reporting.',
+    'Top social media marketing agency in Bangalore offering Instagram, Facebook Ads, Meta Ads and LinkedIn marketing. Whitefield office. Transparent reporting.',
   alternates: {
     canonical: `${SITE.url}/social-media-marketing-agency-bangalore`,
   },

@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Flutter App Development Company in Bangalore | NNC Digital',
   description:
-    'Top Flutter app development company in Bangalore. Flutter developers, Flutter app development services, Dart app development, cross platform app development, hire Flutter developers & Flutter web development for Bangalore businesses. Fixed price.',
+    'Top Flutter app development company in Bangalore offering Dart, cross-platform Android and iOS apps, and Flutter web development at fixed prices.',
   alternates: {
     canonical: `${SITE.url}/flutter-app-development-company-in-bangalore`,
   },

@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Flutter App Development Company in Mumbai | NNC Digital',
   description:
-    'Top Flutter app development company in Mumbai. Cross-platform iOS & Android apps in Flutter & Dart, Flutter web development, hire Flutter developers — office in Thane West. Fixed price. 100+ apps delivered.',
+    'Top Flutter app development company in Mumbai offering iOS, Android and web apps using Flutter & Dart. 100+ apps delivered. Thane West office. Fixed pricing.',
   alternates: {
     canonical: `${SITE.url}/flutter-app-development-company-in-mumbai`,
   },

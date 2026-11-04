@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Software Development Company in Mumbai | Product Development',
   description:
-    'Choose a software development company in Mumbai to build scalable and secure solutions, with NNC delivering custom software tailored to your business needs.',
+    'Choose a software development company in Mumbai for secure, scalable applications. NNC Digital delivers custom software tailored to your business needs.',
   alternates: {
     canonical: `${SITE.url}/software-development-company-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Software Development Company in Mumbai | Product Development',
     description:
-      'Choose a software development company in Mumbai to build scalable and secure solutions, with NNC delivering custom software tailored to your business needs.',
+      'Choose a software development company in Mumbai for secure, scalable applications. NNC Digital delivers custom software tailored to your business needs.',
     url: `${SITE.url}/software-development-company-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Software Development Company in Mumbai | Product Development',
     description:
-      'Choose a software development company in Mumbai to build scalable and secure solutions, with NNC delivering custom software tailored to your business needs.',
+      'Choose a software development company in Mumbai for secure, scalable applications. NNC Digital delivers custom software tailored to your business needs.',
     images: [SITE.teamPhoto],
   },
 }

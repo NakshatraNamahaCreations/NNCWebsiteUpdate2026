@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Motion Graphics Service in Mumbai | Digital Animation',
   description:
-    'NNC provides motion graphics service in Mumbai to create engaging visuals,delivering creative animation solutions for branding, marketing, and business growth.',
+    'NNC offers motion graphics services in Mumbai, creating engaging animations and visuals for branding, digital marketing and business growth.',
   alternates: {
     canonical: `${SITE.url}/motion-graphics-service-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Motion Graphics Service in Mumbai | Digital Animation',
     description:
-      'NNC provides motion graphics service in Mumbai to create engaging visuals,delivering creative animation solutions for branding, marketing, and business growth.',
+      'NNC offers motion graphics services in Mumbai, creating engaging animations and visuals for branding, digital marketing and business growth.',
     url: `${SITE.url}/motion-graphics-service-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Motion Graphics Service in Mumbai | Digital Animation',
     description:
-      'NNC provides motion graphics service in Mumbai to create engaging visuals,delivering creative animation solutions for branding, marketing, and business growth.',
+      'NNC offers motion graphics services in Mumbai, creating engaging animations and visuals for branding, digital marketing and business growth.',
     images: [SITE.teamPhoto],
   },
 }

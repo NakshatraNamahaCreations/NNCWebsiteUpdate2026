@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Mobile App Developers in Mumbai | Enterprise App Development',
   description:
-    'Choose mobile app developers in Mumbai to build scalable and high performance apps, with NNC delivering modern UI and Best mobile solutions for business growth.',
+    'Choose mobile app developers in Mumbai for scalable, high-performance Android and iOS apps. NNC Digital delivers modern UI and user-friendly solutions.',
   alternates: {
     canonical: `${SITE.url}/mobile-app-developers-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Mobile App Developers in Mumbai | Enterprise App Development',
     description:
-      'Choose mobile app developers in Mumbai to build scalable and high performance apps, with NNC delivering modern UI and Best mobile solutions for business growth.',
+      'Choose mobile app developers in Mumbai for scalable, high-performance Android and iOS apps. NNC Digital delivers modern UI and user-friendly solutions.',
     url: `${SITE.url}/mobile-app-developers-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Mobile App Developers in Mumbai | Enterprise App Development',
     description:
-      'Choose mobile app developers in Mumbai to build scalable and high performance apps, with NNC delivering modern UI and Best mobile solutions for business growth.',
+      'Choose mobile app developers in Mumbai for scalable, high-performance Android and iOS apps. NNC Digital delivers modern UI and user-friendly solutions.',
     images: [SITE.teamPhoto],
   },
 }

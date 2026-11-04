@@ -5,8 +5,8 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'Android App Development Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Leading Android app development company in Mysuru. Custom Android apps on Kotlin, Java & React Native. Play Store deployment included. 150+ apps delivered. 4.9★ Google. Walk-in Mysuru office. Fixed price. Call +91 99005 66466.',
+  title: 'Android App Development Company in Mysuru',
+  description: 'Leading Android app development company in Mysuru offering Kotlin, Java and React Native apps. 150+ apps delivered. Fixed pricing. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/android-app-development-company-in-mysuru` },
   keywords: [
     'android app development company in mysuru',
@@ -21,7 +21,7 @@ export const metadata = {
     'android app maker mysuru',
   ].join(', '),
   openGraph: {
-    title: 'Android App Development Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'Android App Development Company in Mysuru',
     description: 'Custom Android apps on Kotlin & React Native. Play Store deployment. Walk-in Mysuru office. Fixed price. Source code yours.',
     url: `${SITE.url}/android-app-development-company-in-mysuru`,
     type: 'website',

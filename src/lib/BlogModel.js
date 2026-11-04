@@ -8,6 +8,7 @@ const FAQSchema = new mongoose.Schema({
 const BlogSchema = new mongoose.Schema({
   slug:        { type: String, required: true, unique: true, trim: true },
   title:       { type: String, required: true, trim: true },
+  metaTitle:   { type: String, default: '' },
   category:    { type: String, required: true },
   date:        { type: String, required: true },
   readTime:    { type: String, required: true },

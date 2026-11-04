@@ -36,7 +36,7 @@ function markdownToHtml(md) {
 }
 
 function makeEmptyForm() {
-  return { title:'', slug:'', category:'Website Development', date: new Date().toISOString().slice(0,10), readTime:'6 min', description:'', bodyContent:'', faqs:[] }
+  return { title:'', slug:'', metaTitle:'', category:'Website Development', date: new Date().toISOString().slice(0,10), readTime:'6 min', description:'', bodyContent:'', faqs:[] }
 }
 
 export default function AdminBlogPage() {
@@ -241,7 +241,7 @@ export default function AdminBlogPage() {
 
   function startEdit(post) {
     setEditSlug(post.slug)
-    setForm({ title:post.title, slug:post.slug, category:post.category, date:post.date, readTime:post.readTime, description:post.description||'', bodyContent: markdownToHtml(post.body||''), faqs: Array.isArray(post.faqs) ? post.faqs.map(f=>({question:f.question||'',answer:f.answer||''})) : [] })
+    setForm({ title:post.title, slug:post.slug, metaTitle:post.metaTitle||'', category:post.category, date:post.date, readTime:post.readTime, description:post.description||'', bodyContent: markdownToHtml(post.body||''), faqs: Array.isArray(post.faqs) ? post.faqs.map(f=>({question:f.question||'',answer:f.answer||''})) : [] })
     setAutoSlug(false); setResult(null)
     setEditorKey(k => k + 1)
     window.scrollTo({top:0,behavior:'smooth'})
@@ -907,6 +907,13 @@ export default function AdminBlogPage() {
                       {READ_TIMES.map(t=><option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
+                </div>
+
+                {/* SEO Meta Title */}
+                <div className="fm">
+                  <label className="fl">SEO Meta Title<span className="fn">optional · overrides the browser tab & Google title (falls back to Blog Title)</span></label>
+                  <input type="text" value={form.metaTitle} onChange={e=>setForm(f=>({...f,metaTitle:e.target.value}))} placeholder="Custom meta title (50–60 characters recommended)" className="fi" maxLength={80} />
+                  <div className="cc" style={{color:form.metaTitle.length>60?'#F59E0B':'#CBD5E1'}}>{form.metaTitle.length} / 60 characters</div>
                 </div>
 
                 {/* SEO Description */}

@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Best Website Development Company in Bangalore | Web Design',
   description:
-    'Get results driven websites from the best website development company in Bangalore, with NNC delivering fast, scalable solutions tailored to your business goals.',
+    'Choose the best website development company in Bangalore for fast, scalable and responsive websites. NNC Digital delivers solutions for business growth.',
   alternates: {
     canonical: `${SITE.url}/best-website-development-company-in-bangalore`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Best Website Development Company in Bangalore | Web Design',
     description:
-      'Get results driven websites from the best website development company in Bangalore, with NNC delivering fast, scalable solutions tailored to your business goals.',
+      'Choose the best website development company in Bangalore for fast, scalable and responsive websites. NNC Digital delivers solutions for business growth.',
     url: `${SITE.url}/best-website-development-company-in-bangalore`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Best Website Development Company in Bangalore | Web Design',
     description:
-      'Get results driven websites from the best website development company in Bangalore, with NNC delivering fast, scalable solutions tailored to your business goals.',
+      'Choose the best website development company in Bangalore for fast, scalable and responsive websites. NNC Digital delivers solutions for business growth.',
     images: [SITE.teamPhoto],
   },
 }

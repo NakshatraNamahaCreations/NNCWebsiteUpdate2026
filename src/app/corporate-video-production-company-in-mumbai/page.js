@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Corporate Video Production Company in Mumbai | Marketing Video',
   description:
-    'Choose a corporate video production company in Mumbai to create brand videos,with NNC delivering professional video solutions for marketing and business growth.',
+    'Choose a corporate video production company in Mumbai for professional brand videos. NNC Digital creates engaging videos for marketing and business growth.',
   alternates: {
     canonical: `${SITE.url}/corporate-video-production-company-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Corporate Video Production Company in Mumbai | Marketing Video',
     description:
-      'Choose a corporate video production company in Mumbai to create brand videos,with NNC delivering professional video solutions for marketing and business growth.',
+      'Choose a corporate video production company in Mumbai for professional brand videos. NNC Digital creates engaging videos for marketing and business growth.',
     url: `${SITE.url}/corporate-video-production-company-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Corporate Video Production Company in Mumbai | Marketing Video',
     description:
-      'Choose a corporate video production company in Mumbai to create brand videos,with NNC delivering professional video solutions for marketing and business growth.',
+      'Choose a corporate video production company in Mumbai for professional brand videos. NNC Digital creates engaging videos for marketing and business growth.',
     images: [SITE.teamPhoto],
   },
 }

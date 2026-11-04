@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Website Designing Company in Jayanagar | Creative Web Design',
   description:
-    'Choose a website designing company in Jayanagar to create modern and responsive websites, with NNC delivering creative designs that enhance your brand presence.',
+    'Choose a website designing company in Jayanagar for modern, responsive websites. NNC Digital creates engaging designs that strengthen your brand presence.',
   alternates: {
     canonical: `${SITE.url}/website-designing-company-in-jayanagar`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Website Designing Company in Jayanagar | Creative Web Design',
     description:
-      'Choose a website designing company in Jayanagar to create modern and responsive websites, with NNC delivering creative designs that enhance your brand presence.',
+      'Choose a website designing company in Jayanagar for modern, responsive websites. NNC Digital creates engaging designs that strengthen your brand presence.',
     url: `${SITE.url}/website-designing-company-in-jayanagar`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Website Designing Company in Jayanagar | Creative Web Design',
     description:
-      'Choose a website designing company in Jayanagar to create modern and responsive websites, with NNC delivering creative designs that enhance your brand presence.',
+      'Choose a website designing company in Jayanagar for modern, responsive websites. NNC Digital creates engaging designs that strengthen your brand presence.',
     images: [SITE.teamPhoto],
   },
 }

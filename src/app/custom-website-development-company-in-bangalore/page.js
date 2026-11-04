@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title:
-    'Custom Website Development Company in Bangalore | Scalable Web Solutions',
+    'Custom Website Development Company in Bangalore',
 
   description:
     'Looking for a Custom Website Development Company in Bangalore? NNC Digital builds high-performance websites and scalable web solutions for businesses.',
@@ -20,7 +20,7 @@ export const metadata = {
 
   openGraph: {
     title:
-      'Custom Website Development Company in Bangalore | Scalable Web Solutions',
+      'Custom Website Development Company in Bangalore',
 
     description:
       'NNC Digital is a Custom Website Development Company in Bangalore delivering scalable, high-performance websites and web applications using React JS, Next JS and modern technologies.',
@@ -43,7 +43,7 @@ export const metadata = {
     site: '@nncbengaluru',
 
     title:
-      'Custom Website Development Company in Bangalore | Scalable Web Solutions',
+      'Custom Website Development Company in Bangalore',
 
     description:
       'Work with a Custom Website Development Company in Bangalore delivering high-performance websites, React JS and Next JS applications for business growth.',

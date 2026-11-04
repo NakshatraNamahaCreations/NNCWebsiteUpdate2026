@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'B2B Marketing Agency in Mysuru | Nakshatra Namaha Creations',
-  description: 'Top B2B marketing agency in Mysuru. LinkedIn lead generation, account-based marketing (ABM), enterprise pipeline building & B2B digital marketing. Walk-in Mysuru office. Fixed price. Call +91 99005 66466.',
+  description: 'Top B2B marketing agency in Mysuru offering LinkedIn lead generation, ABM and enterprise marketing. Fixed pricing. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/b2b-marketing-agency-in-mysuru` },
   keywords: [
     'b2b marketing agency in mysuru',

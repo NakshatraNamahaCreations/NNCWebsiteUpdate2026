@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Digital Marketing Agency Hyderabad | Conversion Optimization',
   description:
-    'Choose our digital marketing agency Hyderabad to boost online visibility and leads, with NNC delivering SEO, ads, and performance driven marketing strategies.',
+    'Choose NNC Digital, a digital marketing agency in Hyderabad, for SEO, Google Ads and performance-driven strategies that boost visibility and generate leads.',
   alternates: {
     canonical: `${SITE.url}/digital-marketing-agency-hyderabad`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Digital Marketing Agency Hyderabad | Conversion Optimization',
     description:
-      'Choose our digital marketing agency Hyderabad to boost online visibility and leads, with NNC delivering SEO, ads, and performance driven marketing strategies.',
+      'Choose NNC Digital, a digital marketing agency in Hyderabad, for SEO, Google Ads and performance-driven strategies that boost visibility and generate leads.',
     url: `${SITE.url}/digital-marketing-agency-hyderabad`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Digital Marketing Agency Hyderabad | Conversion Optimization',
     description:
-      'Choose our digital marketing agency Hyderabad to boost online visibility and leads, with NNC delivering SEO, ads, and performance driven marketing strategies.',
+      'Choose NNC Digital, a digital marketing agency in Hyderabad, for SEO, Google Ads and performance-driven strategies that boost visibility and generate leads.',
     images: [SITE.teamPhoto],
   },
 }

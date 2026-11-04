@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'Best Website Designer in Mumbai | Digital Website Service',
   description:
-    'Choose our best website designer in Mumbai to create modern and responsive websites,with NNC delivering creative designs that boost user engagement and business',
+    'Choose the best website designer in Mumbai for modern, responsive websites. NNC Digital creates engaging designs that support business growth.',
   alternates: {
     canonical: `${SITE.url}/best-website-designer-in-mumbai`,
   },
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Best Website Designer in Mumbai | Digital Website Service',
     description:
-      'Choose our best website designer in Mumbai to create modern and responsive websites,with NNC delivering creative designs that boost user engagement and business',
+      'Choose the best website designer in Mumbai for modern, responsive websites. NNC Digital creates engaging designs that support business growth.',
     url: `${SITE.url}/best-website-designer-in-mumbai`,
     type: 'website',
     images: [
@@ -33,7 +33,7 @@ export const metadata = {
     site: '@nncbengaluru',
     title: 'Best Website Designer in Mumbai | Digital Website Service',
     description:
-      'Choose our best website designer in Mumbai to create modern and responsive websites,with NNC delivering creative designs that boost user engagement and business',
+      'Choose the best website designer in Mumbai for modern, responsive websites. NNC Digital creates engaging designs that support business growth.',
     images: [SITE.teamPhoto],
   },
 }

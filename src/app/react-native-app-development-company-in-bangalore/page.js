@@ -7,7 +7,7 @@ import { SITE } from '@/data/siteData'
 export const metadata = {
   title: 'React Native App Development Company in Bangalore | NNC Digital',
   description:
-    'Top React Native app development company in Bangalore. React Native developers, hire React Native developers, React Native services, JavaScript mobile app development & React Native agency for Bangalore businesses. Fixed price.',
+    'Top React Native app development company in Bangalore offering cross-platform Android & iOS apps. Hire expert React Native developers at fixed prices.',
   alternates: {
     canonical: `${SITE.url}/react-native-app-development-company-in-bangalore`,
   },
@@ -179,7 +179,7 @@ const data = {
   h1: 'React Native App Development Company',
   h1Accent: 'in Bangalore',
   tagline:
-    'Top React Native app development company in Bangalore — React Native developers, hire React Native developers, React Native services, JavaScript mobile app development & React Native agency. One codebase, both platforms. Fixed price.',
+    'Top React Native app development company in Bangalore offering cross-platform Android & iOS apps. Hire expert React Native developers at fixed prices.',
   desc:
     'NNC Digital is a specialist React Native app development company in Bangalore building cross platform Android and iOS applications using React Native and JavaScript for startups, SMEs and enterprise clients. From consumer React Native apps and on-demand platforms to enterprise mobile solutions — every React Native project is built by our in-house Bangalore JavaScript developers with full source code ownership, zero outsourcing and fixed-price delivery.',
   stat1: '565+',

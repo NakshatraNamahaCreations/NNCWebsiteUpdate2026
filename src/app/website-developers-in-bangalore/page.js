@@ -6,12 +6,12 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'Website Developers in Bangalore | Nakshatra Namaha Creations',
-  description: 'Leading website development, app, CRM and digital marketing agency in Rajarajeshwari Nagar, Bangalore. Fixed price, 35+ in-house team, PageSpeed 90+ guaranteed.',
+  description: 'Website development, app, CRM and digital marketing agency in Rajarajeshwari Nagar, Bangalore. 35+ in-house experts, fixed pricing and PageSpeed 90+.',
   alternates: { canonical: `${SITE.url}/website-developers-in-bangalore` },
   keywords: 'website developers in bangalore, website developer bangalore, web developers bangalore, hire website developers bangalore, best website developers bangalore, website development company bangalore, web developer bangalore, full stack developers bangalore, professional website developers bangalore',
   openGraph: {
     title: 'Website Developers in Bangalore | Nakshatra Namaha Creations',
-    description: 'Leading website development, app, CRM and digital marketing agency in Rajarajeshwari Nagar, Bangalore. Fixed price, 35+ in-house team, PageSpeed 90+ guaranteed.',
+    description: 'Website development, app, CRM and digital marketing agency in Rajarajeshwari Nagar, Bangalore. 35+ in-house experts, fixed pricing and PageSpeed 90+.',
     url: `${SITE.url}/website-developers-in-bangalore`,
     type: 'website',
     images: [{ url: SITE.teamPhoto, width: 1200, height: 630, alt: 'Website Developers in Bangalore – NNC Digital' }],
@@ -20,7 +20,7 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@nncbengaluru',
     title: 'Website Developers in Bangalore | Nakshatra Namaha Creations',
-    description: 'Leading website development, app, CRM and digital marketing agency in Rajarajeshwari Nagar, Bangalore. Fixed price, 35+ in-house team, PageSpeed 90+ guaranteed.',
+    description: 'Website development, app, CRM and digital marketing agency in Rajarajeshwari Nagar, Bangalore. 35+ in-house experts, fixed pricing and PageSpeed 90+.',
     images: [SITE.teamPhoto],
   },
 }

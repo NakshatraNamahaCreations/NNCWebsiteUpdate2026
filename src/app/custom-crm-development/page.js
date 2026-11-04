@@ -6,7 +6,7 @@ import { SITE } from '@/data/siteData'
 
 export const metadata = {
   title: 'Custom CRM Development Company in Bangalore | NNC Digital',
-  description: 'Custom CRM development in Bangalore. Proprietary CRM systems, SaaS platforms, admin dashboards and workflow automation built on React JS and Node JS. Fixed price, in-house team. Request a quote.',
+  description: 'Custom CRM development in Bangalore offering SaaS platforms, admin dashboards and workflow automation using React JS and Node JS. Fixed pricing. Get a quote.',
   alternates: { canonical: `${SITE.url}/custom-crm-development` },
   keywords: 'custom crm development company bangalore, crm software development india, saas platform development, admin dashboard development, crm solutions bangalore',
   openGraph: {
@@ -24,7 +24,7 @@ const schema = {
   name: 'Custom CRM Development',
   provider: { '@type': 'Organization', name: SITE.name, url: SITE.url, telephone: SITE.phone },
   areaServed: 'India',
-  description: 'Custom CRM systems, SaaS platforms and admin dashboards built in-house on React JS and Node JS. Replacing manual workflows with purpose-built software. Fixed price.',
+  description: 'Custom CRM development in Bangalore offering SaaS platforms, admin dashboards and workflow automation using React JS and Node JS. Fixed pricing. Get a quote.',
   url: `${SITE.url}/custom-crm-development`,
 }
 

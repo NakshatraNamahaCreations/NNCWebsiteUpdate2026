@@ -5,18 +5,18 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: '2D Animation Service in Mumbai | Creative Animation Studio',
+  title: '2D Animation Company in Mumbai | NNC Digital',
   description:
-    'Choose a 2D animation service in Mumbai to create engaging videos, with NNC delivering creative animation solutions for branding, marketing and business growth.',
+    'NNC Digital, a 2D animation company in Mumbai, creates explainer videos, character animations and reels. 565+ projects, 4.9★ Google rating.',
   alternates: {
     canonical: `${SITE.url}/2d-animation-service-in-mumbai`,
   },
   keywords:
     '2d animation service in mumbai, 2d animation services mumbai, animation service mumbai, animated video service mumbai, explainer video service mumbai, motion graphics service mumbai, whiteboard animation service mumbai, character animation service mumbai, animation company mumbai',
   openGraph: {
-    title: '2D Animation Service in Mumbai | Creative Animation Studio',
+    title: '2D Animation Company in Mumbai | NNC Digital',
     description:
-      'Choose a 2D animation service in Mumbai to create engaging videos, with NNC delivering creative animation solutions for branding, marketing and business growth.',
+      'NNC Digital, a 2D animation company in Mumbai, creates explainer videos, character animations and reels. 565+ projects, 4.9★ Google rating.',
     url: `${SITE.url}/2d-animation-service-in-mumbai`,
     type: 'website',
     images: [
@@ -31,9 +31,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@nncbengaluru',
-    title: '2D Animation Service in Mumbai | Creative Animation Studio',
+    title: '2D Animation Company in Mumbai | NNC Digital',
     description:
-      'Choose a 2D animation service in Mumbai to create engaging videos, with NNC delivering creative animation solutions for branding, marketing and business growth.',
+      'NNC Digital, a 2D animation company in Mumbai, creates explainer videos, character animations and reels. 565+ projects, 4.9★ Google rating.',
     images: [SITE.teamPhoto],
   },
 }

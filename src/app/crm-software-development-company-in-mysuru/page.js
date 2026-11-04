@@ -5,8 +5,8 @@ import ServicePageContent from '@/components/ServicePageContent'
 import { SITE } from '@/data/siteData'
 
 export const metadata = {
-  title: 'CRM Software Development Company in Mysuru | Nakshatra Namaha Creations',
-  description: 'Leading CRM software development company in Mysuru. Custom CRM systems, SaaS platforms, lead management and sales automation. Zoho & Salesforce alternative. Walk-in Mysuru office. Fixed price. Source code yours. Call +91 99005 66466.',
+  title: 'CRM Software Development Company in Mysuru',
+  description: 'Leading CRM software development company in Mysuru offering custom CRM, SaaS, lead management and sales automation. Fixed pricing. Call +91 99005 66466.',
   alternates: { canonical: `${SITE.url}/crm-software-development-company-in-mysuru` },
   keywords: [
     'crm software development company in mysuru',
@@ -23,7 +23,7 @@ export const metadata = {
     'salesforce alternative mysuru',
   ].join(', '),
   openGraph: {
-    title: 'CRM Software Development Company in Mysuru | Nakshatra Namaha Creations',
+    title: 'CRM Software Development Company in Mysuru',
     description: 'Custom CRM systems for Mysuru businesses. Lead management, sales automation, Zoho & Salesforce alternative. Walk-in office. Fixed price.',
     url: `${SITE.url}/crm-software-development-company-in-mysuru`,
     type: 'website',

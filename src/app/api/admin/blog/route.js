@@ -15,7 +15,7 @@ function auth(secret) {
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { secret, slug, title, category, date, readTime, description, bodyContent, faqs } = body
+    const { secret, slug, title, metaTitle, category, date, readTime, description, bodyContent, faqs } = body
 
     if (!auth(secret)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
@@ -40,7 +40,7 @@ export async function POST(request) {
           .filter(f => f.question || f.answer)
       : []
 
-    await Blog.create({ slug, title, category, date, readTime, description: description || '', body: bodyContent || '', faqs: cleanFaqs })
+    await Blog.create({ slug, title, metaTitle: metaTitle || '', category, date, readTime, description: description || '', body: bodyContent || '', faqs: cleanFaqs })
     clearPostsCache()
 
     return NextResponse.json({ success: true, message: `Blog post "${title}" added successfully`, slug, url: `/blog/${slug}` })
@@ -62,7 +62,8 @@ export async function GET(request) {
     const posts = await Blog.find({}).sort({ date: -1 }).lean()
 
     const mapped = posts.map(p => ({
-      slug: p.slug, title: p.title, category: p.category,
+      slug: p.slug, title: p.title, metaTitle: p.metaTitle || '',
+      category: p.category,
       date: p.date, readTime: p.readTime,
       description: p.description || '', body: p.body || '',
       faqs: Array.isArray(p.faqs) ? p.faqs.map(f => ({ question: f.question || '', answer: f.answer || '' })) : [],
@@ -79,7 +80,7 @@ export async function GET(request) {
 export async function PUT(request) {
   try {
     const body = await request.json()
-    const { secret, originalSlug, slug, title, category, date, readTime, description, bodyContent, faqs } = body
+    const { secret, originalSlug, slug, title, metaTitle, category, date, readTime, description, bodyContent, faqs } = body
 
     if (!auth(secret)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     if (!originalSlug || !title) return NextResponse.json({ error: 'originalSlug and title are required' }, { status: 400 })
@@ -97,6 +98,7 @@ export async function PUT(request) {
 
     post.slug        = slug || originalSlug
     post.title       = title
+    post.metaTitle   = metaTitle || ''
     post.category    = category
     post.date        = date
     post.readTime    = readTime
