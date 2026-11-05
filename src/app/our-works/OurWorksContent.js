@@ -8,7 +8,7 @@ const WORKS = [
   { name: 'V-Do Creatives', type: 'Cinematic Video & Production Studio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '3× more client enquiries', resultColor: '#059669', logo: '/assets/vdo-logo.png', url: 'https://www.v-do.in/' },
   { name: 'VRS Water Purifiers', type: 'E-commerce Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '100+ online orders/mo', resultColor: '#059669', logo: '/assets/vrs-logo.png', url: 'https://vrswaterpurifiersalesandservices.com/' },
   { name: '3M Carcare Studio', type: 'Car Care Services Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '60% rise in booking enquiries', resultColor: '#059669', logo: '/assets/3m-logo.webp', url: 'https://3mcarcarestudiosarjapur.com/' },
-  { name: 'Saltech', type: '', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '2× qualified B2B leads', resultColor: '#059669', logo: '/assets/saltech-logo.png', url: 'https://saltech.ltd/' },
+  { name: 'Saltech', type: 'Engineering & Control Systems Website', category: 'Website Development', industry: 'Industrial', tech: ['Next JS', 'CMS', 'SEO'], result: '2× qualified B2B leads', resultColor: '#059669', logo: '/assets/saltech-logo.png', url: 'https://saltech.ltd/' },
   { name: "Werner Electrics", type: 'Industrial Control Components Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/werner-logo.png', url: 'https://www.wernerelektrik.com/' },
   { name: 'Thridhavarnam', type: 'E-commerce Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '200+ sales', resultColor: '#059669', logo: '/assets/thridhavarnam-logo.png', url: 'https://www.thridhavarnam.com/' },
   { name: 'Cycraft', type: 'Cybersecurity Education Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '3× more lead enquiries', resultColor: '@2563EB', logo: '/assets/cycraft-logo.webp', url: 'https://cycraft.in/' },
@@ -21,47 +21,47 @@ const WORKS = [
   { name: 'Griffin Solutions', type: 'Corporate Gifting Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/griffin-logo.png', url: 'https://griffinsolutions.in/' },
   { name: 'Tinysmiles', type: 'Photography Portfolio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#059669', logo: '/assets/tinysmiles-logo.webp', url: 'https://tinysmilesphotography.in/' },
   { name: 'Armedex', type: 'Drug Safety Services Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 3 Google ranking', resultColor: '#2563EB', logo: '/assets/armedex-logo.png', url: 'https://armedexglobal.com/' },
-  { name: 'Puran Interiors', type: 'Corporate Website & SEO', category: 'Website Development', tech: ['Next JS', 'SEO', 'CMS'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/puraninteriors.png', url: 'https://www.puraninteriors.com/' },
+  { name: 'Puran Interiors', type: 'Corporate Website & SEO', category: 'Website Development', industry: 'Interior Design', tech: ['Next JS', 'SEO', 'CMS'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/puraninteriors.png', url: 'https://www.puraninteriors.com/' },
   { name: 'Brainwave Consultancy', type: 'Education Consultancy Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Top 5 Google ranking', resultColor: '#4F46E5', logo: '/assets/bc-logo.webp', url: 'https://www.brainwaveconsultancy.in/' },
-  { name: 'Novus', type: 'Corporate Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: '95 PageSpeed Score', resultColor: '#2563EB', bg: 'linear-gradient(135deg,#1E40AF,#2563EB)', url: 'https://novushealth.in/' },
-  { name: 'Avyakth', type: 'E-commerce Platform', category: 'Website Development', tech: ['React JS', 'Node JS', 'Razorpay'], result: '3× faster checkout', resultColor: '#7C3AED', bg: 'linear-gradient(135deg,#6D28D9,#8B5CF6)', url: '' },
+  { name: 'Novus', type: 'Corporate Website', category: 'Website Development', industry: 'Healthcare', tech: ['Next JS', 'CMS', 'Animations'], result: '95 PageSpeed Score', resultColor: '#2563EB', bg: 'linear-gradient(135deg,#1E40AF,#2563EB)', url: 'https://novushealth.in/' },
   { name: 'Make My Documents', type: 'Service Portal', category: 'Website Development', tech: ['Next JS', 'Node JS', 'MySQL'], result: '200+ daily enquiries', resultColor: '#059669', logo: '/assets/md.png', url: 'https://www.makemydocuments.com/' },
-  { name: 'CND Play', type: 'Entertainment Portal', category: 'Website Development', tech: ['React JS', 'CMS', 'AWS S3'], result: '500+ uploads/month', resultColor: '#DC2626', bg: 'linear-gradient(135deg,#991B1B,#DC2626)', url: '' },
-  { name: 'Rent Angadi', type: 'Rental Listing Website', category: 'Website Development', tech: ['Next JS', 'Maps API', 'Node JS'], result: '1,200+ active listings', resultColor: '#D97706', logo: '/assets/rent-logo.jpg', url: 'https://rentangadi.in/' },
-  { name: 'Avyakth Roofing Solutions', type: 'Corporate Website', category: 'Website Development', tech: ['React JS', 'CMS', 'SEO'], result: '3× more lead enquiries', resultColor: '#2563EB', logo: '/assets/avyakth-logo.webp', url: 'https://avyakthroofing.com/' },
-  { name: 'Ganesh Interiors', type: 'Portfolio & Lead Gen', category: 'Website Development', tech: ['Next JS', 'CMS', 'Google Ads'], result: 'Top 3 local search rank', resultColor: '#059669', logo: '/assets/gd.webp', url: 'https://www.ganeshinteriordesigns.com/' },
+  { name: 'CND Play', type: 'Entertainment Portal', category: 'Mobile Apps', tech: ['React JS', 'CMS', 'AWS S3'], result: '500+ uploads/month', resultColor: '#DC2626', bg: 'linear-gradient(135deg,#991B1B,#DC2626)', url: '' },
+  { name: 'Rent Angadi', type: 'Rental Listing Website', category: 'Website Development', industry: 'E-commerce', tech: ['Next JS', 'Maps API', 'Node JS'], result: '1,200+ active listings', resultColor: '#D97706', logo: '/assets/rent-logo.jpg', url: 'https://rentangadi.in/' },
+  { name: 'Avyakth Roofing Solutions', type: 'Corporate Website', category: 'Website Development', industry: 'Services', tech: ['React JS', 'CMS', 'SEO'], result: '3× more lead enquiries', resultColor: '#2563EB', logo: '/assets/avyakth-logo.webp', url: 'https://avyakthroofing.com/' },
+  { name: 'Ganesh Interiors', type: 'Portfolio & Lead Gen', category: 'Website Development', industry: 'Interior Design', tech: ['Next JS', 'CMS', 'Google Ads'], result: 'Top 3 local search rank', resultColor: '#059669', logo: '/assets/gd.webp', url: 'https://www.ganeshinteriordesigns.com/' },
   { name: 'Perar Infotech', type: 'IT Services Website', category: 'Website Development', tech: ['Next JS', 'SEO', 'Node JS'], result: '40% growth in organic traffic', resultColor: '#7C3AED', logo: '/assets/pi-logo.png', url: 'https://perarinfotech.com/' },
   { name: 'Anuflow Controls', type: 'Industrial Corporate Site', category: 'Website Development', tech: ['React JS', 'CMS', 'SEO'], result: 'Page 1 for 12 keywords', resultColor: '#D97706', logo: '/assets/afc-logo.jpeg', url: 'https://www.anuflowcontrols.com/' },
   { name: 'Learn Telugu Now', type: 'EdTech Learning Platform', category: 'Website Development', tech: ['Next JS', 'Node JS', 'MySQL'], result: '2,000+ enrolled learners', resultColor: '#F97316', logo: '/assets/lt-logo.png', url: 'https://www.learntelugunow.com/' },
   { name: 'Kulkarni Housing', type: 'Real Estate Website', category: 'Website Development', tech: ['Next JS', 'Maps API', 'CMS'], result: '500+ property enquiries/mo', resultColor: '#0284C7', logo: '/assets/kh-logo.webp', url: 'https://www.kulkarnihousing.com/' },
   { name: 'Destination Wedding', type: 'Wedding Portfolio Site', category: 'Website Development', tech: ['Next JS', 'CMS', 'Gallery'], result: '120+ booking enquiries', resultColor: '#DB2777', logo: '/assets/dh-logo.jpeg', url: 'https://destinationweddingcompany.in/' },
-  { name: 'CarePro', type: 'Healthcare Service Website', category: 'Website Development', tech: ['React JS', 'Node JS', 'SEO'], result: '80+ daily appointment requests', resultColor: '#059669', logo: '/assets/cr-logo.jpeg', url: '' },
+  { name: 'CarePro', type: 'Healthcare Service Website', category: 'Website Development', tech: ['React JS', 'Node JS', 'SEO'], result: '80+ daily appointment requests', resultColor: '#059669', logo: '/assets/cr-logo.jpeg', url: 'https://careproaihealth.com/' },
   { name: 'Kangrow Health', type: 'Health & Wellness Platform', category: 'Website Development', tech: ['Next JS', 'Node JS', 'CMS'], result: '4.9★ customer satisfaction', resultColor: '#16A34A', logo: '/assets/kg-logo.png', url: 'https://svkangrowhealth.com/' },
-  { name: 'Rent Your PC', type: 'Tech Rental Platform', category: 'Website Development', tech: ['React JS', 'Node JS', 'Razorpay'], result: '300+ rentals processed/mo', resultColor: '#6366F1', logo: '/assets/rent-logo.webp', url: 'https://www.rentyourpc.com/' },
+  { name: 'Rent Your PC', type: 'Tech Rental Platform', category: 'Website Development', industry: 'Services', tech: ['React JS', 'Node JS', 'Razorpay'], result: '300+ rentals processed/mo', resultColor: '#6366F1', logo: '/assets/rent-logo.webp', url: 'https://www.rentyourpc.com/' },
   { name: 'Chiru Holidays', type: 'Tour & Travel Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Google Maps'], result: '250+ tour bookings/month', resultColor: '#D97706', logo: '/assets/chiru-logo.webp', url: 'https://www.chiruholidays.com/' },
   { name: 'Studio99', type: 'Creative Studio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: 'Premium brand presence', resultColor: '#7C3AED', logo: '/assets/st99.webp', url: 'https://studio99rrnagar.com/' },
 
   // ── Mobile Apps ──
-  { name: 'Dhoond', type: 'Energy Ecosystem App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Maps API'], result: '500+ daily searches', resultColor: '#2563EB', logo: '/assets/dhoond-logo.jpeg' },
-  { name: "3040 Property", type: 'Real Estate Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'AWS'], result: '1,000+ property listings', resultColor: '#D97706', logo: '/assets/30-40logo.jpeg' },
-  { name: "Salil Javeri", type: 'Library App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Firebase'], result: '100+ books available', resultColor: '#7C3AED', logo: '' },
+  { name: 'Dhoond', type: 'Energy Ecosystem App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Maps API'], result: '500+ daily searches', resultColor: '#2563EB', logo: '/assets/dhoond-logo.jpeg', url: 'https://play.google.com/store/apps/details?id=com.ameccodex.dhoond.co' },
+  { name: "3040 Property", type: 'Real Estate Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'AWS'], result: '1,000+ property listings', resultColor: '#D97706', logo: '/assets/30-40logo.jpeg', url: 'https://play.google.com/store/apps/details?id=com.ororegencompanies.thirtyforty' },
+  { name: "Salil Javeri", type: 'Library App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Firebase'], result: '100+ books available', resultColor: '#7C3AED', logo: '', url: 'https://play.google.com/store/apps/details?id=com.saliljaveri' },
   { name: 'Homjee', type: 'Home Services App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Firebase'], result: '5,000+ service bookings', resultColor: '#2563EB', logo: '/assets/logo.png' },
-  { name: 'Rent Angadi', type: 'Rental Marketplace App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'Maps API'], result: '1,200+ active listings', resultColor: '#D97706', logo: '/assets/rent-logo.jpg' },
-  { name: 'Novus', type: 'Business Management App', category: 'Mobile Apps', tech: ['Flutter', 'Firebase', 'REST API'], result: '95 performance score', resultColor: '#6366F1', logo: '/assets/novus-logo.webp' },
-  { name: 'Coffee Mart', type: 'Food & Beverage Ordering App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'Razorpay'], result: '800+ daily orders processed', resultColor: '#92400E', logo: '/assets/cf-logo.jpeg' },
-  { name: 'Kangrow Health', type: 'Health & Wellness App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'MySQL'], result: '4.8★ on Play Store', resultColor: '#16A34A', logo: '/assets/kg-logo.png' },
-  { name: 'Vijay Home Services', type: 'On-demand Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'AWS'], result: '340% booking growth', resultColor: '#059669', logo: '/assets/vhs-logo.png' },
+  { name: 'Rent Angadi', type: 'Rental Marketplace App', category: 'Mobile Apps', industry: 'E-commerce', tech: ['React Native', 'Node JS', 'Maps API'], result: '1,200+ active listings', resultColor: '#D97706', logo: '/assets/rent-logo.jpg' },
+  { name: 'Novus', type: 'Business Management App', category: 'Mobile Apps', industry: 'Healthcare', tech: ['Flutter', 'Firebase', 'REST API'], result: '95 performance score', resultColor: '#6366F1', logo: '/assets/novus-logo.webp', url: 'https://play.google.com/store/apps/details?id=com.novus.novus_health_lab' },
+  { name: 'Coffee Mart', type: 'Food & Beverage Ordering App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'Razorpay'], result: '800+ daily orders processed', resultColor: '#92400E', logo: '/assets/cf-logo.jpeg', url: 'https://play.google.com/store/apps/details?id=com.indiancoffeetrader' },
+  { name: 'Kangrow Health', type: 'Health & Wellness App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'MySQL'], result: '4.8★ on Play Store', resultColor: '#16A34A', logo: '/assets/kg-logo.png', url: 'https://play.google.com/store/apps/details?id=com.kangrow' },
+  { name: 'Vijay Home Services', type: 'On-demand Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'AWS'], result: '340% booking growth', resultColor: '#059669', logo: '/assets/vhs-logo.png', url: 'https://play.google.com/store/apps/details?id=com.vhs1' },
   { name: 'Think It', type: 'Productivity & Ideas App', category: 'Mobile Apps', tech: ['Flutter', 'Firebase', 'Hive DB'], result: '10,000+ active users', resultColor: '#7C3AED', logo: '/assets/th-logo.png' },
   { name: 'Make My Documents', type: 'Document Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'MySQL'], result: '200+ daily document requests', resultColor: '#DC2626', logo: '/assets/md.png' },
   
 
   // ── CRM & Web Apps ──
+  { name: 'Smira Club', type: 'Membership based Travel Booking CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'MySQL'], result: '3× repeat bookings', resultColor: '#059669', logo: '/assets/smira-logo.svg' },
   { name: 'Vijay Home Services', type: 'Service Booking CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'MySQL'], result: '340% booking growth', resultColor: '#059669', logo: '/assets/vhs-logo.png' },
   { name: 'Think It', type: 'Project Management CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'Firebase'], result: '10,000+ active users', resultColor: '#7C3AED', logo: '/assets/th-logo.png' },
   { name: 'Make My Documents', type: 'Document Management CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'MySQL'], result: '200+ daily requests handled', resultColor: '#2563EB', logo: '/assets/md.png' },
   { name: 'Ramsnest', type: 'Operations Dashboard', category: 'CRM & Web Apps', tech: ['React JS', 'Express', 'MySQL'], result: '80% less manual work', resultColor: '#D97706', bg: 'linear-gradient(135deg,#78350F,#D97706)' },
   { name: 'Classy Capture', type: 'Photography Studio CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'AWS S3'], result: '3× faster booking flow', resultColor: '#DB2777', bg: 'linear-gradient(135deg,#9D174D,#EC4899)' },
-  { name: 'Rent Angadi', type: 'Rental Management CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'Maps API'], result: '1,200+ listings managed', resultColor: '#F97316', logo: '/assets/rent-logo.jpg' },
+  { name: 'Rent Angadi', type: 'Rental Management CRM', category: 'CRM & Web Apps', industry: 'E-commerce', tech: ['React JS', 'Node JS', 'Maps API'], result: '1,200+ listings managed', resultColor: '#F97316', logo: '/assets/rent-logo.jpg' },
   { name: 'Kangrow Health', type: 'Healthcare CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'MySQL'], result: '4.9★ patient satisfaction', resultColor: '#16A34A', logo: '/assets/kg-logo.png' },
   { name: 'Coffee Mart', type: 'F&B Order Management CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'Razorpay'], result: '800+ daily orders tracked', resultColor: '#92400E', logo: '/assets/cf-logo.jpeg' },
   { name: 'Ecomgyan', type: 'E-learning Admin CRM', category: 'CRM & Web Apps', tech: ['React JS', 'Node JS', 'MySQL'], result: '5,000+ learners managed', resultColor: '#0284C7', logo: '/assets/eg.webp' },
@@ -118,6 +118,46 @@ const CAT_META = {
   'Digital Marketing':   { color: '#0284C7', light: '#E0F2FE', icon: 'M22 12h-4l-3 9L9 3l-3 9H2' },
   'Videos':              { color: '#DC2626', light: '#FEE2E2', icon: 'M15 10l4.553-2.069A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M3 8h12v8H3z' },
   'Behind The Scenes':   { color: '#B45309', light: '#FEF3C7', icon: 'M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2zM12 17a4 4 0 100-8 4 4 0 000 8z' },
+}
+
+// ─── Industry Taxonomy (secondary filter) ─────────────────────────────────────
+const INDUSTRY_META = {
+  'E-commerce':       { color: '#DC2626', light: '#FEE2E2' },
+  'Healthcare':       { color: '#DB2777', light: '#FCE7F3' },
+  'Education':        { color: '#F59E0B', light: '#FEF3C7' },
+  'Real Estate':      { color: '#0284C7', light: '#E0F2FE' },
+  'Interior Design':  { color: '#7C3AED', light: '#EDE9FE' },
+  'Corporate & B2B':  { color: '#2563EB', light: '#DBEAFE' },
+  'Travel':           { color: '#0891B2', light: '#CFFAFE' },
+  'Industrial':       { color: '#475569', light: '#E2E8F0' },
+  'Services':         { color: '#059669', light: '#D1FAE5' },
+  'Creative & Media': { color: '#C026D3', light: '#FAE8FF' },
+  'Food & Beverage':  { color: '#92400E', light: '#FEF3C7' },
+  'Finance':          { color: '#16A34A', light: '#D1FAE5' },
+  'Events':           { color: '#EA580C', light: '#FED7AA' },
+  'IT & Technology':  { color: '#6366F1', light: '#E0E7FF' },
+}
+
+// Derives an industry bucket from a project's `type`.
+// Project rows may set `industry` explicitly to override — used where the type is ambiguous
+// (e.g. Novus's type is "Corporate Website" but the client is actually Healthcare).
+function deriveIndustry(w) {
+  if (w.industry) return w.industry
+  const t = (w.type || '').toLowerCase()
+  if (/\be-?commerce\b/.test(t)) return 'E-commerce'
+  if (/health|clinic|dermatology|drug|wellness|medical|hospital/.test(t)) return 'Healthcare'
+  if (/education|consultancy|consulting|edtech|e-learning|elearning|learning|library|cybersecurity|school|college/.test(t)) return 'Education'
+  if (/real estate|property|housing|rental/.test(t)) return 'Real Estate'
+  if (/interior|decor/.test(t)) return 'Interior Design'
+  if (/travel|tour|holidays|hospitality/.test(t)) return 'Travel'
+  if (/industrial|manufacturing|control components/.test(t)) return 'Industrial'
+  if (/food|beverage|f&b|restaurant/.test(t)) return 'Food & Beverage'
+  if (/wedding|event/.test(t)) return 'Events'
+  if (/finance|investment|banking/.test(t)) return 'Finance'
+  if (/it services|project management|productivity|saas/.test(t)) return 'IT & Technology'
+  if (/photography|cinematic|video|film|animation|animated|motion|graphics|reel|showcase|documentary|creative|entertainment|studio|2d|3d/.test(t)) return 'Creative & Media'
+  if (/b2b|gifting|global sourcing/.test(t)) return 'Corporate & B2B'
+  return 'Services'
 }
 
 // ─── Video Card ───────────────────────────────────────────────────────────────
@@ -601,18 +641,74 @@ function WorkCard({ w }) {
 // ─── Main Component ───────────────────────────────────────────────────────────
 export default function OurWorksContent() {
   const [active, setActive] = useState('All')
+  const [activeIndustry, setActiveIndustry] = useState('All')
   const [playingVideo, setPlayingVideo] = useState(null)
+  const [industryScroll, setIndustryScroll] = useState({ left: 0, max: 0 })
   const scrollRef = useRef(null)
+  const industryScrollRef = useRef(null)
 
-  const filtered = useMemo(
+  // Reset industry filter whenever the top-level category changes.
+  useEffect(() => { setActiveIndustry('All') }, [active])
+
+  // Projects in the currently selected category (before industry filter).
+  const inCategory = useMemo(
     () => active === 'All' ? WORKS : WORKS.filter(w => w.category === active),
     [active]
   )
+
+  // Industries present in the current category (or across every project when 'All' is selected),
+  // ordered by frequency so the biggest buckets surface first.
+  const industriesForCategory = useMemo(() => {
+    const counts = {}
+    for (const w of inCategory) {
+      const ind = deriveIndustry(w)
+      counts[ind] = (counts[ind] || 0) + 1
+    }
+    return Object.entries(counts).sort((a, b) => b[1] - a[1])
+  }, [inCategory])
+
+  // Track scroll position + overflow of the industry row so the arrow buttons
+  // can appear only when there's actually content to scroll into.
+  // Declared after industriesForCategory because the effect reruns when its length changes.
+  useEffect(() => {
+    const el = industryScrollRef.current
+    if (!el) return
+    const update = () => setIndustryScroll({ left: el.scrollLeft, max: el.scrollWidth - el.clientWidth })
+    update()
+    el.addEventListener('scroll', update, { passive: true })
+    const ro = new ResizeObserver(update)
+    ro.observe(el)
+    // Convert vertical mouse-wheel into horizontal scroll on this row (desktop convenience).
+    const onWheel = (e) => {
+      if (e.deltaY === 0) return
+      if (el.scrollWidth <= el.clientWidth) return
+      e.preventDefault()
+      el.scrollBy({ left: e.deltaY, behavior: 'auto' })
+    }
+    el.addEventListener('wheel', onWheel, { passive: false })
+    return () => {
+      el.removeEventListener('scroll', update)
+      el.removeEventListener('wheel', onWheel)
+      ro.disconnect()
+    }
+  }, [industriesForCategory.length])
+
+  const scrollIndustryBy = (delta) => {
+    const el = industryScrollRef.current
+    if (!el) return
+    el.scrollBy({ left: delta, behavior: 'smooth' })
+  }
+
+  const filtered = useMemo(() => {
+    if (activeIndustry === 'All') return inCategory
+    return inCategory.filter(w => deriveIndustry(w) === activeIndustry)
+  }, [inCategory, activeIndustry])
 
   const countFor = cat =>
     cat === 'All' ? WORKS.length : WORKS.filter(w => w.category === cat).length
 
   const activeMeta = CAT_META[active] || CAT_META['All']
+  const industryMeta = INDUSTRY_META[activeIndustry] || { color: activeMeta.color, light: activeMeta.light }
 
   return (
     <>
@@ -721,6 +817,154 @@ export default function OurWorksContent() {
               })}
             </div>
           </div>
+
+          {/* ── Industry (sub-filter) row ── */}
+          {industriesForCategory.length > 1 && (() => {
+            const canLeft  = industryScroll.left > 4
+            const canRight = industryScroll.left < industryScroll.max - 4
+            // Edge-fade mask: left side fades when there's content behind it, right side when there's content ahead.
+            const leftFade  = canLeft  ? 'black 32px' : 'black 0'
+            const rightFade = canRight ? 'black calc(100% - 32px)' : 'black 100%'
+            const mask = `linear-gradient(to right, transparent 0, ${leftFade}, ${rightFade}, transparent 100%)`
+            return (
+          <div style={{ position: 'relative', marginTop: 8, paddingTop: 8, borderTop: '1px dashed #E2E8F0' }}>
+            <div
+              ref={industryScrollRef}
+              className="ow-tab-scroll"
+              style={{
+                overflowX: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                width: '100%',
+                maxWidth: '100%',
+                WebkitMaskImage: mask,
+                maskImage: mask,
+              }}
+            >
+              <div style={{ display: 'flex', gap: 6, minWidth: 'max-content', padding: '2px 24px 2px 0', alignItems: 'center' }}>
+                <span style={{
+                  fontSize: 11, fontWeight: 700,
+                  color: '#94A3B8',
+                  letterSpacing: '.08em',
+                  textTransform: 'uppercase',
+                  marginRight: 4,
+                  whiteSpace: 'nowrap',
+                }}>
+                  Industry
+                </span>
+                {[['All', inCategory.length], ...industriesForCategory].map(([ind, count]) => {
+                  const isActive = ind === activeIndustry
+                  const m = INDUSTRY_META[ind] || { color: activeMeta.color, light: activeMeta.light }
+                  return (
+                    <button
+                      key={ind}
+                      onClick={(e) => {
+                        setActiveIndustry(ind)
+                        const btn = e.currentTarget
+                        const scroller = industryScrollRef.current
+                        if (!scroller) return
+                        const btnLeft = btn.offsetLeft
+                        const btnRight = btnLeft + btn.offsetWidth
+                        const viewLeft = scroller.scrollLeft
+                        const viewRight = viewLeft + scroller.clientWidth
+                        const PAD = 16
+                        if (btnLeft < viewLeft + PAD) {
+                          scroller.scrollTo({ left: Math.max(0, btnLeft - PAD), behavior: 'smooth' })
+                        } else if (btnRight > viewRight - PAD) {
+                          scroller.scrollTo({ left: btnRight - scroller.clientWidth + PAD, behavior: 'smooth' })
+                        }
+                      }}
+                      style={{
+                        display: 'flex', alignItems: 'center', gap: 6,
+                        padding: '6px 12px',
+                        fontSize: 12, fontWeight: isActive ? 700 : 500,
+                        color: isActive ? '#fff' : '#475569',
+                        border: isActive ? 'none' : '1.5px solid #E2E8F0',
+                        borderRadius: 20,
+                        cursor: 'pointer',
+                        transition: 'all .22s cubic-bezier(.16,1,.3,1)',
+                        fontFamily: 'inherit',
+                        whiteSpace: 'nowrap',
+                        outline: 'none',
+                        WebkitTapHighlightColor: 'transparent',
+                        background: isActive
+                          ? `linear-gradient(135deg,${m.color},${m.color}CC)`
+                          : '#fff',
+                        boxShadow: isActive ? `0 3px 10px ${m.color}40` : 'none',
+                      }}
+                    >
+                      {ind}
+                      <span style={{
+                        fontSize: 10, fontWeight: 700,
+                        padding: '1px 7px',
+                        borderRadius: 20,
+                        background: isActive ? 'rgba(255,255,255,.25)' : m.color + '15',
+                        color: isActive ? '#fff' : m.color,
+                        minWidth: 20, textAlign: 'center',
+                      }}>
+                        {count}
+                      </span>
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Scroll-left button — appears only when there's hidden content to the left */}
+            {canLeft && (
+              <button
+                onClick={() => scrollIndustryBy(-240)}
+                aria-label="Scroll industry filter left"
+                style={{
+                  position: 'absolute', left: -6, top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: 32, height: 32, borderRadius: '50%',
+                  background: '#fff',
+                  border: '1.5px solid #E2E8F0',
+                  boxShadow: '0 2px 10px rgba(11,31,75,.1)',
+                  cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  zIndex: 2,
+                  color: '#475569',
+                  padding: 0,
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+            )}
+
+            {/* Scroll-right button — appears only when there's hidden content to the right */}
+            {canRight && (
+              <button
+                onClick={() => scrollIndustryBy(240)}
+                aria-label="Scroll industry filter right"
+                style={{
+                  position: 'absolute', right: -6, top: '50%',
+                  transform: 'translateY(-50%)',
+                  width: 32, height: 32, borderRadius: '50%',
+                  background: '#fff',
+                  border: '1.5px solid #E2E8F0',
+                  boxShadow: '0 2px 10px rgba(11,31,75,.1)',
+                  cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  zIndex: 2,
+                  color: '#475569',
+                  padding: 0,
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            )}
+          </div>
+            )
+          })()}
         </div>
       </div>
 
@@ -764,34 +1008,66 @@ export default function OurWorksContent() {
                     <strong style={{ color: activeMeta.color }}>{active}</strong>
                   </>
                 )}
+                {activeIndustry !== 'All' && (
+                  <>
+                    {' · '}
+                    <strong style={{ color: industryMeta.color }}>{activeIndustry}</strong>
+                  </>
+                )}
               </p>
             </div>
 
-            {/* Active category chip */}
-            {active !== 'All' && (
-              <button
-                onClick={() => setActive('All')}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: 6,
-                  padding: '6px 13px',
-                  background: activeMeta.light,
-                  border: `1.5px solid ${activeMeta.color}30`,
-                  borderRadius: 20,
-                  fontSize: 12.5, fontWeight: 700,
-                  color: activeMeta.color,
-                  cursor: 'pointer',
-                  fontFamily: 'inherit',
-                  transition: 'all .2s',
-                }}
-              >
-                {active}
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </button>
-            )}
+            {/* Active filter chips */}
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              {activeIndustry !== 'All' && (
+                <button
+                  onClick={() => setActiveIndustry('All')}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 6,
+                    padding: '6px 13px',
+                    background: industryMeta.light,
+                    border: `1.5px solid ${industryMeta.color}30`,
+                    borderRadius: 20,
+                    fontSize: 12.5, fontWeight: 700,
+                    color: industryMeta.color,
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    transition: 'all .2s',
+                  }}
+                >
+                  {activeIndustry}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              )}
+              {active !== 'All' && (
+                <button
+                  onClick={() => setActive('All')}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 6,
+                    padding: '6px 13px',
+                    background: activeMeta.light,
+                    border: `1.5px solid ${activeMeta.color}30`,
+                    borderRadius: 20,
+                    fontSize: 12.5, fontWeight: 700,
+                    color: activeMeta.color,
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    transition: 'all .2s',
+                  }}
+                >
+                  {active}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Project grid */}
