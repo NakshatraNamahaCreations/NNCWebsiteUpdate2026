@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Privacy Policy | NNC Digital',
   description: 'Privacy Policy for Nakshatra Namaha Creations Pvt. Ltd. (NNC Digital). How we collect, use and protect your personal information.',
   alternates: { canonical: `${SITE.url}/privacy` },
-  robots: { index: false },
+  robots: { index: true, follow: true },
 }
 
 const sections = [

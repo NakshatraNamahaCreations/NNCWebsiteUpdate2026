@@ -12,7 +12,7 @@ export const metadata = {
     'Website Design in Rajajinagar Bangalore offering modern UI/UX design, responsive layouts and high-converting websites for startups, SMEs and businesses.',
 
   alternates: {
-    canonical: `${SITE.url}/website-design-rajajinagar-bangalore`,
+    canonical: `${SITE.url}/website-design-in-rajajinagar-bangalore`,
   },
 
   keywords:

@@ -5,6 +5,7 @@ import BtsContent from './BtsContent'
 export const metadata = {
   title: 'Behind The Scenes | NNC Team & Culture | Nakshatra Namaha Creations',
   description: 'Go behind the scenes at NNC — our team, our process, our culture. 35+ in-house specialists building real products every day.',
+  alternates: { canonical: 'https://www.nakshatranamahacreations.com/behind-the-scenes' },
 }
 
 export default function BehindTheScenesPage() {

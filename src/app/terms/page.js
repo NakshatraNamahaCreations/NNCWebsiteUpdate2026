@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Terms of Service | NNC Digital',
   description: 'Terms of Service for Nakshatra Namaha Creations Pvt. Ltd. (NNC Digital). Read our service agreement, project delivery terms and usage policies.',
   alternates: { canonical: `${SITE.url}/terms` },
-  robots: { index: false },
+  robots: { index: true, follow: true },
 }
 
 const sections = [

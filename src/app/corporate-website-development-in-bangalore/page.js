@@ -12,7 +12,7 @@ export const metadata = {
     'Looking for Corporate Website Development Bangalore? NNC Digital builds high-performance corporate websites and scalable business solutions for companies.',
 
   alternates: {
-    canonical: `${SITE.url}/corporate-website-development-bangalore`,
+    canonical: `${SITE.url}/corporate-website-development-in-bangalore`,
   },
 
   keywords:
