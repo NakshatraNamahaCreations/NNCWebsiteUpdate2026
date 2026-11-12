@@ -60,12 +60,13 @@ export default function About() {
               </h2>
 
               <p style={{ fontSize: 'clamp(14px,2.5vw,17px)', color: 'rgba(255,255,255,.75)', lineHeight: 1.8, maxWidth: 540, marginBottom: 10 }}>
-                NNC was founded in Bengaluru in 2015 with one principle: every project built by the people
-                accountable for it. <strong style={{ color: '#fff' }}>Not outsourced. Not freelanced. Done by a permanent team.</strong>
+                Nakshatra Namaha Creations was founded in Bengaluru in 2015 with one principle: every project should be built by the people accountable for it. Not outsourced. Not freelanced. Done by a permanent team.
               </p>
               <p style={{ fontSize: 'clamp(13px,2vw,15.5px)', color: 'rgba(255,255,255,.55)', lineHeight: 1.75, maxWidth: 540, marginBottom: 32 }}>
-                Ten years later: 35+ permanent specialists, 565+ projects, four physical offices across India.
-                You can walk into any of them and meet your project team in person.
+                From website development and mobile app development to CRM software and digital marketing, our team handles different digital requirements under one roof.
+              </p>
+
+              <p style={{ fontSize: 'clamp(13px,2vw,15.5px)', color: 'rgba(255,255,255,.55)', lineHeight: 1.75, maxWidth: 540, marginBottom: 32 }}>You can walk into any of our offices and meet your project team in person.
               </p>
 
               <div className="d-flex flex-wrap gap-3 mb-4">
@@ -87,6 +88,9 @@ export default function About() {
             <h3 className="sec-h" style={{ fontSize: 'clamp(24px, 2.8vw, 32px)' }}>
               Present in <span className="sky">4 Cities</span> Across India
             </h3>
+            <p className="sec-sub" style={{ maxWidth: 680, margin: '12px auto 0' }}>
+              Nakshatra Namaha Creations operates through four physical offices, providing businesses with direct access to our in-house team.
+            </p>
           </div>
           <div className="row g-3 justify-content-center">
             {OFFICES.map((o, i) => (

@@ -7,7 +7,7 @@ import Link from 'next/link'
 export const metadata = {
   title: 'Our Services | Web, App, CRM & Digital Marketing | NNC Digital',
   description: 'NNC Digital offers website and app development, CRM, SEO, digital marketing, video production and graphic design. 35+ experts, 565+ projects delivered.',
-  alternates: { canonical: 'https://www.nakshatranamahacreations.com/services' },
+  alternates: { canonical: 'https://nakshatranamahacreations.com/services' },
 }
 
 export default function ServicesPage() {
@@ -26,7 +26,7 @@ export default function ServicesPage() {
               NNC&apos;s in-house team covers the complete digital stack. Every project is built by permanent NNC employees you can walk into any office and meet them.
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-              {['565+ Projects Delivered', '4.9★ Google Rating', '35+ In-house Specialists', 'Since 2015'].map(t => (
+              {['565+ Projects Delivered', '4.9â˜… Google Rating', '35+ In-house Specialists', 'Since 2015'].map(t => (
                 <span key={t} style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,.6)', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.12)', padding: '5px 14px', borderRadius: 30 }}>{t}</span>
               ))}
             </div>

@@ -164,7 +164,7 @@ function thankYouEmail(name, service) {
           <a href="tel:+919900566466" style="display:inline-block;background:#2196F3;color:#fff;font-size:14px;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;letter-spacing:.01em;">
             Call +91 99005 66466
           </a>
-          <p style="font-size:12.5px;color:#94a3b8;margin:12px 0 0;">Mon – Sat, 9:00 AM – 7:00 PM IST</p>
+          <p style="font-size:12.5px;color:#94a3b8;margin:12px 0 0;">Mon â€“ Sat, 9:00 AM â€“ 7:00 PM IST</p>
         </div>
 
         <!-- Divider -->
@@ -178,7 +178,7 @@ function thankYouEmail(name, service) {
               <div style="font-size:11px;color:#94a3b8;">Projects</div>
             </td>
             <td style="padding:8px;">
-              <div style="font-size:22px;font-weight:800;color:#0B1F4B;letter-spacing:-.03em;">4.9★</div>
+              <div style="font-size:22px;font-weight:800;color:#0B1F4B;letter-spacing:-.03em;">4.9â˜…</div>
               <div style="font-size:11px;color:#94a3b8;">Google Rating</div>
             </td>
             <td style="padding:8px;">
@@ -200,7 +200,7 @@ function thankYouEmail(name, service) {
           Bengaluru &middot; Mumbai &middot; Mysuru &middot; Hyderabad
         </p>
         <p style="font-size:11px;color:#CBD5E1;margin:0;">
-          <a href="https://www.nakshatranamahacreations.com" style="color:#2196F3;text-decoration:none;">nakshatranamahacreations.com</a>
+          <a href="https://nakshatranamahacreations.com" style="color:#2196F3;text-decoration:none;">nakshatranamahacreations.com</a>
           &nbsp;&middot;&nbsp;
           <a href="https://wa.me/919900566466" style="color:#2196F3;text-decoration:none;">WhatsApp</a>
         </p>
@@ -240,7 +240,7 @@ export async function POST(request) {
     if (!isChatbot) {
       const captcha = await verifyTurnstile(cfToken, ip)
       if (!captcha.ok) {
-        console.warn(`[enquiry] captcha not verified (${captcha.reason}) — accepting anyway for ${name || 'unknown'}`)
+        console.warn(`[enquiry] captcha not verified (${captcha.reason}) â€” accepting anyway for ${name || 'unknown'}`)
       }
     }
 
@@ -273,7 +273,7 @@ export async function POST(request) {
     // Forward enquiry to CRM first (always succeeds regardless of email status)
     const crmUrl = process.env.CRM_BACKEND_URL
     if (!crmUrl) {
-      console.error('[enquiry] CRM_BACKEND_URL is not set — enquiry will NOT be saved to the CRM. Set CRM_BACKEND_URL in .env.local or hosting env vars.')
+      console.error('[enquiry] CRM_BACKEND_URL is not set â€” enquiry will NOT be saved to the CRM. Set CRM_BACKEND_URL in .env.local or hosting env vars.')
     } else {
       fetch(`${crmUrl}/api/website-enquiry`, {
         method: 'POST',
@@ -285,7 +285,7 @@ export async function POST(request) {
           service,
           requirements: message || '',
           landingPage: pagePath || '/',
-          site: 'nnc', // NNC main website → "Enquire NNC" tab in the CRM
+          site: 'nnc', // NNC main website â†’ "Enquire NNC" tab in the CRM
         }),
       })
         .then(async (r) => {

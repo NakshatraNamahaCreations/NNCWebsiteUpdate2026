@@ -129,8 +129,11 @@ export function ClientsBand() {
             Chose Us
           </span>
         </h2>
-        <p style={{ fontSize: 14, color: '#64748B', maxWidth: 400, margin: '0 auto', lineHeight: 1.7 }}>
-          From first-time founders to established enterprises — all built in-house, zero outsourced.
+        <p style={{ fontSize: 14, color: '#64748B', maxWidth: 600, margin: '0 auto', lineHeight: 1.7 }}>
+          From first-time founders to established enterprises, businesses choose Nakshatra Namaha Creations for website development, mobile applications, CRM systems and digital marketing services.
+        </p>
+        <p style={{ fontSize: 14, color: '#64748B', maxWidth: 600, margin: '12px auto 0', lineHeight: 1.7 }}>
+          Our portfolio includes businesses across different industries, with projects handled entirely by our in-house development and creative teams.
         </p>
       </div>
 

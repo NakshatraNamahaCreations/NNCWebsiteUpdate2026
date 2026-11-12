@@ -6,14 +6,14 @@ import QuoteModal from '@/components/QuoteModal'
 import CallFloat from '@/components/CallFloat'
 
 export const metadata = {
-  title: 'Website & App Development Company in Bangalore | NNC',
+  title: 'Website Development Company in Bangalore | Nakshatra Namaha Creations',
   icons: {
     icon: '/assets/nnc-logo.png',
     apple: '/assets/nnc-logo.png',
     shortcut: '/assets/nnc-logo.png',
   },
   description:
-    'Build your digital presence with a Website & App Development Company creating custom websites, mobile apps, UI/UX, and scalable business solutions.',
+    'Nakshatra Namaha Creations is a website development company offering custom websites, mobile apps, CRM software and digital marketing. 35+ in-house specialists.',
   keywords: [
     'website development company in bangalore',
     'web design company bangalore',
@@ -37,15 +37,15 @@ export const metadata = {
   creator: 'Nakshatra Namaha Creations Pvt. Ltd.',
   publisher: 'Nakshatra Namaha Creations Pvt. Ltd.',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
-  alternates: { canonical: 'https://www.nakshatranamahacreations.com' },
+  alternates: { canonical: 'https://nakshatranamahacreations.com' },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://www.nakshatranamahacreations.com',
+    url: 'https://nakshatranamahacreations.com',
     siteName: 'NNC Digital Website Development Company Bangalore',
-    title: 'Website & App Development Company in Bangalore | NNC',
+    title: 'Website Development Company in Bangalore | Nakshatra Namaha Creations',
     description:
-      'Build your digital presence with a Website & App Development Company creating custom websites, mobile apps, UI/UX, and scalable business solutions.',
+      'Nakshatra Namaha Creations is a website development company offering custom websites, mobile apps, CRM software and digital marketing. 35+ in-house specialists.',
     images: [
       {
         url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
@@ -59,24 +59,24 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@nncbengaluru',
     creator: '@nncbengaluru',
-    title: 'Website & App Development Company in Bangalore | NNC',
+    title: 'Website Development Company in Bangalore | Nakshatra Namaha Creations',
     description:
-      'NNC builds websites, mobile apps, CRM software and runs digital marketing. 35+ in-house team, 565+ projects, 4 offices. Fixed price. Free quote in 24hrs.',
+      'Nakshatra Namaha Creations is a website development company offering custom websites, mobile apps, CRM software and digital marketing. 35+ in-house specialists.',
     images: ['https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png'],
   },
   // verification: {
-  //   google: 'REPLACE_WITH_YOUR_ACTUAL_GSC_TOKEN',  // get from Google Search Console → Settings → Ownership verification → HTML tag
+  //   google: 'REPLACE_WITH_YOUR_ACTUAL_GSC_TOKEN',  // get from Google Search Console â†’ Settings â†’ Ownership verification â†’ HTML tag
   // },
 }
 
-/* ── JSON-LD Schemas ─────────────────────────────────────────── */
+/* â”€â”€ JSON-LD Schemas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://www.nakshatranamahacreations.com/#organization',
+  '@id': 'https://nakshatranamahacreations.com/#organization',
   name: 'Nakshatra Namaha Creations Pvt. Ltd.',
   alternateName: 'NNC Digital',
-  url: 'https://www.nakshatranamahacreations.com',
+  url: 'https://nakshatranamahacreations.com',
   logo: {
     '@type': 'ImageObject',
     url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
@@ -135,13 +135,13 @@ const organizationSchema = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ITService',
-  '@id': 'https://www.nakshatranamahacreations.com/#localbusiness',
+  '@id': 'https://nakshatranamahacreations.com/#localbusiness',
   name: 'Nakshatra Namaha Creations Pvt. Ltd.',
   image: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
-  url: 'https://www.nakshatranamahacreations.com',
+  url: 'https://nakshatranamahacreations.com',
   telephone: '+91-99005-66466',
   email: 'info@nakshatranamahacreations.com',
-  priceRange: '₹₹',
+  priceRange: 'â‚¹â‚¹',
   currenciesAccepted: 'INR',
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
@@ -186,13 +186,13 @@ const localBusinessSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': 'https://www.nakshatranamahacreations.com/#website',
+  '@id': 'https://nakshatranamahacreations.com/#website',
   name: 'NNC Digital Website Development Company Bangalore',
-  url: 'https://www.nakshatranamahacreations.com',
-  publisher: { '@id': 'https://www.nakshatranamahacreations.com/#organization' },
+  url: 'https://nakshatranamahacreations.com',
+  publisher: { '@id': 'https://nakshatranamahacreations.com/#organization' },
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://www.nakshatranamahacreations.com/search?q={search_term_string}',
+    target: 'https://nakshatranamahacreations.com/search?q={search_term_string}',
     'query-input': 'required name=search_term_string',
   },
 }
@@ -206,7 +206,7 @@ const faqSchema = {
       name: 'How much does a website or app project cost?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Website development starts from ₹24,999. E-commerce from ₹45,000. Mobile apps from ₹75,000. CRM and SaaS platforms are scoped individually. All pricing is fixed before work begins.',
+        text: 'Website development starts from â‚¹24,999. E-commerce from â‚¹45,000. Mobile apps from â‚¹75,000. CRM and SaaS platforms are scoped individually. All pricing is fixed before work begins.',
       },
     },
     {
@@ -230,7 +230,7 @@ const faqSchema = {
       name: 'How long does a project take?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Corporate website: 3–5 weeks. E-commerce: 5–8 weeks. Mobile app: 8–14 weeks. CRM: 10–18 weeks. All timelines are agreed upfront.',
+        text: 'Corporate website: 3â€“5 weeks. E-commerce: 5â€“8 weeks. Mobile app: 8â€“14 weeks. CRM: 10â€“18 weeks. All timelines are agreed upfront.',
       },
     },
   ],

@@ -5,7 +5,7 @@ export default function robots() {
       allow: '/',
       disallow: ['/api/', '/_next/', '/admin/'],
     },
-    sitemap: 'https://www.nakshatranamahacreations.com/sitemap.xml',
-    host: 'https://www.nakshatranamahacreations.com',
+    sitemap: 'https://nakshatranamahacreations.com/sitemap.xml',
+    host: 'https://nakshatranamahacreations.com',
   }
 }

@@ -30,7 +30,7 @@ export default function PortfolioSubPage() {
         </section>
         <section style={{ background: '#F8FAFC', padding: '72px 0' }}>
           <div style={{ maxWidth: 1220, margin: '0 auto', padding: '0 24px', textAlign: 'center' }}>
-            <p style={{ fontSize: 17, color: '#6B7A99', marginBottom: 32 }}>Portfolio images are loaded from our main website. <a href="https://www.nakshatranamahacreations.com/our-works/animation" style={{ color: '#2196F3', fontWeight: 700 }}>View live portfolio →</a></p>
+            <p style={{ fontSize: 17, color: '#6B7A99', marginBottom: 32 }}>Portfolio images are loaded from our main website. <a href="https://nakshatranamahacreations.com/our-works/animation" style={{ color: '#2196F3', fontWeight: 700 }}>View live portfolio â†’</a></p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20, maxWidth: 900, margin: '0 auto' }}>
               {[1,2,3,4,5,6].map(n => (
                 <div key={n} style={{ background: '#fff', border: '1.5px solid #E2E8F0', borderRadius: 12, height: 180, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94A3B8', fontSize: 14, fontWeight: 600 }}>

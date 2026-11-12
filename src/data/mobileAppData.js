@@ -1,4 +1,4 @@
-// ── Mobile App Development Landing Page Data ──────────────────────────────
+// â”€â”€ Mobile App Development Landing Page Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const APP_PAGE = {
   slug: '/mobile-app-development-company-in-bangalore',
@@ -32,7 +32,7 @@ export const APP_PAGE = {
 export const APP_STATS = [
   { n: '150+', label: 'Apps Delivered' },
   { n: '35+',  label: 'In-house Specialists' },
-  { n: '4.9★', label: 'Google Rating' },
+  { n: '4.9â˜…', label: 'Google Rating' },
   { n: '8+',   label: 'Years Experience' },
   { n: '100%', label: 'Source Code Ownership' },
 ]
@@ -45,44 +45,44 @@ export const APP_TECH = [
 ]
 
 export const APP_TYPES = [
-  { ico: '🛍️', name: 'E-commerce Apps',       desc: 'Product catalogues, cart, Razorpay/UPI payments, order tracking and vendor dashboards.' },
-  { ico: '🚗', name: 'On-demand Apps',          desc: 'Uber-style booking customer app, service provider app and admin panel.' },
-  { ico: '🏥', name: 'Healthcare Apps',         desc: 'Appointment booking, doctor consultation, prescription management and health records.' },
-  { ico: '📚', name: 'EdTech Apps',             desc: 'Course delivery, video streaming, live classes, quizzes and certificate generation.' },
-  { ico: '🏋️', name: 'Fitness & Sports Apps',   desc: 'Workout tracking, coach booking, tournament management and leaderboards.' },
-  { ico: '🏠', name: 'Real Estate Apps',         desc: 'Property listings, virtual tours, agent CRM and EMI calculators.' },
-  { ico: '🍽️', name: 'Food & Restaurant Apps',  desc: 'Menu ordering, table booking, kitchen display system and loyalty programmes.' },
-  { ico: '💰', name: 'Finance & Fintech Apps',   desc: 'Portfolio tracking, investment calculators, KYC onboarding and wallet management.' },
-  { ico: '🚚', name: 'Logistics & Delivery Apps',desc: 'Driver tracking, route optimisation, proof of delivery and fleet management.' },
-  { ico: '🏢', name: 'Enterprise & HRMS Apps',  desc: 'Employee self-service, leave management, payroll and performance reviews.' },
+  { ico: 'ðŸ›ï¸', name: 'E-commerce Apps',       desc: 'Product catalogues, cart, Razorpay/UPI payments, order tracking and vendor dashboards.' },
+  { ico: 'ðŸš—', name: 'On-demand Apps',          desc: 'Uber-style booking customer app, service provider app and admin panel.' },
+  { ico: 'ðŸ¥', name: 'Healthcare Apps',         desc: 'Appointment booking, doctor consultation, prescription management and health records.' },
+  { ico: 'ðŸ“š', name: 'EdTech Apps',             desc: 'Course delivery, video streaming, live classes, quizzes and certificate generation.' },
+  { ico: 'ðŸ‹ï¸', name: 'Fitness & Sports Apps',   desc: 'Workout tracking, coach booking, tournament management and leaderboards.' },
+  { ico: 'ðŸ ', name: 'Real Estate Apps',         desc: 'Property listings, virtual tours, agent CRM and EMI calculators.' },
+  { ico: 'ðŸ½ï¸', name: 'Food & Restaurant Apps',  desc: 'Menu ordering, table booking, kitchen display system and loyalty programmes.' },
+  { ico: 'ðŸ’°', name: 'Finance & Fintech Apps',   desc: 'Portfolio tracking, investment calculators, KYC onboarding and wallet management.' },
+  { ico: 'ðŸšš', name: 'Logistics & Delivery Apps',desc: 'Driver tracking, route optimisation, proof of delivery and fleet management.' },
+  { ico: 'ðŸ¢', name: 'Enterprise & HRMS Apps',  desc: 'Employee self-service, leave management, payroll and performance reviews.' },
 ]
 
 export const APP_PROCESS = [
   { n: '01', title: 'Requirement Discovery',   desc: 'We map your complete user journey, feature list and tech requirements. No assumptions.', time: 'Day 1' },
-  { n: '02', title: 'UI/UX Wireframing',        desc: 'Figma screens for every flow onboarding, core features, edge cases. You approve before code.', time: 'Week 1–2' },
-  { n: '03', title: 'API & Backend Setup',      desc: 'Node JS REST APIs, MongoDB/PostgreSQL database and AWS infrastructure provisioned.', time: 'Week 2–3' },
-  { n: '04', title: 'App Development',          desc: 'React Native or Flutter build. Weekly TestFlight/APK drops so you track progress live.', time: 'Week 3–10' },
-  { n: '05', title: 'QA & Device Testing',      desc: 'Tested on 15+ real devices. Performance, crash and battery benchmarks run before submission.', time: 'Week 10–11' },
-  { n: '06', title: 'Store Submission & Launch',desc: 'Play Store & App Store submission handled by NNC. Full source code and credentials delivered.', time: 'Week 11–12' },
+  { n: '02', title: 'UI/UX Wireframing',        desc: 'Figma screens for every flow onboarding, core features, edge cases. You approve before code.', time: 'Week 1â€“2' },
+  { n: '03', title: 'API & Backend Setup',      desc: 'Node JS REST APIs, MongoDB/PostgreSQL database and AWS infrastructure provisioned.', time: 'Week 2â€“3' },
+  { n: '04', title: 'App Development',          desc: 'React Native or Flutter build. Weekly TestFlight/APK drops so you track progress live.', time: 'Week 3â€“10' },
+  { n: '05', title: 'QA & Device Testing',      desc: 'Tested on 15+ real devices. Performance, crash and battery benchmarks run before submission.', time: 'Week 10â€“11' },
+  { n: '06', title: 'Store Submission & Launch',desc: 'Play Store & App Store submission handled by NNC. Full source code and credentials delivered.', time: 'Week 11â€“12' },
 ]
 
 export const APP_FEATURES = [
-  { ico: '⚡', title: 'React Native & Flutter',  desc: 'Single codebase for Android + iOS. 60fps performance. 30–40% faster delivery vs. native builds.' },
-  { ico: '☁️', title: 'AWS Cloud Backend',       desc: 'Node JS APIs + MongoDB/PostgreSQL on AWS EC2/RDS. Auto-scaling. 99.9% uptime SLA.' },
-  { ico: '🔐', title: 'Secure by Default',        desc: 'JWT auth, data encryption at rest and in transit, OWASP best practices on every build.' },
-  { ico: '📊', title: 'Analytics Built-in',       desc: 'Firebase Analytics, Mixpanel or custom dashboards track every user action from day one.' },
-  { ico: '🔔', title: 'Push Notifications',       desc: 'Firebase Cloud Messaging for targeted, segmented push notifications on both platforms.' },
-  { ico: '💳', title: 'Payment Integrations',     desc: 'Razorpay, Stripe, PayU, PhonePe and UPI all PCI-DSS compliant integrations.' },
-  { ico: '🌐', title: 'Offline Mode Support',     desc: 'Local SQLite caching so your app works without internet and syncs when back online.' },
-  { ico: '🛠️', title: '30 Days Post-launch',      desc: 'Bug fixes and minor updates for 30 days after Play Store / App Store launch at no extra cost.' },
+  { ico: 'âš¡', title: 'React Native & Flutter',  desc: 'Single codebase for Android + iOS. 60fps performance. 30â€“40% faster delivery vs. native builds.' },
+  { ico: 'â˜ï¸', title: 'AWS Cloud Backend',       desc: 'Node JS APIs + MongoDB/PostgreSQL on AWS EC2/RDS. Auto-scaling. 99.9% uptime SLA.' },
+  { ico: 'ðŸ”', title: 'Secure by Default',        desc: 'JWT auth, data encryption at rest and in transit, OWASP best practices on every build.' },
+  { ico: 'ðŸ“Š', title: 'Analytics Built-in',       desc: 'Firebase Analytics, Mixpanel or custom dashboards track every user action from day one.' },
+  { ico: 'ðŸ””', title: 'Push Notifications',       desc: 'Firebase Cloud Messaging for targeted, segmented push notifications on both platforms.' },
+  { ico: 'ðŸ’³', title: 'Payment Integrations',     desc: 'Razorpay, Stripe, PayU, PhonePe and UPI all PCI-DSS compliant integrations.' },
+  { ico: 'ðŸŒ', title: 'Offline Mode Support',     desc: 'Local SQLite caching so your app works without internet and syncs when back online.' },
+  { ico: 'ðŸ› ï¸', title: '30 Days Post-launch',      desc: 'Bug fixes and minor updates for 30 days after Play Store / App Store launch at no extra cost.' },
 ]
 
 export const APP_PRICING = [
   {
     tier: 'MVP / Startup',
-    price: '₹75,000',
-    priceGst: '₹88,500',
-    timeline: '6–8 weeks',
+    price: 'â‚¹75,000',
+    priceGst: 'â‚¹88,500',
+    timeline: '6â€“8 weeks',
     best: 'First version to validate your idea',
     includes: [
       'React Native (Android + iOS)',
@@ -99,9 +99,9 @@ export const APP_PRICING = [
   },
   {
     tier: 'Business App',
-    price: '₹1,75,000',
-    priceGst: '₹2,06,500',
-    timeline: '10–14 weeks',
+    price: 'â‚¹1,75,000',
+    priceGst: 'â‚¹2,06,500',
+    timeline: '10â€“14 weeks',
     best: 'Full-featured app for a growing business',
     includes: [
       'React Native or Flutter',
@@ -121,7 +121,7 @@ export const APP_PRICING = [
     tier: 'Enterprise Platform',
     price: 'Custom',
     priceGst: null,
-    timeline: '14–24 weeks',
+    timeline: '14â€“24 weeks',
     best: 'Multi-role complex platform',
     includes: [
       'React Native / Flutter / Native',
@@ -143,31 +143,31 @@ export const APP_PORTFOLIO = [
   {
     name: 'Vijaya Home Services',
     type: 'On-demand Services Platform',
-    stack: 'React Native · Node JS · AWS',
+    stack: 'React Native Â· Node JS Â· AWS',
     result: '340% booking growth in 6 months',
     metric: '340%',
     metricLabel: 'Booking growth',
-    img: 'https://www.nakshatranamahacreations.com/media/ourwork/vijayhome.webp',
+    img: 'https://nakshatranamahacreations.com/media/ourwork/vijayhome.webp',
     stores: ['Play Store'],
   },
   {
     name: 'Pro Leverage',
     type: 'Finance & Investment App',
-    stack: 'Flutter · REST API · Firebase',
+    stack: 'Flutter Â· REST API Â· Firebase',
     result: '10,000+ downloads in month one',
     metric: '10K+',
     metricLabel: 'Downloads M1',
-    img: 'https://www.nakshatranamahacreations.com/media/ourwork/proleverage.webp',
+    img: 'https://nakshatranamahacreations.com/media/ourwork/proleverage.webp',
     stores: ['Play Store'],
   },
   {
     name: 'CND Play',
     type: 'OTT Streaming Platform',
-    stack: 'React Native · Video SDK · Node JS',
+    stack: 'React Native Â· Video SDK Â· Node JS',
     result: 'Subscription-based OTT with live channels',
-    metric: '4.4★',
+    metric: '4.4â˜…',
     metricLabel: 'Play Store rating',
-    img: 'https://www.nakshatranamahacreations.com/media/ourwork/cdn.webp',
+    img: 'https://nakshatranamahacreations.com/media/ourwork/cdn.webp',
     stores: ['Play Store'],
   },
 ]
@@ -175,11 +175,11 @@ export const APP_PORTFOLIO = [
 export const APP_FAQS = [
   {
     q: 'How much does mobile app development cost in Bangalore?',
-    a: 'A basic MVP app starts from ₹75,000. A full-featured business app is typically ₹1,50,000–₹2,50,000. Enterprise platforms with complex features are scoped individually. All pricing is fixed before work begins no hourly billing or surprise invoices.',
+    a: 'A basic MVP app starts from â‚¹75,000. A full-featured business app is typically â‚¹1,50,000â€“â‚¹2,50,000. Enterprise platforms with complex features are scoped individually. All pricing is fixed before work begins no hourly billing or surprise invoices.',
   },
   {
     q: 'How long does it take to build a mobile app?',
-    a: 'An MVP takes 6–8 weeks. A full business app takes 10–14 weeks. Enterprise platforms take 14–24 weeks. Your timeline is agreed in writing before development begins and tracked weekly.',
+    a: 'An MVP takes 6â€“8 weeks. A full business app takes 10â€“14 weeks. Enterprise platforms take 14â€“24 weeks. Your timeline is agreed in writing before development begins and tracked weekly.',
   },
   {
     q: 'React Native or Flutter which is better for my app?',
@@ -187,7 +187,7 @@ export const APP_FAQS = [
   },
   {
     q: 'Do I need separate apps for Android and iOS?',
-    a: 'Not with React Native or Flutter. One codebase delivers both Android and iOS apps saving 30–40% in development time and cost while maintaining near-native performance.',
+    a: 'Not with React Native or Flutter. One codebase delivers both Android and iOS apps saving 30â€“40% in development time and cost while maintaining near-native performance.',
   },
   {
     q: 'Will NNC handle Play Store and App Store submission?',
@@ -203,22 +203,22 @@ export const APP_TESTIMONIALS = [
   {
     quote: '"NNC built our complete on-demand platform customer app, vendor app and admin panel in 8 weeks. Within 6 months of launch we had 340% more bookings. The team was always reachable and delivered exactly what was scoped."',
     author: 'Vijaya Home Services',
-    role: 'On-demand Services · Bengaluru',
+    role: 'On-demand Services Â· Bengaluru',
     result: '340% booking growth',
     featured: true,
   },
   {
     quote: '"We needed a finance app that retail investors could actually use. NNC got it right first time. 10,000 downloads in month one and 4.4 stars on Play Store. They knew exactly what they were doing."',
     author: 'Pro Leverage',
-    role: 'Finance App · Bengaluru',
+    role: 'Finance App Â· Bengaluru',
     result: '10K+ downloads M1',
     featured: false,
   },
   {
     quote: '"The team at NNC understood our OTT product inside out. The React Native app performed exactly like a native app. Deployment was smooth and they handled all the Play Store formalities."',
     author: 'CND Play',
-    role: 'OTT Platform · Bengaluru',
-    result: '4.4★ Play Store',
+    role: 'OTT Platform Â· Bengaluru',
+    result: '4.4â˜… Play Store',
     featured: false,
   },
 ]

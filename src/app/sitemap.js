@@ -4,7 +4,7 @@ import { SLUG_MAP, CASE_STUDY_DATA } from '@/data/landingData'
 import { connectDB } from '@/lib/mongodb'
 import Blog from '@/lib/BlogModel'
 
-const BASE = 'https://www.nakshatranamahacreations.com'
+const BASE = 'https://nakshatranamahacreations.com'
 
 export const dynamic = 'force-dynamic'
 
@@ -63,7 +63,7 @@ function getStaticRoutes() {
 export default async function sitemap() {
   const now = new Date().toISOString()
 
-  // 1. Static routes — every folder with page.js under src/app.
+  // 1. Static routes â€” every folder with page.js under src/app.
   const staticRoutes = getStaticRoutes().map(route => {
     const meta = ROUTE_META[route] || { priority: 0.8, changeFrequency: 'monthly' }
     return {

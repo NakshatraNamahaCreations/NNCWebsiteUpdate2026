@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="hero-glow1" aria-hidden="true" />
       <div className="hero-glow2" aria-hidden="true" />
 
-      <div style={{ maxWidth: 1220, margin: '0 auto', padding: 'clamp(28px,6vw,60px) clamp(16px,4vw,24px)', width: '100%', position: 'relative', zIndex: 1 }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: 'clamp(28px,6vw,60px) clamp(16px,4vw,24px)', width: '100%', position: 'relative', zIndex: 1 }}>
         <div className="row align-items-center g-5">
 
           {/* LEFT */}
@@ -18,17 +18,20 @@ export default function Hero() {
             {/* Trust badge */}
            
             <h1 className="hero-h1 mb-3">
-              Website Development Company<br />
-              <span className="sky">Apps, CRM &amp; Digital Marketing</span>
+              Website Development Company 
+              <span className="sky"> in Bangalore for Websites, Apps & Digital Solutions</span>
             </h1>
 
             <p className="hero-sub mb-4">
-              <Link href="/website-development-company-in-bangalore" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.3)' }}>Custom websites</Link>,{' '}
-              <Link href="/mobile-app-development-company-in-bangalore" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.3)' }}>mobile apps</Link>,{' '}
-              <Link href="/custom-crm-development" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.3)' }}>CRM systems</Link> &amp;{' '}
-              <Link href="/digital-marketing-agency-in-bangalore" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.3)' }}>digital marketing</Link> by a{' '}
-              <strong>35+ member in-house team</strong> across Bengaluru, Mumbai, Mysuru &amp; Hyderabad.{' '}
-              <strong>565+ projects delivered. Zero outsourced.</strong>
+              Nakshatra Namaha Creations is a reliable Website Development Company offering{' '}
+              <Link href="/website-development-company-in-bangalore" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.3)' }}>custom website development</Link>,{' '}
+              <Link href="/mobile-app-development-company-in-bangalore" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.3)' }}>mobile app development</Link>,{' '}
+              <Link href="/custom-crm-development" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.3)' }}>CRM software</Link>,{' '}
+              <Link href="/digital-marketing-agency-in-bangalore" style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'rgba(255,255,255,.3)' }}>digital marketing</Link> and creative services.
+              <br /><br />
+              Our in-house team builds corporate websites, e-commerce platforms, mobile applications and custom business software. We also provide website design and development, SEO and digital marketing services across Bengaluru, Mumbai, Mysuru and Hyderabad.
+              <br /><br />
+              With <strong>565+ projects delivered</strong>, <strong>fixed pricing</strong> and <strong>zero outsourcing</strong>, we help businesses achieve their digital goals.
             </p>
 
             <div className="hero-btns d-flex flex-wrap gap-3 mb-4">

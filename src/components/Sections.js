@@ -13,10 +13,11 @@ export function CaseStudies() {
         <div className="row g-5 mb-5 anim">
           <div className="col-lg-5">
             <div className="section-tag"><span className="tag-dot" />Case Studies</div>
-            <h2 className="sec-h">Real Outcomes.<br /><span className="sky">Documented Results.</span></h2>
+            <h2 className="sec-h">Real Outcomes. <br /><span className="sky">Documented Results.</span></h2>
           </div>
-          <div className="col-lg-7 d-flex align-items-end">
-            <p className="sec-sub">Three representative NNC projects the brief, what was built and the measured result.</p>
+          <div className="col-lg-7 d-flex flex-column justify-content-end">
+            <p className="sec-sub">Explore how Nakshatra Namaha Creations has helped businesses through website development, mobile application development and custom software solutions</p>
+            <p className="sec-sub">Each case study covers the original business requirement, the solution developed and the measured project results.</p>
           </div>
         </div>
 
@@ -26,7 +27,8 @@ export function CaseStudies() {
               {/* Top bar */}
               <div className="rc-top d-flex align-items-start justify-content-between flex-wrap gap-3">
                 <div>
-                  <div className="rc-client">{r.client} · {r.industry}</div>
+                  <div className="rc-client">{r.client} · {r.category || r.industry}</div>
+                  {r.category && <div className="rc-category" style={{ fontSize: 12.5, color: '#64748B', fontWeight: 500, marginTop: 2 }}>{r.industry}</div>}
                   <div className="rc-title">{r.title}</div>
                 </div>
                 <div className="d-flex gap-2 flex-wrap">
@@ -36,11 +38,11 @@ export function CaseStudies() {
               {/* Body */}
               <div className="row g-0" style={{ borderBottom: '1px solid var(--border)' }}>
                 <div className="col-md-6 rc-col" style={{ borderRight: '1px solid var(--border)', padding: 28 }}>
-                  <div className="rc-lbl">Before NNC</div>
+                  <div className="rc-lbl">Before Nakshatra Namaha Creations</div>
                   <p className="rc-tx">{r.challenge}</p>
                 </div>
                 <div className="col-md-6 rc-col" style={{ padding: 28 }}>
-                  <div className="rc-lbl">What NNC Built</div>
+                  <div className="rc-lbl">What Nakshatra Namaha Creations Built</div>
                   <p className="rc-tx">{r.solution}</p>
                   <div className="rc-hl">{r.highlight}</div>
                 </div>
@@ -71,10 +73,12 @@ export function Process() {
         <div className="row g-5 mb-5 anim">
           <div className="col-lg-5">
             <div className="section-tag"><span className="tag-dot" />How We Work</div>
-            <h2 className="sec-h">Six Steps. Your Approval<br /><span className="sky">At Every Stage.</span></h2>
+            <h2 className="sec-h">Six Steps. Your Approval <br /><span className="sky">At Every Stage.</span></h2>
           </div>
-          <div className="col-lg-7 d-flex align-items-end">
-            <p className="sec-sub">No black boxes. You see and approve every major decision before we proceed. Weekly updates on a live staging site you can access.</p>
+          <div className="col-lg-7 d-flex flex-column justify-content-end">
+            <p className="sec-sub">Our website and software development process keeps you involved at every major stage. You see and approve important decisions before we proceed.</p>
+
+            <p className="sec-sub">Weekly updates on a live staging site help you review project progress throughout development.</p>
           </div>
         </div>
 
@@ -102,13 +106,27 @@ export function Testimonials() {
 
         {/* Header */}
         <div className="d-flex align-items-end justify-content-between flex-wrap gap-4 mb-4 anim">
-          <div>
-           
+          <div style={{ flex: '1 1 480px', minWidth: 280 }}>
+
             <h2 className="sec-h" style={{ color: '#fff' }}>
               Google Reviews.<br /><span className="sky">One Consistent Verdict.</span>
             </h2>
+            <p className="sec-sub" style={{ color: 'rgba(255,255,255,.75)', marginTop: 12 }}>
+              Our Google Business Profile reflects a 4.9-star rating supported by 87 reviews.
+            </p>
           </div>
-          <button className="btn btn-outline-light fw-semibold">View All on Google →</button>
+          <div style={{ flex: '1 1 520px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 16 }}>
+            <p className="sec-sub" style={{ color: 'rgba(255,255,255,.75)', textAlign: 'right', margin: 0, maxWidth: 560 }}>
+              From website development and mobile applications to business software, our client feedback reflects their experience working with the Nakshatra Namaha Creations team.
+            </p>
+            <button className="btn btn-outline-light fw-semibold google-reviews-btn" style={{ flexShrink: 0 }}>View All on Google →</button>
+          </div>
+          <style jsx>{`
+            :global(.google-reviews-btn:hover),
+            :global(.google-reviews-btn:focus) {
+              color: var(--sky, #0EA5E9) !important;
+            }
+          `}</style>
         </div>
 
         {/* Google badge */}
@@ -180,8 +198,10 @@ export function Industries() {
               Ten Industries.<br /><span style={{ color: 'var(--sky)' }}>Sector-Specific Knowledge.</span>
             </h2>
             <p style={{ fontSize: 15.5, color: 'rgba(255,255,255,.5)', lineHeight: 1.7, marginBottom: 24, maxWidth: 420 }}>
-              Deep domain expertise across verticals not generic templates, but solutions shaped by real industry workflows.
+              Every industry has different business requirements. Nakshatra Namaha Creations works across ten industries, developing digital solutions based on sector-specific workflows rather than generic templates.
             </p>
+
+            <p style={{ fontSize: 15.5, color: 'rgba(255,255,255,.5)', lineHeight: 1.7, marginBottom: 24, maxWidth: 420 }}>From business websites and CRM software to mobile applications and digital marketing, our services cover different industry requirements.</p>
             <a href="#faq" className="btn btn-sky fw-bold px-4"
                onClick={e => { e.preventDefault(); document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' }) }}>
               Discuss Your Sector →
@@ -197,6 +217,11 @@ export function Industries() {
                   <div>
                     <div className="ind-name">{ind.name}</div>
                     <div className="ind-sub">{ind.sub}</div>
+                    {ind.description && (
+                      <div className="ind-desc" style={{ fontSize: 12, color: '#64748B', marginTop: 4, lineHeight: 1.5 }}>
+                        {ind.description}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -219,7 +244,7 @@ export function TechStack() {
             <h2 className="sec-h">Modern Technology.<br /><span className="sky">Proven in Production.</span></h2>
           </div>
           <div className="col-lg-7 d-flex align-items-end">
-            <p className="sec-sub">We choose the stack that fits your project not the easiest for us. React JS, Next JS and Node JS for web. React Native and Flutter for mobile.</p>
+            <p className="sec-sub">Our development team chooses technologies based on your project requirements. From website development frameworks to mobile app technologies and cloud infrastructure, we work with the stack displayed below.</p>
           </div>
         </div>
 
@@ -589,9 +614,9 @@ export function FaqContact() {
           {/* FAQ COLUMN */}
           <div className="col-lg-6 anim-l">
             <div className="section-tag"><span className="tag-dot" />FAQ</div>
-            <h2 className="faq-h mb-2">Questions. <span className="sky">Answered Honestly.</span></h2>
+            <h2 className="faq-h mb-2">Frequently <span className="sky">Asked Questions </span></h2>
             <p className="sec-sub mb-4" style={{ fontSize: 15.5 }}>
-              Every new client asks these questions. We answer them directly including the ones that make us look harder to work with.
+             Find answers to common questions about website development, mobile applications, CRM software and Nakshatra Namaha Creations's project process.
             </p>
 
             <div style={{ borderTop: '1px solid var(--border)' }}>
@@ -623,7 +648,7 @@ export function FaqContact() {
             <div className="contact-card">
               <div className="cc-eyebrow"><span className="cc-eyebrow-tx">Start a Project</span></div>
               <div className="cc-h mb-2">Let&apos;s talk about<br />what you need.</div>
-              <p className="cc-sub mb-4">Tell us your goals. We&apos;ll come back with clear scope, timeline and a fixed price within 24 hours. No obligation.</p>
+              <p className="cc-sub mb-4">Looking for website development, mobile app development, CRM software or digital marketing services? Tell us your goals. Our team will come back with clear scope, timeline and a fixed price within 24 hours. No obligation.</p>
 
               {/* Direct contact links */}
               <div className="d-flex flex-column gap-2 mb-4">
@@ -760,9 +785,11 @@ export function CtaBand() {
         <div className="row align-items-center g-5">
           <div className="col-lg-8 anim">
             <h2 className="cta-h mb-2">
-              Ready to Build Something<br /><span className="sky">That Actually Grows Your Business?</span>
+              Ready to Build Something <br /><span className="sky">That Actually Grows Your Business?</span>
             </h2>
-            <p className="cta-sub mb-3">Tell us what you need. We&apos;ll come back with a clear scope, timeline and fixed price within 24 hours.</p>
+            <p className="cta-sub mb-3">Looking for a website development company to bring your business ideas to life? Nakshatra Namaha Creations provides website development, mobile app development, CRM systems and digital marketing services through a dedicated in-house team.</p>
+
+            <p className="cta-sub mb-3">Tell us what you need. We'll come back with a clear scope, timeline and fixed price within 24 hours.</p>
             <div className="d-flex flex-wrap gap-4">
               {['Free consultation', 'PageSpeed 90+ guaranteed', 'Source code 100% yours', 'Fixed price'].map((chip, i) => (
                 <span key={i} className="cta-chip">

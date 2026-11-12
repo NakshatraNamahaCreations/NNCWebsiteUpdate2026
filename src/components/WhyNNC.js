@@ -13,10 +13,12 @@ export default function WhyNNC() {
               Six Things We Do<br /><span className="sky">That Others Don&apos;t</span>
             </h2>
           </div>
-          <div className="col-lg-7 d-flex align-items-end">
+          <div className="col-lg-7 d-flex flex-column justify-content-end">
             <p className="sec-sub">
-              These aren&apos;t promises on a website. They&apos;re verifiable facts about how NNC operates every single day
-              facts you can confirm by walking into any of our four offices.
+              Choosing a website development company means looking beyond design and cost. You need a reliable team that communicates clearly and delivers on its commitments.
+            </p>
+
+            <p className="sec-sub">Nakshatra Namaha Creations offers in-house development, fixed pricing, performance commitments and complete source code ownership.
             </p>
           </div>
         </div>

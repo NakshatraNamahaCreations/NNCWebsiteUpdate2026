@@ -5,6 +5,9 @@ import Link from 'next/link'
 // ─── Project Data ─────────────────────────────────────────────────────────────
 const WORKS = [
   // ── Website Development ──
+  { name: "Amec Technology", type: 'Powertrain, Energy & Mobility Solutions Website', category: 'Website Development', industry: 'Industrial', tech: ['Next JS', 'CMS', 'SEO'], result: '2× qualified B2B leads', resultColor: '#059669', logo: '/assets/amec-logo.jpeg', url: 'https://www.amectechnology.com/' },
+  { name: 'Casasaga', type: 'Suites Booking Platform', category: 'Website Development', industry: 'Services', tech: ['Next JS', 'CMS', 'SEO'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/casasaga-logo.png', url: 'https://www.casasaga.in/' },
+  { name: 'Movixora Logistics Pvt Ltd', type: 'Logistics Services Website', category: 'Website Development', industry: 'Logistics', tech: ['Next JS', 'CMS', 'SEO'], result: '2× qualified B2B leads', resultColor: '#059669', logo: '/assets/movixora-logo.webp', url: 'https://www.movixoralogistics.com/' },
   { name: 'Saltech', type: 'Engineering & Control Systems Website', category: 'Website Development', industry: 'Industrial', tech: ['Next JS', 'CMS', 'SEO'], result: '2× qualified B2B leads', resultColor: '#059669', logo: '/assets/saltech-logo.png', url: 'https://saltech.ltd/' },
   { name: "Werner Electrics", type: 'Industrial Control Components Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: 'Page 1 Google in 90 days', resultColor: '#059669', logo: '/assets/werner-logo.png', url: 'https://www.wernerelektrik.com/' },
   { name: 'Thridhavarnam', type: 'E-commerce Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'SEO'], result: '200+ sales', resultColor: '#059669', logo: '/assets/thridhavarnam-logo.png', url: 'https://www.thridhavarnam.com/' },
@@ -41,6 +44,7 @@ const WORKS = [
   { name: 'Studio99', type: 'Creative Studio Website', category: 'Website Development', tech: ['Next JS', 'CMS', 'Animations'], result: 'Premium brand presence', resultColor: '#7C3AED', logo: '/assets/st99.webp', url: 'https://studio99rrnagar.com/' },
 
   // ── Mobile Apps ──
+  { name: 'Qresq', type: 'On-demand Service App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Firebase'], result: '1,000+ service requests', resultColor: '#059669', logo: '', url: '' },
   { name: 'Dhoond', type: 'Energy Ecosystem App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Maps API'], result: '500+ daily searches', resultColor: '#2563EB', logo: '/assets/dhoond-logo.jpeg', url: 'https://play.google.com/store/apps/details?id=com.ameccodex.dhoond.co' },
   { name: "3040 Property", type: 'Real Estate Service App', category: 'Mobile Apps', tech: ['React Native', 'Node JS', 'AWS'], result: '1,000+ property listings', resultColor: '#D97706', logo: '/assets/30-40logo.jpeg', url: 'https://play.google.com/store/apps/details?id=com.ororegencompanies.thirtyforty' },
   { name: "Salil Javeri", type: 'Library App', category: 'Mobile Apps', tech: ['Flutter', 'Node JS', 'Firebase'], result: '100+ books available', resultColor: '#7C3AED', logo: '', url: 'https://play.google.com/store/apps/details?id=com.saliljaveri' },

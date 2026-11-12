@@ -24,7 +24,7 @@ export const metadata = {
         url: SITE.teamPhoto,
         width: 1200,
         height: 630,
-        alt: 'Website Developers in Mumbai – NNC Digital',
+        alt: 'Website Developers in Mumbai â€“ NNC Digital',
       },
     ],
   },
@@ -41,19 +41,19 @@ export const metadata = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  '@id': 'https://www.nakshatranamahacreations.com/website-developers-in-mumbai#localbusiness',
+  '@id': 'https://nakshatranamahacreations.com/website-developers-in-mumbai#localbusiness',
   name: 'Nakshatra Namaha Creations',
   legalName: 'Nakshatra Namaha Creations Private Limited',
   alternateName: 'NNC Digital Mumbai',
   description: 'Nakshatra Namaha Creations is a leading website development, mobile app development, CRM and digital marketing company in Thane West, Mumbai. React JS and Node JS development, Android and iOS apps, corporate video, 2D animation, SEO and B2B digital solutions delivered by a 35+ in-house team across 4 offices in India.',
-  url: 'https://www.nakshatranamahacreations.com/website-developers-in-mumbai',
-  mainEntityOfPage: 'https://www.nakshatranamahacreations.com/website-developers-in-mumbai',
-  logo: 'https://www.nakshatranamahacreations.com/images/logo.png',
-  image: ['https://www.nakshatranamahacreations.com/images/mumbai-office-exterior.jpg', 'https://www.nakshatranamahacreations.com/images/mumbai-office-interior.jpg', 'https://www.nakshatranamahacreations.com/images/mumbai-team.jpg'],
+  url: 'https://nakshatranamahacreations.com/website-developers-in-mumbai',
+  mainEntityOfPage: 'https://nakshatranamahacreations.com/website-developers-in-mumbai',
+  logo: 'https://nakshatranamahacreations.com/images/logo.png',
+  image: ['https://nakshatranamahacreations.com/images/mumbai-office-exterior.jpg', 'https://nakshatranamahacreations.com/images/mumbai-office-interior.jpg', 'https://nakshatranamahacreations.com/images/mumbai-team.jpg'],
   telephone: '+91-85910-18808',
   email: 'info@nakshatranamahacreations.com',
   foundingDate: '2015-03-07',
-  priceRange: '₹₹',
+  priceRange: 'â‚¹â‚¹',
   currenciesAccepted: 'INR',
   paymentAccepted: 'Cash, Credit Card, Debit Card, UPI, Bank Transfer',
   address: { '@type': 'PostalAddress', streetAddress: '#302, Lodha Signet, Kolshet Road, Kolshet Industrial Area', addressLocality: 'Thane West', addressRegion: 'Maharashtra', postalCode: '400607', addressCountry: 'IN' },
@@ -66,7 +66,7 @@ const localBusinessSchema = {
   knowsAbout: ['React JS Development', 'Node JS Development', 'React Native App Development', 'Next.js Development', 'MongoDB', 'SEO', 'Google Ads', 'CRM Software', 'SaaS Platforms'],
   aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '8', bestRating: '5', worstRating: '1' },
   sameAs: ['https://www.linkedin.com/in/harish-kashyap-65035678', 'https://www.instagram.com/nnc.digitalbengaluru', 'https://www.facebook.com/Nakshatranamahacreations'],
-  parentOrganization: { '@type': 'Organization', name: 'Nakshatra Namaha Creations Private Limited', url: 'https://www.nakshatranamahacreations.com', founder: { '@type': 'Person', name: 'Harish Kashyap', jobTitle: 'Founder and Managing Director' } },
+  parentOrganization: { '@type': 'Organization', name: 'Nakshatra Namaha Creations Private Limited', url: 'https://nakshatranamahacreations.com', founder: { '@type': 'Person', name: 'Harish Kashyap', jobTitle: 'Founder and Managing Director' } },
 }
 
 const schema = {
@@ -104,7 +104,7 @@ const schema = {
     'High Performance Website Development',
   ],
   description:
-    'Website developers in Mumbai — fast and scalable websites with modern development solutions tailored to your business needs. In-house developers, branch office in Thane West.',
+    'Website developers in Mumbai â€” fast and scalable websites with modern development solutions tailored to your business needs. In-house developers, branch office in Thane West.',
   url: `${SITE.url}/website-developers-in-mumbai`,
   offers: [
     {
@@ -112,7 +112,7 @@ const schema = {
       name: 'Business Website Development Mumbai',
       price: '24999',
       priceCurrency: 'INR',
-      description: 'Custom business website — Next JS/React, mobile responsive, PageSpeed 90+ and SEO setup.',
+      description: 'Custom business website â€” Next JS/React, mobile responsive, PageSpeed 90+ and SEO setup.',
     },
     {
       '@type': 'Offer',
@@ -154,7 +154,7 @@ const faqSchema = {
       name: 'Where can I find the best website developers in Mumbai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "NNC Digital has among Mumbai's best website developers — 565+ projects delivered, 4.9★ Google rating, branch office in Thane West. Our in-house developers build fast and scalable websites with modern development solutions tailored to your business needs.",
+        text: "NNC Digital has among Mumbai's best website developers â€” 565+ projects delivered, 4.9â˜… Google rating, branch office in Thane West. Our in-house developers build fast and scalable websites with modern development solutions tailored to your business needs.",
       },
     },
     {
@@ -162,7 +162,7 @@ const faqSchema = {
       name: 'What do website developers at NNC build in Mumbai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "NNC's website developers in Mumbai build custom business websites, corporate websites, landing pages, web applications, ecommerce platforms, SaaS frontends and full stack solutions using Next JS, React JS and Node JS — all high performance, mobile responsive and PageSpeed 90+.",
+        text: "NNC's website developers in Mumbai build custom business websites, corporate websites, landing pages, web applications, ecommerce platforms, SaaS frontends and full stack solutions using Next JS, React JS and Node JS â€” all high performance, mobile responsive and PageSpeed 90+.",
       },
     },
     {
@@ -170,7 +170,7 @@ const faqSchema = {
       name: 'How much does it cost to hire website developers in Mumbai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A custom business website starts from ₹24,999. A full stack web application starts from ₹75,000. All projects are fixed-price — fully scoped before development begins with no surprise invoices.',
+        text: 'A custom business website starts from â‚¹24,999. A full stack web application starts from â‚¹75,000. All projects are fixed-price â€” fully scoped before development begins with no surprise invoices.',
       },
     },
     {
@@ -178,7 +178,7 @@ const faqSchema = {
       name: 'Do NNC website developers build high performance websites in Mumbai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes. NNC's website developers in Mumbai build high performance websites using Next JS and React — server-side rendering, static generation, image optimisation, code splitting and lazy loading. PageSpeed 90+ on mobile and desktop is contractually guaranteed.",
+        text: "Yes. NNC's website developers in Mumbai build high performance websites using Next JS and React â€” server-side rendering, static generation, image optimisation, code splitting and lazy loading. PageSpeed 90+ on mobile and desktop is contractually guaranteed.",
       },
     },
     {
@@ -186,7 +186,7 @@ const faqSchema = {
       name: 'Do NNC website developers build scalable websites in Mumbai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Yes. NNC's Mumbai developers build scalable websites and web applications — clean code architecture, modular components, API-driven content and cloud deployment on AWS that scales with your business growth.",
+        text: "Yes. NNC's Mumbai developers build scalable websites and web applications â€” clean code architecture, modular components, API-driven content and cloud deployment on AWS that scales with your business growth.",
       },
     },
     {
@@ -194,7 +194,7 @@ const faqSchema = {
       name: 'Can I hire dedicated website developers in Mumbai from NNC?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. You can hire dedicated website developers from NNC Mumbai on a project or retainer basis. All are full-time NNC employees — not freelancers. Meet them at our Thane West, Mumbai office.',
+        text: 'Yes. You can hire dedicated website developers from NNC Mumbai on a project or retainer basis. All are full-time NNC employees â€” not freelancers. Meet them at our Thane West, Mumbai office.',
       },
     },
     {
@@ -202,20 +202,20 @@ const faqSchema = {
       name: 'Do NNC website developers have an office in Mumbai?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. NNC Digital has a branch office at Lodha Signet, Kolshet Road, Thane West, Mumbai – 400 607. Visit us to review development demos and meet the developers building your website.',
+        text: 'Yes. NNC Digital has a branch office at Lodha Signet, Kolshet Road, Thane West, Mumbai â€“ 400 607. Visit us to review development demos and meet the developers building your website.',
       },
     },
   ],
 }
 
 const data = {
-  badge: 'Website Developers · Mumbai',
+  badge: 'Website Developers Â· Mumbai',
   h1: 'Website Developers',
   h1Accent: 'in Mumbai',
   tagline:
-    'Expert website developers in Mumbai — fast, scalable and high performance websites with modern development solutions tailored to your business. Next JS, React, Node JS. Office in Thane West. Fixed price.',
+    'Expert website developers in Mumbai â€” fast, scalable and high performance websites with modern development solutions tailored to your business. Next JS, React, Node JS. Office in Thane West. Fixed price.',
   desc:
-    "NNC Digital's website developers in Mumbai build fast, scalable and high performance websites for startups, SMEs and enterprises across Mumbai, Thane and Navi Mumbai. Our in-house development team delivers modern solutions using Next JS, React JS and Node JS — custom business websites, web applications, ecommerce platforms and full stack solutions with PageSpeed 90+, zero outsourcing and complete source code ownership on delivery.",
+    "NNC Digital's website developers in Mumbai build fast, scalable and high performance websites for startups, SMEs and enterprises across Mumbai, Thane and Navi Mumbai. Our in-house development team delivers modern solutions using Next JS, React JS and Node JS â€” custom business websites, web applications, ecommerce platforms and full stack solutions with PageSpeed 90+, zero outsourcing and complete source code ownership on delivery.",
   stat1: '565+',
   stat1Label: 'Projects Delivered',
   serviceName: 'website development in Mumbai',
@@ -223,93 +223,93 @@ const data = {
   features: [
     {
       h3: 'Custom Business Website Development Mumbai',
-      desc: 'Custom business websites built from scratch with Next JS or React — no page builders, no templates. Fast load times, SEO-ready architecture, PageSpeed 90+ and mobile-first responsive design for Mumbai businesses.',
+      desc: 'Custom business websites built from scratch with Next JS or React â€” no page builders, no templates. Fast load times, SEO-ready architecture, PageSpeed 90+ and mobile-first responsive design for Mumbai businesses.',
     },
     {
       h3: 'Corporate Website Development Mumbai',
-      desc: 'Corporate website development for Mumbai companies — multi-page architecture, CMS integration, service pages, team sections and contact forms built to convert visitors into qualified leads.',
+      desc: 'Corporate website development for Mumbai companies â€” multi-page architecture, CMS integration, service pages, team sections and contact forms built to convert visitors into qualified leads.',
     },
     {
       h3: 'Full Stack Web Application Development Mumbai',
-      desc: 'Full stack web applications — React JS or Next JS frontend connected to Node JS backend with REST APIs, database integration (MongoDB/PostgreSQL) and AWS cloud deployment for Mumbai businesses.',
+      desc: 'Full stack web applications â€” React JS or Next JS frontend connected to Node JS backend with REST APIs, database integration (MongoDB/PostgreSQL) and AWS cloud deployment for Mumbai businesses.',
     },
     {
       h3: 'High Performance Website Development Mumbai',
-      desc: 'High performance websites for Mumbai businesses — server-side rendering, static site generation, image optimisation, code splitting and lazy loading. PageSpeed 90+ on mobile and desktop guaranteed.',
+      desc: 'High performance websites for Mumbai businesses â€” server-side rendering, static site generation, image optimisation, code splitting and lazy loading. PageSpeed 90+ on mobile and desktop guaranteed.',
     },
     {
       h3: 'Landing Page Development Mumbai',
-      desc: 'High converting landing pages for Mumbai ad campaigns — fast-loading, conversion-optimised with clear CTAs, lead capture forms and A/B test-ready architecture for Google Ads and Meta Ads.',
+      desc: 'High converting landing pages for Mumbai ad campaigns â€” fast-loading, conversion-optimised with clear CTAs, lead capture forms and A/B test-ready architecture for Google Ads and Meta Ads.',
     },
     {
       h3: 'Ecommerce Website Development Mumbai',
-      desc: 'Ecommerce website development for Mumbai online stores — Shopify, WooCommerce or custom-built platforms with Razorpay/UPI integration, product management and order tracking.',
+      desc: 'Ecommerce website development for Mumbai online stores â€” Shopify, WooCommerce or custom-built platforms with Razorpay/UPI integration, product management and order tracking.',
     },
     {
       h3: 'Next JS Development Mumbai',
-      desc: 'Next JS website development for Mumbai businesses — SSR, SSG, ISR, App Router, API routes and full SEO optimisation. Fast, modern and scalable Next JS sites built by certified in-house developers.',
+      desc: 'Next JS website development for Mumbai businesses â€” SSR, SSG, ISR, App Router, API routes and full SEO optimisation. Fast, modern and scalable Next JS sites built by certified in-house developers.',
     },
     {
       h3: 'Website Maintenance & Support Mumbai',
-      desc: 'Ongoing website maintenance and support for Mumbai businesses — bug fixes, content updates, plugin updates, security patches, uptime monitoring and performance optimisation.',
+      desc: 'Ongoing website maintenance and support for Mumbai businesses â€” bug fixes, content updates, plugin updates, security patches, uptime monitoring and performance optimisation.',
     },
     {
       h3: 'Hire Website Developers Mumbai',
-      desc: 'Hire dedicated website developers from NNC Mumbai on a project or retainer basis. All are full-time in-house engineers — not freelancers. Meet them at our Thane West office.',
+      desc: 'Hire dedicated website developers from NNC Mumbai on a project or retainer basis. All are full-time in-house engineers â€” not freelancers. Meet them at our Thane West office.',
     },
   ],
   h2Why: 'Why Hire Website Developers from NNC Mumbai?',
   why: [
     {
       n: '01',
-      h3: 'Mumbai branch office — meet developers in person',
+      h3: 'Mumbai branch office â€” meet developers in person',
       body: 'NNC has a branch office at Lodha Signet, Thane West, Mumbai. Visit us to review live development builds, discuss technical requirements and meet the developers building your website.',
     },
     {
       n: '02',
-      h3: 'Full-time in-house developers — not freelancers',
-      body: 'Every website developer at NNC Mumbai is a full-time employee — consistent, accountable engineers who stay with your project from kickoff to launch. No freelancer turnover, no offshore contractors.',
+      h3: 'Full-time in-house developers â€” not freelancers',
+      body: 'Every website developer at NNC Mumbai is a full-time employee â€” consistent, accountable engineers who stay with your project from kickoff to launch. No freelancer turnover, no offshore contractors.',
     },
     {
       n: '03',
-      h3: 'Modern tech stack — Next JS, React, Node JS',
-      body: "NNC builds with the modern web stack — Next JS 14, React 18, TypeScript, Node JS and AWS. Fast, scalable and maintainable code that grows with your Mumbai business without costly rewrites.",
+      h3: 'Modern tech stack â€” Next JS, React, Node JS',
+      body: "NNC builds with the modern web stack â€” Next JS 14, React 18, TypeScript, Node JS and AWS. Fast, scalable and maintainable code that grows with your Mumbai business without costly rewrites.",
     },
     {
       n: '04',
-      h3: 'PageSpeed 90+ — contractually guaranteed',
-      body: 'Every website NNC develops achieves PageSpeed 90+ on mobile and desktop. Core Web Vitals compliance is written into every delivery contract — not just a best-effort.',
+      h3: 'PageSpeed 90+ â€” contractually guaranteed',
+      body: 'Every website NNC develops achieves PageSpeed 90+ on mobile and desktop. Core Web Vitals compliance is written into every delivery contract â€” not just a best-effort.',
     },
     {
       n: '05',
-      h3: 'Fixed price — fully scoped before development starts',
+      h3: 'Fixed price â€” fully scoped before development starts',
       body: 'Every project is scoped and priced upfront. No hourly billing, no scope creep charges, no surprise invoices for SEO setup, responsive breakpoints or cloud deployment.',
     },
     {
       n: '06',
-      h3: '565+ projects delivered — 4.9★ Google rating',
-      body: 'NNC has built websites for startups, SMEs, ecommerce brands and enterprises across Mumbai. 4.9★ rated on Google with verifiable client reviews.',
+      h3: '565+ projects delivered â€” 4.9â˜… Google rating',
+      body: 'NNC has built websites for startups, SMEs, ecommerce brands and enterprises across Mumbai. 4.9â˜… rated on Google with verifiable client reviews.',
     },
   ],
   techStack: ['Next JS', 'React JS', 'Node JS', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'PostgreSQL', 'AWS'],
   h2Tech: 'Website Development Technology Stack',
-  h2Faq: 'Website Developers Mumbai — Frequently Asked Questions',
+  h2Faq: 'Website Developers Mumbai â€” Frequently Asked Questions',
   faqs: [
     {
       q: 'Where can I find the best website developers in Mumbai?',
-      a: "NNC Digital has among Mumbai's best website developers — 565+ projects, 4.9★ Google rating, office in Thane West. Fast, scalable and high performance websites with modern solutions.",
+      a: "NNC Digital has among Mumbai's best website developers â€” 565+ projects, 4.9â˜… Google rating, office in Thane West. Fast, scalable and high performance websites with modern solutions.",
     },
     {
       q: 'How much does it cost to hire website developers in Mumbai?',
-      a: 'A custom business website starts from ₹24,999. A full stack web application starts from ₹75,000. All fixed-price — fully scoped before development begins.',
+      a: 'A custom business website starts from â‚¹24,999. A full stack web application starts from â‚¹75,000. All fixed-price â€” fully scoped before development begins.',
     },
     {
       q: 'Do NNC website developers build high performance websites?',
-      a: 'Yes. NNC builds high performance websites using Next JS and React — SSR, image optimisation, code splitting and lazy loading. PageSpeed 90+ guaranteed.',
+      a: 'Yes. NNC builds high performance websites using Next JS and React â€” SSR, image optimisation, code splitting and lazy loading. PageSpeed 90+ guaranteed.',
     },
     {
       q: 'Can I hire dedicated website developers in Mumbai?',
-      a: 'Yes. Hire dedicated website developers from NNC Mumbai on a project or retainer. All are full-time NNC employees — not freelancers. Meet them at our Thane West office.',
+      a: 'Yes. Hire dedicated website developers from NNC Mumbai on a project or retainer. All are full-time NNC employees â€” not freelancers. Meet them at our Thane West office.',
     },
     {
       q: 'Do you build scalable websites in Mumbai?',
@@ -317,7 +317,7 @@ const data = {
     },
     {
       q: 'Do you have a website development office in Mumbai?',
-      a: 'Yes. NNC has a branch office at Lodha Signet, Kolshet Road, Thane West, Mumbai – 400 607. Visit us to review development demos and meet the team.',
+      a: 'Yes. NNC has a branch office at Lodha Signet, Kolshet Road, Thane West, Mumbai â€“ 400 607. Visit us to review development demos and meet the team.',
     },
   ],
 }

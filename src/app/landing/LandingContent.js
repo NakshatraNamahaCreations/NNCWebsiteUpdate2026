@@ -53,8 +53,14 @@ export default function LandingContent({ page }) {
   const [status, setStatus] = useState({ sending: false, ok: false, err: '' })
   const [hp, setHp] = useState('')            // honeypot — bots fill this, humans don't
   const renderedAt = useRef(Date.now())       // spam guard: too-fast submits are bots
-  const [portfolioTab, setPortfolioTab] = useState('all')
-  const shownWork = portfolioTab === 'all' ? PORTFOLIO_ITEMS : PORTFOLIO_ITEMS.filter((w) => w.cat === portfolioTab)
+  const serviceCat = service.cat || null
+  const serviceItems = serviceCat
+    ? PORTFOLIO_ITEMS.filter((w) => w.cat === serviceCat)
+    : PORTFOLIO_ITEMS
+  const [portfolioTab, setPortfolioTab] = useState(serviceCat || 'all')
+  const shownWork = serviceCat
+    ? serviceItems
+    : (portfolioTab === 'all' ? PORTFOLIO_ITEMS : PORTFOLIO_ITEMS.filter((w) => w.cat === portfolioTab))
 
   /* Pinned horizontal scroll for the Problems section (desktop only).
      As the user scrolls down while the section is pinned, the track slides
@@ -315,37 +321,55 @@ export default function LandingContent({ page }) {
           <div className="lp-eyebrow">Selected work</div>
           <h2 className="lp-h2">{`A glimpse of our ${LANDING_COMPANY.stats.websites} websites`}</h2>
           <p className="lp-sub">{`See why we are called the ${keyword}. Animated experiences, ecommerce, landing pages, corporate sites, web apps and mobile apps — each one owned outright by the client.`}</p>
-          <div className="lp-tabs">
-            {PORTFOLIO_CATEGORIES.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                className={`lp-tab${portfolioTab === c.id ? ' active' : ''}`}
-                onClick={() => setPortfolioTab(c.id)}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
+          {!serviceCat && (
+            <div className="lp-tabs">
+              {PORTFOLIO_CATEGORIES.map((c) => (
+                <button
+                  key={c.id}
+                  type="button"
+                  className={`lp-tab${portfolioTab === c.id ? ' active' : ''}`}
+                  onClick={() => setPortfolioTab(c.id)}
+                >
+                  {c.label}
+                </button>
+              ))}
+            </div>
+          )}
           <div className="lp-work-grid">
-            {shownWork.map((w) => (
-              <article className="lp-work-card" key={w.name}>
-                <div className="lp-work-thumb" style={{ background: w.grad }}>
-                  <span className="lp-work-dots"><i /><i /><i /></span>
-                  <span className="lp-work-name">{w.name}</span>
-                </div>
-                <div className="lp-work-body">
-                  <div className="lp-work-head">
-                    <h3>{w.name}</h3>
-                    <span className="lp-work-url">↗</span>
+            {shownWork.map((w) => {
+              const inner = (
+                <>
+                  <div className="lp-work-thumb" style={{ background: w.grad }}>
+                    <span className="lp-work-dots"><i /><i /><i /></span>
+                    <span className="lp-work-name">{w.name}</span>
                   </div>
-                  <div className="lp-work-url-text">{w.url}</div>
-                  <div className="lp-work-tags">
-                    {w.tags.map((t) => <span key={t}>{t}</span>)}
+                  <div className="lp-work-body">
+                    <div className="lp-work-head">
+                      <h3>{w.name}</h3>
+                      <span className="lp-work-url">↗</span>
+                    </div>
+                    <div className="lp-work-url-text">{w.url}</div>
+                    <div className="lp-work-tags">
+                      {w.tags.map((t) => <span key={t}>{t}</span>)}
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </>
+              )
+              return w.href ? (
+                <a
+                  className="lp-work-card"
+                  key={w.name}
+                  href={w.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+                >
+                  {inner}
+                </a>
+              ) : (
+                <article className="lp-work-card" key={w.name}>{inner}</article>
+              )
+            })}
           </div>
         </div>
       </section>

@@ -14,10 +14,10 @@ export default function Services() {
           </div>
           <div className="col-lg-7 d-flex flex-column justify-content-end">
             <p className="sec-sub mb-3">
-              NNC&apos;s in-house team covers the complete digital stack.{' '}
-              <strong>Every project is built by permanent NNC employees.</strong>{' '}
-              You can walk into any office and meet the team.
+              Nakshatra Namaha Creations provides complete digital services through one in-house team. From professional website development and mobile app development to CRM software, SEO and creative production, every project is handled by permanent Nakshatra Namaha Creations employees.
             </p>
+
+            <p className='sec-sub mb-3'>Whether you need a business website, an e-commerce platform, a custom mobile application or digital marketing services, our team works across the complete digital stack.</p>
             <div className="d-flex flex-wrap gap-2">
               <button className="btn btn-sky fw-bold px-4"
                 onClick={() => window.dispatchEvent(new CustomEvent('open-quote'))}>

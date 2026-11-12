@@ -1,11 +1,11 @@
-// ─── ALL LANDING PAGE DATA ───────────────────────────────────────────────────
+// â”€â”€â”€ ALL LANDING PAGE DATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // This file drives 100+ pages via dynamic routing.
 // Each slug maps to SEO metadata + page content.
 // Structure: city landing pages, service pages, neighbourhood pages
 
 import { SITE } from './siteData'
 
-// ─── SERVICE DEFINITIONS ──────────────────────────────────────────────────────
+// â”€â”€â”€ SERVICE DEFINITIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const SERVICE_DEFS = {
   'website-development': {
     name: 'Website Development',
@@ -99,14 +99,14 @@ export const SERVICE_DEFS = {
   },
 }
 
-// ─── CITY DEFINITIONS ─────────────────────────────────────────────────────────
+// â”€â”€â”€ CITY DEFINITIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const CITY_DEFS = {
   bangalore: {
     name: 'Bangalore',
     fullName: 'Bengaluru, Karnataka',
     pop: '13 million',
     desc: "India's Silicon Valley and the hub of technology businesses.",
-    office: 'Darshan Plaza, 1st Floor, Channasandra, Bengaluru – 560 098',
+    office: 'Darshan Plaza, 1st Floor, Channasandra, Bengaluru â€“ 560 098',
     phone: '+91 99005 66466',
     landmarks: ['Koramangala', 'Indiranagar', 'Whitefield', 'Electronic City', 'HSR Layout'],
   },
@@ -115,7 +115,7 @@ export const CITY_DEFS = {
     fullName: 'Mumbai (Thane West), Maharashtra',
     pop: '20 million',
     desc: "India's financial capital and home to the country's largest business community.",
-    office: 'Lodha Signet, Kolshet Road, Thane West, Mumbai – 400 607',
+    office: 'Lodha Signet, Kolshet Road, Thane West, Mumbai â€“ 400 607',
     phone: '+91 99005 66466',
     landmarks: ['Thane', 'Andheri', 'BKC', 'Powai', 'Navi Mumbai'],
   },
@@ -124,7 +124,7 @@ export const CITY_DEFS = {
     fullName: 'Hyderabad, Telangana',
     pop: '10 million',
     desc: "India's fastest growing tech hub with HITEC City as a global IT destination.",
-    office: 'Prakashnagar, Begumpet, Hyderabad – 500 016',
+    office: 'Prakashnagar, Begumpet, Hyderabad â€“ 500 016',
     phone: '+91 99005 66466',
     landmarks: ['HITEC City', 'Gachibowli', 'Banjara Hills', 'Jubilee Hills', 'Madhapur'],
   },
@@ -133,13 +133,13 @@ export const CITY_DEFS = {
     fullName: 'Mysuru, Karnataka',
     pop: '1.2 million',
     desc: 'The cultural capital of Karnataka with a growing IT and business sector.',
-    office: 'Suswani Towers, JP Nagar 2nd Stage, Mysuru – 570 008',
+    office: 'Suswani Towers, JP Nagar 2nd Stage, Mysuru â€“ 570 008',
     phone: '+91 99005 66466',
     landmarks: ['Jayalakshmipuram', 'Vijayanagar', 'Kuvempunagar', 'Gokulam'],
   },
 }
 
-// ─── NEIGHBOURHOOD DEFINITIONS ────────────────────────────────────────────────
+// â”€â”€â”€ NEIGHBOURHOOD DEFINITIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const NEIGHBOURHOOD_DEFS = {
   'rr-nagar': { name: 'RR Nagar', city: 'Bangalore', cityKey: 'bangalore', desc: 'Rajarajeshwari Nagar, one of Bangalore\'s fastest growing residential and commercial areas.' },
   'hsr-layout': { name: 'HSR Layout', city: 'Bangalore', cityKey: 'bangalore', desc: 'HSR Layout, a premium tech hub and startup neighbourhood in Bangalore.' },
@@ -150,10 +150,10 @@ export const NEIGHBOURHOOD_DEFS = {
   'indiranagar': { name: 'Indiranagar', city: 'Bangalore', cityKey: 'bangalore', desc: 'Indiranagar, Bangalore\'s most vibrant neighbourhood for tech companies and startups.' },
 }
 
-// ─── ALL SLUG CONFIGURATIONS ──────────────────────────────────────────────────
+// â”€â”€â”€ ALL SLUG CONFIGURATIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Maps every slug to { service, city, neighbourhood, titleOverride, descOverride }
 export const SLUG_MAP = {
-  // ── BANGALORE SERVICE PAGES ──
+  // â”€â”€ BANGALORE SERVICE PAGES â”€â”€
   'website-development-company-in-bangalore':          { service: 'website-development',        city: 'bangalore', titleOverride: 'Website Development Company in Bangalore | NNC Digital', descOverride: 'Custom React JS and Next JS website in Bangalore. Corporate, e-commerce and web apps with PageSpeed 90+ guaranteed. 200+ delivered. Fixed price.' },
   'mobile-app-development-company-in-bangalore':       { service: 'mobile-app-development',     city: 'bangalore', titleOverride: 'Mobile App Development Company Bangalore | NNC Digital', descOverride: 'iOS and Android apps in Bangalore on React Native and Flutter. Full Play Store and App Store deployment. 150+ apps. Fixed price. Zero outsourcing.' },
   'digital-marketing-agency-in-bangalore':             { service: 'digital-marketing',          city: 'bangalore', titleOverride: 'Digital Marketing Agency Bangalore | NNC Digital', descOverride: 'Google Ads, Meta Ads, SEO and social media in Bangalore. Real leads reported, not vanity metrics. 8+ years experience. Get a free quote today.' },
@@ -167,7 +167,7 @@ export const SLUG_MAP = {
   'app-developers-in-bangalore':                       { service: 'mobile-app-development',     city: 'bangalore', titleOverride: 'App Developers in Bangalore | NNC Digital' },
   'best-website-development-company-in-bangalore':     { service: 'website-development',        city: 'bangalore', titleOverride: 'Best Website Development Company in Bangalore | NNC Digital' },
 
-  // ── BANGALORE NEIGHBOURHOOD PAGES ──
+  // â”€â”€ BANGALORE NEIGHBOURHOOD PAGES â”€â”€
   'website-development-company-in-rr-nagar':           { service: 'website-development',    city: 'bangalore', neighbourhood: 'rr-nagar' },
   'mobile-app-development-company-in-rr-nagar':        { service: 'mobile-app-development', city: 'bangalore', neighbourhood: 'rr-nagar' },
   'website-development-company-in-hsr-layout':         { service: 'website-development',    city: 'bangalore', neighbourhood: 'hsr-layout' },
@@ -177,7 +177,7 @@ export const SLUG_MAP = {
   'website-designing-company-in-jayanagar':            { service: 'website-development',    city: 'bangalore', neighbourhood: 'jayanagar', titleOverride: 'Website Designing Company in Jayanagar, Bangalore | NNC' },
   'website-development-company-in-indiranagar':        { service: 'website-development',    city: 'bangalore', neighbourhood: 'indiranagar' },
 
-  // ── MUMBAI SERVICE PAGES ──
+  // â”€â”€ MUMBAI SERVICE PAGES â”€â”€
   'website-development-company-in-mumbai':             { service: 'website-development',        city: 'mumbai', titleOverride: 'Website Development Company in Mumbai | NNC Digital', descOverride: 'Custom websites in Mumbai on React JS and Next JS. Corporate, e-commerce and web apps. PageSpeed 90+ guaranteed. Office in Thane West. Fixed price.' },
   'mobile-app-development-company-in-mumbai':          { service: 'mobile-app-development',     city: 'mumbai', titleOverride: 'Mobile App Development Company in Mumbai | NNC Digital', descOverride: 'iOS and Android app development in Mumbai React Native and Flutter. Full Play Store and App Store deployment. In-house team. Office in Thane West. Fixed price.' },
   'digital-marketing-agency-in-mumbai':                { service: 'digital-marketing',          city: 'mumbai', titleOverride: 'Digital Marketing Agency in Mumbai | NNC Digital', descOverride: 'Google Ads, Meta Ads, SEO and social media for Mumbai businesses. Real leads, transparent reports. NNC branch office in Thane West. Get a quote.' },
@@ -211,7 +211,7 @@ export const SLUG_MAP = {
   'best-website-designer-in-mumbai':                   { service: 'website-development',        city: 'mumbai', titleOverride: 'Best Website Designer in Mumbai | NNC Digital' },
   'best-website-design-and-development-company-in-mumbai': { service: 'website-development', city: 'mumbai', titleOverride: 'Best Website Design & Development Company in Mumbai | NNC' },
 
-  // ── HYDERABAD SERVICE PAGES ──
+  // â”€â”€ HYDERABAD SERVICE PAGES â”€â”€
   'mobile-app-development-company-hyderabad':          { service: 'mobile-app-development',     city: 'hyderabad', titleOverride: 'Mobile App Development Company in Hyderabad | NNC Digital', descOverride: 'iOS and Android app development in Hyderabad on React Native and Flutter. Fixed price, zero outsourcing. NNC branch office in Begumpet, Hyderabad.' },
   'website-development-company-in-hyderabad':          { service: 'website-development',        city: 'hyderabad', titleOverride: 'Website Development Company in Hyderabad | NNC Digital', descOverride: 'Professional website development in Hyderabad corporate websites, e-commerce and web apps. Fixed price, in-house team. NNC branch office in Begumpet, Hyderabad.' },
   'digital-marketing-agency-hyderabad':                { service: 'digital-marketing',          city: 'hyderabad' },
@@ -220,7 +220,7 @@ export const SLUG_MAP = {
   'graphic-design-services-hyderabad':                 { service: 'graphic-design',             city: 'hyderabad' },
   'b2b-marketing-company-hyderabad':                   { service: 'b2b-marketing',              city: 'hyderabad' },
 
-  // ── MYSURU SERVICE PAGES ──
+  // â”€â”€ MYSURU SERVICE PAGES â”€â”€
   'website-development-company-in-mysuru':             { service: 'website-development',        city: 'mysuru', titleOverride: 'Website Development Company in Mysuru | NNC Digital', descOverride: 'Professional website development in Mysuru corporate websites, e-commerce and web apps. Fixed price, in-house team. NNC branch office in JP Nagar.' },
   'mobile-app-development-company-in-mysuru':          { service: 'mobile-app-development',     city: 'mysuru' },
   'digital-marketing-agency-in-mysuru':                { service: 'digital-marketing',          city: 'mysuru' },
@@ -230,7 +230,7 @@ export const SLUG_MAP = {
   '2d-animation-studio-in-mysuru':                     { service: '2d-animation',               city: 'mysuru' },
   'b2b-marketing-agency-in-mysuru':                    { service: 'b2b-marketing',              city: 'mysuru' },
 
-  // ── GENERIC SERVICE PAGES (no city) ──
+  // â”€â”€ GENERIC SERVICE PAGES (no city) â”€â”€
   'mobile-app-development-company':                    { service: 'mobile-app-development' },
   'website-development-company':                       { service: 'website-development' },
   'website-development-agency':                        { service: 'website-development', titleOverride: 'Website Development Agency in India | NNC Digital' },
@@ -241,7 +241,7 @@ export const SLUG_MAP = {
   'react-native-mobile-app-developers':                { service: 'mobile-app-development', titleOverride: 'React Native Mobile App Developers | NNC Digital' },
   'android-app-development':                           { service: 'mobile-app-development', titleOverride: 'Android App Development Company | NNC Digital' },
   'ios-mobile-app-development':                        { service: 'mobile-app-development', titleOverride: 'iOS Mobile App Development Company | NNC Digital' },
-  'react-js-development-company':                      { service: 'software-development', titleOverride: 'React JS Development Company in Bangalore | NNC Digital' },
+  'react-js-development-company':                      { service: 'software-development', titleOverride: 'React JS Development Company in Bangalore | NNC Digital', descOverride: 'NNC Digital offers custom software, CRM, SaaS and enterprise solutions in India. 565+ projects, 4.9â˜… Google rating. Call +91 99005 66466.' },
   'node-js-development-company':                       { service: 'software-development', titleOverride: 'Node JS Development Company in Bangalore | NNC Digital' },
   'seo-services':                                      { service: 'digital-marketing', titleOverride: 'SEO Services in Bangalore | NNC Digital' },
   'social-media-marketing':                            { service: 'digital-marketing', titleOverride: 'Social Media Marketing Company in Bangalore | NNC Digital' },
@@ -259,7 +259,7 @@ export const SLUG_MAP = {
   '2d-animation-studio':                               { service: '2d-animation', titleOverride: '2D Animation Studio in Bangalore | NNC Digital' },
 }
 
-// ─── BLOG POSTS ───────────────────────────────────────────────────────────────
+// â”€â”€â”€ BLOG POSTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const BLOG_POSTS = [
   { slug: 'how-mobile-app-development-can-transform-customer-experience-in-bangalore', title: 'How Mobile App Development Can Transform Customer Experience in Bangalore', category: 'Mobile Apps', date: '2025-10-07', readTime: '6 min' },
   { slug: 'why-hiring-a-mobile-app-development-company-in-bangalore-is-a-smart-business-move', title: 'Why Hiring a Mobile App Development Company in Bangalore Is a Smart Business Move', category: 'Mobile Apps', date: '2025-12-16', readTime: '5 min' },
@@ -308,7 +308,7 @@ export const BLOG_POSTS = [
   { slug: 'test', title: 'test', category: 'Design', date: '2026-04-17', readTime: '6 min', description: 'test', body: 'test' },
 ]
 
-// ─── CASE STUDIES ─────────────────────────────────────────────────────────────
+// â”€â”€â”€ CASE STUDIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const CASE_STUDY_DATA = {
   'healthcare/scinado': {
     title: 'Scinado Healthcare Platform',
@@ -317,11 +317,11 @@ export const CASE_STUDY_DATA = {
     category: 'healthcare',
     slug: 'scinado',
     tags: ['React Native', 'Node JS', 'AWS'],
-    img: 'https://www.nakshatranamahacreations.com/media/ourwork/scinado.webp',
+    img: 'https://nakshatranamahacreations.com/media/ourwork/scinado.webp',
     result: '10,000+ app downloads in just 3 months',
     challenge: 'Discover how NNC Digital developed Scinado\'s healthcare platform, simplifying patient bookings and achieving',
     solution: 'NNC built a full React Native app for patients, a web portal for doctors and an admin CRM all integrated on AWS with real-time appointment management.',
-    outcomes: ['10K+ downloads in 3 months', '4.5★ Play Store rating', '60% reduction in missed appointments', 'Live across 5 cities'],
+    outcomes: ['10K+ downloads in 3 months', '4.5â˜… Play Store rating', '60% reduction in missed appointments', 'Live across 5 cities'],
   },
   'home-services/ganesh-interior': {
     title: 'Ganesh Interior Website & SEO',
@@ -330,11 +330,11 @@ export const CASE_STUDY_DATA = {
     category: 'home-services',
     slug: 'ganesh-interior',
     tags: ['Next JS', 'SEO', 'CMS'],
-    img: 'https://www.nakshatranamahacreations.com/media/ourwork/ganeshinterior.webp',
+    img: 'https://nakshatranamahacreations.com/media/ourwork/ganeshinterior.webp',
     result: 'Page 1 Google ranking in 90 days',
     challenge: 'Discover how NNC Digital helped an interior design business improve local visibility and achieve',
     solution: 'NNC built a Next JS website with on-page SEO, Google Business optimisation and a custom portfolio CMS. PageSpeed 94 on delivery.',
-    outcomes: ['Page 1 Google ranking · 90 days', '12+ qualified enquiries/month', 'PageSpeed score 94', '40% increase in calls'],
+    outcomes: ['Page 1 Google ranking Â· 90 days', '12+ qualified enquiries/month', 'PageSpeed score 94', '40% increase in calls'],
   },
   'home-services/avyakthroofing': {
     title: 'Avyakth Roofing Brand & Web',
@@ -343,7 +343,7 @@ export const CASE_STUDY_DATA = {
     category: 'home-services',
     slug: 'avyakthroofing',
     tags: ['React JS', 'Branding', 'SEO'],
-    img: 'https://www.nakshatranamahacreations.com/media/ourwork/avyakth.webp',
+    img: 'https://nakshatranamahacreations.com/media/ourwork/avyakth.webp',
     result: '3x more customer enquiries',
     challenge: 'See how NNC Digital helped a roofing business build its online presence with website development and branding, achieving',
     solution: 'NNC delivered complete brand identity, a React JS website with service portfolio and technical SEO. Full project in 4 weeks.',
