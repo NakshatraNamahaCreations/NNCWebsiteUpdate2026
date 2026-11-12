@@ -616,7 +616,7 @@ export function FaqContact() {
             <div className="section-tag"><span className="tag-dot" />FAQ</div>
             <h2 className="faq-h mb-2">Frequently <span className="sky">Asked Questions </span></h2>
             <p className="sec-sub mb-4" style={{ fontSize: 15.5 }}>
-             Find answers to common questions about website development, mobile applications, CRM software and Nakshatra Namaha Creations's project process.
+             Find answers to common questions about website development, mobile applications, CRM software and Nakshatra Namaha Creations&apos;s project process.
             </p>
 
             <div style={{ borderTop: '1px solid var(--border)' }}>
@@ -789,7 +789,7 @@ export function CtaBand() {
             </h2>
             <p className="cta-sub mb-3">Looking for a website development company to bring your business ideas to life? Nakshatra Namaha Creations provides website development, mobile app development, CRM systems and digital marketing services through a dedicated in-house team.</p>
 
-            <p className="cta-sub mb-3">Tell us what you need. We'll come back with a clear scope, timeline and fixed price within 24 hours.</p>
+            <p className="cta-sub mb-3">Tell us what you need. We&apos;ll come back with a clear scope, timeline and fixed price within 24 hours.</p>
             <div className="d-flex flex-wrap gap-4">
               {['Free consultation', 'PageSpeed 90+ guaranteed', 'Source code 100% yours', 'Fixed price'].map((chip, i) => (
                 <span key={i} className="cta-chip">
