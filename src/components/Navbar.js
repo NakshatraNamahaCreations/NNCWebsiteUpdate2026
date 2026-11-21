@@ -13,13 +13,13 @@ const SERVICES = [
     eyebrow: 'Web Solutions', title: ['High-performance', 'Websites'],
     desc: 'Custom React JS and Next JS websites built for speed, SEO and conversion. Every delivery includes a PageSpeed 90+ guarantee written into the contract.',
     links: [
-      { name: 'Corporate & Business Websites', href: '/website-development-company-in-bangalore' },
+      { name: 'Corporate & Business Websites', href: '/corporate-business-websites' },
       { name: 'E-commerce Platforms',          href: '/ecommerce-website-development-company' },
       { name: 'E-commerce Development Mumbai', href: '/ecommerce-website-development-company-in-mumbai' },
-      { name: 'Web Applications & Portals',    href: '/react-js-development-company' },
-      { name: 'Landing Pages & Funnels',       href: '/website-development-company-in-bangalore' },
-      { name: 'CMS & Content Platforms',       href: '/website-development-company-in-bangalore' },
-      { name: 'Progressive Web Apps',          href: '/website-development-company-in-bangalore' },
+      { name: 'Web Applications & Portals',    href: '/web-application-development' },
+      { name: 'Landing Pages & Funnels',       href: '/landing-page-development' },
+      { name: 'CMS & Content Platforms',       href: '/cms-content-platforms' },
+      { name: 'Progressive Web Apps',          href: '/progressive-web-app-development' },
     ],
   },
   {
@@ -29,12 +29,12 @@ const SERVICES = [
     eyebrow: 'Mobile Solutions', title: ['iOS & Android', 'Mobile Apps'],
     desc: 'Cross-platform React Native and Flutter apps built by dedicated in-house specialists. Weekly APK/TestFlight builds so you track progress throughout development.',
     links: [
-      { name: 'On-demand Service Apps',      href: '/mobile-app-development-company-in-bangalore' },
-      { name: 'E-commerce Mobile Apps',      href: '/mobile-app-development-company-in-bangalore' },
-      { name: 'Healthcare & Clinic Apps',    href: '/mobile-app-development-company-in-bangalore' },
-      { name: 'React Native Apps',           href: '/react-native-mobile-app-developers' },
-      { name: 'Flutter App Development',     href: '/flutter-app-development' },
-      { name: 'iOS & Android Apps',          href: '/android-app-development' },
+      { name: 'On-demand Service Apps',      href: '/on-demand-service-apps' },
+      { name: 'E-commerce Mobile Apps',      href: '/ecommerce-mobile-app-development' },
+      { name: 'Healthcare & Clinic Apps',    href: '/healthcare-clinic-app-development' },
+      { name: 'React Native Apps',           href: '/react-native-app-development-company-in-bangalore' },
+      { name: 'Flutter App Development',     href: '/flutter-app-development-company-in-bangalore' },
+      { name: 'iOS & Android Apps',          href: '/ios-android-app-development' },
       { name: 'App Development Mumbai',      href: '/mobile-app-development-company-in-mumbai' },
     ],
   },
@@ -45,12 +45,12 @@ const SERVICES = [
     eyebrow: 'Software Solutions', title: ['Custom CRM &', 'SaaS Platforms'],
     desc: 'Proprietary CRM systems, SaaS platforms and admin dashboards replacing manual workflows with software your team actually uses.',
     links: [
-      { name: 'Custom CRM Systems',           href: '/custom-crm-development' },
-      { name: 'SaaS & Subscription Platforms',href: '/custom-crm-development' },
-      { name: 'Admin Dashboards',              href: '/crm-solutions' },
-      { name: 'Workflow Automation',           href: '/custom-crm-development' },
-      { name: 'ERP & Inventory Systems',       href: '/custom-crm-development' },
-      { name: 'API Integrations',              href: '/node-js-development-company' },
+      { name: 'Custom CRM Systems',           href: '/custom-crm-systems' },
+      { name: 'SaaS & Subscription Platforms',href: '/saas-subscription-platforms' },
+      { name: 'Admin Dashboards',              href: '/admin-dashboards' },
+      { name: 'Workflow Automation',           href: '/workflow-automation' },
+      { name: 'ERP & Inventory Systems',       href: '/erp-inventory-systems' },
+      { name: 'API Integrations',              href: '/api-integrations' },
     ],
   },
   {
@@ -60,12 +60,12 @@ const SERVICES = [
     eyebrow: 'Growth & Marketing', title: ['Digital Marketing', 'That Drives Leads'],
     desc: 'Google Ads, Meta Ads, technical SEO and social media managed by in-house specialists who report on real business outcomes.',
     links: [
-      { name: 'Google Search & Display Ads', href: '/paid-marketing-services' },
-      { name: 'Facebook & Instagram Ads',    href: '/paid-marketing-services' },
-      { name: 'Technical SEO & On-page',     href: '/seo-services' },
-      { name: 'Social Media Management',     href: '/social-media-marketing' },
-      { name: 'Google Shopping Campaigns',   href: '/paid-marketing-services' },
-      { name: 'Local SEO & GMB',             href: '/seo-services' },
+      { name: 'Google Search & Display Ads', href: '/google-search-display-ads' },
+      { name: 'Facebook & Instagram Ads',    href: '/facebook-instagram-ads' },
+      { name: 'Technical SEO & On-page',     href: '/technical-seo-services' },
+      { name: 'Social Media Management',     href: '/social-media-management' },
+      { name: 'Google Shopping Campaigns',   href: '/google-shopping-campaigns' },
+      { name: 'Local SEO & GMB',             href: '/local-seo-gmb' },
     ],
   },
   {
@@ -75,12 +75,12 @@ const SERVICES = [
     eyebrow: 'Visual Production', title: ['Video & Animation', 'Production'],
     desc: 'Brand films to explainer animations scripted, shot and edited by the NNC in-house production team. Zero outsourcing from brief to final file.',
     links: [
-      { name: 'Corporate Brand Films',    href: '/corporate-video-makers' },
-      { name: '2D Explainer Animation',   href: '/animated-video-creators' },
-      { name: 'Character Animation',      href: '/2d-animation-studio' },
-      { name: 'Drone & Aerial Footage',   href: '/corporate-video-production-company-in-bangalore' },
-      { name: 'Product Ad Shoots',        href: '/corporate-film-makers' },
-      { name: 'Social Media Reels',       href: '/motion-graphics-services' },
+      { name: 'Corporate Brand Films',    href: '/corporate-brand-films' },
+      { name: '2D Explainer Animation',   href: '/2d-explainer-animation' },
+      { name: 'Character Animation',      href: '/character-animation' },
+      { name: 'Drone & Aerial Footage',   href: '/drone-aerial-footage' },
+      { name: 'Product Ad Shoots',        href: '/product-ad-shoots' },
+      { name: 'Social Media Reels',       href: '/social-media-reels' },
     ],
   },
   {
@@ -90,12 +90,12 @@ const SERVICES = [
     eyebrow: 'Design & Branding', title: ['Brand Identity &', 'UI/UX Design'],
     desc: 'Logo design, brand identity systems, UI/UX for web and apps and complete social media creative kits. Consistent visual language across every touchpoint.',
     links: [
-      { name: 'Logo & Brand Identity',       href: '/graphic-designing-company' },
-      { name: 'UI/UX for Web & Apps',        href: '/ui-ux-design-agency' },
-      { name: 'Social Media Creative Kits',  href: '/graphic-design-company-in-bangalore' },
-      { name: 'Brand Guidelines & Systems',  href: '/graphic-design-company-in-bangalore' },
-      { name: 'Marketing Collateral',        href: '/graphic-designing-company' },
-      { name: 'Pitch Deck Design',           href: '/graphic-designing-company' },
+      { name: 'Logo & Brand Identity',       href: '/logo-brand-identity' },
+      { name: 'UI/UX for Web & Apps',        href: '/ui-ux-design' },
+      { name: 'Social Media Creative Kits',  href: '/social-media-creative-kits' },
+      { name: 'Brand Guidelines & Systems',  href: '/brand-guidelines-systems' },
+      { name: 'Marketing Collateral',        href: '/marketing-collateral-design' },
+      { name: 'Pitch Deck Design',           href: '/pitch-deck-design' },
     ],
   },
 ]
@@ -188,8 +188,16 @@ function DDShell({ open, children, style = {} }) {
 }
 
 /* ─── SERVICES MEGA (SIDEBAR LAYOUT) ─────────────────────────── */
-function ServicesMega({ open , setOpenMenu}) {
-  const [activeKey, setActiveKey] = useState('web')
+function ServicesMega({ open , setOpenMenu, pathname }) {
+  const currentGroup = SERVICES.find(s =>
+    s.slug === pathname || s.links.some(l => l.href === pathname)
+  )
+  const [activeKey, setActiveKey] = useState(currentGroup ? currentGroup.key : 'web')
+
+  useEffect(() => {
+    if (currentGroup) setActiveKey(currentGroup.key)
+  }, [pathname, currentGroup])
+
   const active = SERVICES.find(s => s.key === activeKey) || SERVICES[0]
 
   return (
@@ -261,29 +269,41 @@ function ServicesMega({ open , setOpenMenu}) {
           <p style={{ fontSize: 13.5, color: '#475569', lineHeight: 1.7, marginBottom: 20 }}>{active.desc}</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 22 }}>
-            {active.links.map(link => (
-          <Link
-            href={link.href}
-             key={link.name}
-           onClick={() => setOpenMenu(null)}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 9,
-              padding: '10px 12px',
-              borderRadius: 8,
-              background: '#F8FAFC',
-              border: '1px solid #E2E8F0',
-              textDecoration: 'none'
-            }}
-          >
-            <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#2196F3' }} />
-            <span style={{ fontSize: 12.5, fontWeight: 600, color: '#1E293B', flex: 1 }}>
-              {link.name}
-            </span>
-            <ArrowRight />
-          </Link>
-            ))}
+            {active.links.map(link => {
+              const isActive = link.href === pathname
+              return (
+                <Link
+                  href={link.href}
+                  key={link.name}
+                  onClick={() => setOpenMenu(null)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 9,
+                    padding: '10px 12px',
+                    borderRadius: 8,
+                    background: isActive ? '#2196F3' : '#F8FAFC',
+                    border: `1px solid ${isActive ? '#1565C0' : '#E2E8F0'}`,
+                    boxShadow: isActive ? '0 6px 16px -6px rgba(33,150,243,.55)' : 'none',
+                    textDecoration: 'none',
+                    transition: 'background .18s, border-color .18s, box-shadow .18s',
+                  }}
+                >
+                  <div style={{
+                    width: 6, height: 6, borderRadius: '50%',
+                    background: isActive ? '#fff' : '#2196F3',
+                  }} />
+                  <span style={{
+                    fontSize: 12.5, fontWeight: isActive ? 700 : 600,
+                    color: isActive ? '#fff' : '#1E293B',
+                    flex: 1,
+                  }}>
+                    {link.name}
+                  </span>
+                  <ArrowRight />
+                </Link>
+              )
+            })}
           </div>
 
           {/* CTA bar */}
@@ -564,9 +584,10 @@ useEffect(() => {
           <nav className="d-none d-xl-flex" style={{ alignItems: 'center', gap: 2, flex: 1, justifyContent: 'flex-end' }}>
             <div style={{ position: 'relative', height: 80, display: 'flex', alignItems: 'center' }}>
               <NavTrigger label="Services" open={openMenu === 'svc'} onClick={() => tog('svc')} />
-              <ServicesMega 
-                open={openMenu === 'svc'} 
-                setOpenMenu={setOpenMenu} 
+              <ServicesMega
+                open={openMenu === 'svc'}
+                setOpenMenu={setOpenMenu}
+                pathname={pathname}
               />
             </div>
             <div style={{ position: 'relative', height: 80, display: 'flex', alignItems: 'center' }}>

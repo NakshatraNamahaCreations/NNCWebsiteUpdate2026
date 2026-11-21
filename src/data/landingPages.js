@@ -1,9 +1,11 @@
 /**
- * Landing-page content â€” service Ã— location SEO landing pages.
+ * Landing-page content — service × location SEO landing pages.
  * Ported from the standalone "Nakshatra NAMAHA Website landing page" project
  * into the main NNC website. Each published combination renders at
  * /landing/<slug>.
  */
+
+import { WORKS_FOR_LANDING } from '@/data/worksData'
 
 export const LANDING_COMPANY = {
   legalName: 'Nakshatra Namaha Creations',
@@ -177,68 +179,14 @@ export const PORTFOLIO_CATEGORIES = [
   { id: 'marketing', label: 'Digital marketing' },
 ]
 
-// Real NNC projects grouped by service category.
-// `cat` matches the SERVICES[*].cat values so each landing page shows only its
-// relevant projects. Source of truth lives in src/app/our-works/OurWorksContent.js.
-export const PORTFOLIO_ITEMS = [
-  // ── Websites ──
-  { name: 'Amec Technology', cat: 'website', tags: ['Next.js', 'CMS', 'SEO'], grad: 'linear-gradient(135deg,#1E40AF,#2563EB)', url: 'amectechnology.com', href: 'https://www.amectechnology.com/' },
-  { name: 'Casasaga', cat: 'website', tags: ['Next.js', 'CMS', 'SEO'], grad: 'linear-gradient(135deg,#7C3AED,#2563EB)', url: 'casasaga.in', href: 'https://www.casasaga.in/' },
-  { name: 'Movixora Logistics', cat: 'website', tags: ['Next.js', 'CMS', 'SEO'], grad: 'linear-gradient(135deg,#0B1F4B,#0ea5e9)', url: 'movixoralogistics.com', href: 'https://www.movixoralogistics.com/' },
-  { name: 'Saltech', cat: 'website', tags: ['Next.js', 'CMS', 'SEO'], grad: 'linear-gradient(135deg,#334155,#2196f3)', url: 'saltech.ltd', href: 'https://saltech.ltd/' },
-  { name: 'Werner Electrics', cat: 'website', tags: ['Next.js', 'CMS', 'SEO'], grad: 'linear-gradient(135deg,#1e293b,#f59e0b)', url: 'wernerelektrik.com', href: 'https://www.wernerelektrik.com/' },
-  { name: 'Thridhavarnam', cat: 'website', tags: ['Next.js', 'Ecommerce', 'SEO'], grad: 'linear-gradient(135deg,#be123c,#f59e0b)', url: 'thridhavarnam.com', href: 'https://www.thridhavarnam.com/' },
-  { name: 'V-Do Creatives', cat: 'website', tags: ['Next.js', 'CMS', 'SEO'], grad: 'linear-gradient(135deg,#7c3aed,#ec4899)', url: 'v-do.in', href: 'https://www.v-do.in/' },
-  { name: 'Dermfit Clinic', cat: 'website', tags: ['Next.js', 'CMS', 'SEO'], grad: 'linear-gradient(135deg,#0ea5e9,#10b981)', url: 'dermfitclinic.com', href: 'https://dermfitclinic.com/' },
-  { name: 'Puran Interiors', cat: 'website', tags: ['Next.js', 'SEO', 'CMS'], grad: 'linear-gradient(135deg,#7C3AED,#2196f3)', url: 'puraninteriors.com', href: 'https://www.puraninteriors.com/' },
-  { name: 'Rent Angadi', cat: 'website', tags: ['Next.js', 'Maps API', 'Node.js'], grad: 'linear-gradient(135deg,#D97706,#f59e0b)', url: 'rentangadi.in', href: 'https://rentangadi.in/' },
-  { name: 'Chiru Holidays', cat: 'website', tags: ['Next.js', 'CMS', 'Google Maps'], grad: 'linear-gradient(135deg,#D97706,#f97316)', url: 'chiruholidays.com', href: 'https://www.chiruholidays.com/' },
-  { name: 'Studio99', cat: 'website', tags: ['Next.js', 'CMS', 'Animations'], grad: 'linear-gradient(135deg,#7C3AED,#ec4899)', url: 'studio99rrnagar.com', href: 'https://studio99rrnagar.com/' },
-
-  // ── Mobile apps ──
-  { name: 'Dhoond', cat: 'mobile', tags: ['Flutter', 'Node.js', 'Maps API'], grad: 'linear-gradient(135deg,#1E40AF,#2563EB)', url: 'play.google.com/dhoond', href: 'https://play.google.com/store/apps/details?id=com.ameccodex.dhoond.co' },
-  { name: '3040 Property', cat: 'mobile', tags: ['React Native', 'Node.js', 'AWS'], grad: 'linear-gradient(135deg,#D97706,#f59e0b)', url: 'play.google.com/thirtyforty', href: 'https://play.google.com/store/apps/details?id=com.ororegencompanies.thirtyforty' },
-  { name: 'Homjee', cat: 'mobile', tags: ['Flutter', 'Node.js', 'Firebase'], grad: 'linear-gradient(135deg,#2563EB,#0ea5e9)', url: 'homjee.in' },
-  { name: 'Novus Health', cat: 'mobile', tags: ['Flutter', 'Firebase', 'REST API'], grad: 'linear-gradient(135deg,#6366F1,#7c3aed)', url: 'play.google.com/novus_health_lab', href: 'https://play.google.com/store/apps/details?id=com.novus.novus_health_lab' },
-  { name: 'Coffee Mart', cat: 'mobile', tags: ['React Native', 'Node.js', 'Razorpay'], grad: 'linear-gradient(135deg,#92400E,#f59e0b)', url: 'play.google.com/indiancoffeetrader', href: 'https://play.google.com/store/apps/details?id=com.indiancoffeetrader' },
-  { name: 'Kangrow Health', cat: 'mobile', tags: ['Flutter', 'Node.js', 'MySQL'], grad: 'linear-gradient(135deg,#16A34A,#10b981)', url: 'play.google.com/kangrow', href: 'https://play.google.com/store/apps/details?id=com.kangrow' },
-  { name: 'Vijay Home Services', cat: 'mobile', tags: ['React Native', 'Node.js', 'AWS'], grad: 'linear-gradient(135deg,#059669,#10b981)', url: 'play.google.com/vhs1', href: 'https://play.google.com/store/apps/details?id=com.vhs1' },
-  { name: 'Salil Javeri', cat: 'mobile', tags: ['Flutter', 'Node.js', 'Firebase'], grad: 'linear-gradient(135deg,#065f46,#10b981)', url: 'play.google.com/saliljaveri', href: 'https://play.google.com/store/apps/details?id=com.saliljaveri' },
-
-  // ── CRM & Web apps ──
-  { name: 'Smira Club CRM', cat: 'crm', tags: ['React.js', 'Node.js', 'MySQL'], grad: 'linear-gradient(135deg,#059669,#10b981)', url: 'smiraclub.in' },
-  { name: 'Vijay Home Services CRM', cat: 'crm', tags: ['React.js', 'Node.js', 'MySQL'], grad: 'linear-gradient(135deg,#065f46,#10b981)', url: 'crm.vhs.com' },
-  { name: 'Think It', cat: 'crm', tags: ['React.js', 'Node.js', 'Firebase'], grad: 'linear-gradient(135deg,#7C3AED,#2196f3)', url: 'thinkit.app' },
-  { name: 'Make My Documents', cat: 'crm', tags: ['React.js', 'Node.js', 'MySQL'], grad: 'linear-gradient(135deg,#2563EB,#0ea5e9)', url: 'crm.makemydocuments.com' },
-  { name: 'Ramsnest Ops', cat: 'crm', tags: ['React.js', 'Express', 'MySQL'], grad: 'linear-gradient(135deg,#78350F,#D97706)', url: 'ramsnest.in' },
-  { name: 'ProLeverage', cat: 'crm', tags: ['React.js', 'Firebase', 'REST API'], grad: 'linear-gradient(135deg,#6366F1,#7c3aed)', url: 'proleverage.in' },
-  { name: 'Nithya Event CRM', cat: 'crm', tags: ['React.js', 'Node.js', 'MySQL'], grad: 'linear-gradient(135deg,#DC2626,#ef4444)', url: 'nithyaevent.in' },
-  { name: 'Ecomgyan Admin', cat: 'crm', tags: ['React.js', 'Node.js', 'MySQL'], grad: 'linear-gradient(135deg,#0284C7,#0ea5e9)', url: 'ecomgyan.in' },
-
-  // ── 2D Animation ──
-  { name: 'Animation Reel Vol.1', cat: 'animation', tags: ['After Effects', 'Illustrator', 'Motion'], grad: 'linear-gradient(135deg,#7C3AED,#ec4899)', url: 'youtu.be/2IVW069hDGo', href: 'https://youtu.be/2IVW069hDGo' },
-  { name: 'Motion Graphics Film', cat: 'animation', tags: ['After Effects', 'Cinema 4D', 'VFX'], grad: 'linear-gradient(135deg,#6366F1,#7c3aed)', url: 'youtu.be/-4sN_QzE_vU', href: 'https://youtu.be/-4sN_QzE_vU' },
-  { name: 'Character Animation', cat: 'animation', tags: ['Adobe Animate', 'AE', 'Illustrator'], grad: 'linear-gradient(135deg,#be123c,#ec4899)', url: 'youtu.be/JHd3ocRFiw4', href: 'https://youtu.be/JHd3ocRFiw4' },
-  { name: 'Brand Explainer', cat: 'animation', tags: ['After Effects', 'Illustrator', 'Voice Over'], grad: 'linear-gradient(135deg,#F59E0B,#ef4444)', url: 'youtu.be/ov3pOoah8F8', href: 'https://youtu.be/ov3pOoah8F8' },
-  { name: 'Social Media Reels', cat: 'animation', tags: ['After Effects', 'Premiere Pro', 'Motion'], grad: 'linear-gradient(135deg,#ec4899,#f97316)', url: 'youtu.be/_Sx2ETyA2PM', href: 'https://youtu.be/_Sx2ETyA2PM' },
-  { name: 'Animation Reel Vol.2', cat: 'animation', tags: ['After Effects', 'Illustrator', 'Motion'], grad: 'linear-gradient(135deg,#7c3aed,#2196f3)', url: 'youtu.be/PND2cqMerUs', href: 'https://youtu.be/PND2cqMerUs' },
-
-  // ── Corporate Video ──
-  { name: 'NNC Corporate Film', cat: 'video', tags: ['4K Production', 'Drone', 'Colour Grade'], grad: 'linear-gradient(135deg,#DC2626,#ef4444)', url: 'youtu.be/rkxk2hhljqE', href: 'https://youtu.be/rkxk2hhljqE' },
-  { name: 'Brand Film', cat: 'video', tags: ['4K Production', 'VFX', 'Sound Design'], grad: 'linear-gradient(135deg,#991B1B,#DC2626)', url: 'youtu.be/lZliMJm5DzM', href: 'https://youtu.be/lZliMJm5DzM' },
-  { name: 'Corporate Video', cat: 'video', tags: ['4K Production', 'Colour Grade', 'Sound Design'], grad: 'linear-gradient(135deg,#1e293b,#DC2626)', url: 'youtu.be/iJTVv1HKLIo', href: 'https://youtu.be/iJTVv1HKLIo' },
-  { name: 'Client Success Film', cat: 'video', tags: ['4K Production', 'Drone', 'Motion Gfx'], grad: 'linear-gradient(135deg,#334155,#ef4444)', url: 'youtu.be/SzLCHQWqsqA', href: 'https://youtu.be/SzLCHQWqsqA' },
-  { name: 'Brand Story Film', cat: 'video', tags: ['4K Production', 'VFX', 'Colour Grade'], grad: 'linear-gradient(135deg,#7f1d1d,#f97316)', url: 'youtu.be/rh_hLGbRpwo', href: 'https://youtu.be/rh_hLGbRpwo' },
-
-  // ── Digital Marketing ──
-  { name: 'Puran Interiors SEO', cat: 'marketing', tags: ['On-page SEO', 'Link Building', 'CWV'], grad: 'linear-gradient(135deg,#14532D,#16A34A)', url: 'puraninteriors.com', href: 'https://www.puraninteriors.com/' },
-  { name: 'Vijaya Home Services', cat: 'marketing', tags: ['Google Ads', 'Meta Ads', 'Analytics'], grad: 'linear-gradient(135deg,#1E40AF,#3B82F6)', url: 'vijayahomeservices.com', href: 'https://www.vijayahomeservices.com/' },
-  { name: 'E-commerce Growth', cat: 'marketing', tags: ['SEO', 'Meta Ads', 'Email'], grad: 'linear-gradient(135deg,#4C1D95,#8B5CF6)', url: 'thridhavarnam.com', href: 'https://www.thridhavarnam.com/' },
-]
+// Real NNC projects shown on the landing portfolio section.
+// Single source lives in src/data/worksData.js (also used by /our-works).
+// Add a new project there and it will appear on both pages automatically.
+export const PORTFOLIO_ITEMS = WORKS_FOR_LANDING
 
 export const TESTIMONIALS = [
   { name: 'Rahul Mehta', role: 'Founder, Kanchi Silks', rating: 5, quote: 'They rebuilt our store and sales went up within the first month. Fast, professional, and the site is genuinely ours.' },
-  { name: 'Ananya Rao', role: 'Director, Meridian Group', rating: 5, quote: 'One team handled everything â€” design, build and SEO. We finally rank for the terms our customers actually search.' },
+  { name: 'Ananya Rao', role: 'Director, Meridian Group', rating: 5, quote: 'One team handled everything — design, build and SEO. We finally rank for the terms our customers actually search.' },
   { name: 'Vikram Shetty', role: 'CEO, FleetIQ', rating: 5, quote: 'The dashboard they built runs our whole operation. Clean code, delivered on time, and they handed us everything.' },
   { name: 'Priya Nair', role: 'Owner, Bloom & Co', rating: 5, quote: 'Our old site was embarrassing. The new one loads instantly and looks premium. Enquiries have doubled.' },
   { name: 'Arjun Kapoor', role: 'Partner, Sterling Finance', rating: 5, quote: 'PageSpeed 90+ in the contract was not a gimmick. They delivered exactly that, and the design is beautiful.' },

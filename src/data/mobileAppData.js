@@ -1,4 +1,4 @@
-// â”€â”€ Mobile App Development Landing Page Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Mobile App Development Landing Page Data ──────────────────────────────
 
 export const APP_PAGE = {
   slug: '/mobile-app-development-company-in-bangalore',
@@ -32,7 +32,7 @@ export const APP_PAGE = {
 export const APP_STATS = [
   { n: '150+', label: 'Apps Delivered' },
   { n: '35+',  label: 'In-house Specialists' },
-  { n: '4.9â˜…', label: 'Google Rating' },
+  { n: '4.9★', label: 'Google Rating' },
   { n: '8+',   label: 'Years Experience' },
   { n: '100%', label: 'Source Code Ownership' },
 ]
@@ -59,15 +59,15 @@ export const APP_TYPES = [
 
 export const APP_PROCESS = [
   { n: '01', title: 'Requirement Discovery',   desc: 'We map your complete user journey, feature list and tech requirements. No assumptions.', time: 'Day 1' },
-  { n: '02', title: 'UI/UX Wireframing',        desc: 'Figma screens for every flow onboarding, core features, edge cases. You approve before code.', time: 'Week 1â€“2' },
-  { n: '03', title: 'API & Backend Setup',      desc: 'Node JS REST APIs, MongoDB/PostgreSQL database and AWS infrastructure provisioned.', time: 'Week 2â€“3' },
-  { n: '04', title: 'App Development',          desc: 'React Native or Flutter build. Weekly TestFlight/APK drops so you track progress live.', time: 'Week 3â€“10' },
-  { n: '05', title: 'QA & Device Testing',      desc: 'Tested on 15+ real devices. Performance, crash and battery benchmarks run before submission.', time: 'Week 10â€“11' },
-  { n: '06', title: 'Store Submission & Launch',desc: 'Play Store & App Store submission handled by NNC. Full source code and credentials delivered.', time: 'Week 11â€“12' },
+  { n: '02', title: 'UI/UX Wireframing',        desc: 'Figma screens for every flow onboarding, core features, edge cases. You approve before code.', time: 'Week 1–2' },
+  { n: '03', title: 'API & Backend Setup',      desc: 'Node JS REST APIs, MongoDB/PostgreSQL database and AWS infrastructure provisioned.', time: 'Week 2–3' },
+  { n: '04', title: 'App Development',          desc: 'React Native or Flutter build. Weekly TestFlight/APK drops so you track progress live.', time: 'Week 3–10' },
+  { n: '05', title: 'QA & Device Testing',      desc: 'Tested on 15+ real devices. Performance, crash and battery benchmarks run before submission.', time: 'Week 10–11' },
+  { n: '06', title: 'Store Submission & Launch',desc: 'Play Store & App Store submission handled by NNC. Full source code and credentials delivered.', time: 'Week 11–12' },
 ]
 
 export const APP_FEATURES = [
-  { ico: 'âš¡', title: 'React Native & Flutter',  desc: 'Single codebase for Android + iOS. 60fps performance. 30â€“40% faster delivery vs. native builds.' },
+  { ico: 'âš¡', title: 'React Native & Flutter',  desc: 'Single codebase for Android + iOS. 60fps performance. 30–40% faster delivery vs. native builds.' },
   { ico: 'â˜ï¸', title: 'AWS Cloud Backend',       desc: 'Node JS APIs + MongoDB/PostgreSQL on AWS EC2/RDS. Auto-scaling. 99.9% uptime SLA.' },
   { ico: 'ðŸ”', title: 'Secure by Default',        desc: 'JWT auth, data encryption at rest and in transit, OWASP best practices on every build.' },
   { ico: 'ðŸ“Š', title: 'Analytics Built-in',       desc: 'Firebase Analytics, Mixpanel or custom dashboards track every user action from day one.' },
@@ -80,9 +80,9 @@ export const APP_FEATURES = [
 export const APP_PRICING = [
   {
     tier: 'MVP / Startup',
-    price: 'â‚¹75,000',
-    priceGst: 'â‚¹88,500',
-    timeline: '6â€“8 weeks',
+    price: '₹75,000',
+    priceGst: '₹88,500',
+    timeline: '6–8 weeks',
     best: 'First version to validate your idea',
     includes: [
       'React Native (Android + iOS)',
@@ -99,9 +99,9 @@ export const APP_PRICING = [
   },
   {
     tier: 'Business App',
-    price: 'â‚¹1,75,000',
-    priceGst: 'â‚¹2,06,500',
-    timeline: '10â€“14 weeks',
+    price: '₹1,75,000',
+    priceGst: '₹2,06,500',
+    timeline: '10–14 weeks',
     best: 'Full-featured app for a growing business',
     includes: [
       'React Native or Flutter',
@@ -121,7 +121,7 @@ export const APP_PRICING = [
     tier: 'Enterprise Platform',
     price: 'Custom',
     priceGst: null,
-    timeline: '14â€“24 weeks',
+    timeline: '14–24 weeks',
     best: 'Multi-role complex platform',
     includes: [
       'React Native / Flutter / Native',
@@ -165,7 +165,7 @@ export const APP_PORTFOLIO = [
     type: 'OTT Streaming Platform',
     stack: 'React Native Â· Video SDK Â· Node JS',
     result: 'Subscription-based OTT with live channels',
-    metric: '4.4â˜…',
+    metric: '4.4★',
     metricLabel: 'Play Store rating',
     img: 'https://nakshatranamahacreations.com/media/ourwork/cdn.webp',
     stores: ['Play Store'],
@@ -175,11 +175,11 @@ export const APP_PORTFOLIO = [
 export const APP_FAQS = [
   {
     q: 'How much does mobile app development cost in Bangalore?',
-    a: 'A basic MVP app starts from â‚¹75,000. A full-featured business app is typically â‚¹1,50,000â€“â‚¹2,50,000. Enterprise platforms with complex features are scoped individually. All pricing is fixed before work begins no hourly billing or surprise invoices.',
+    a: 'A basic MVP app starts from ₹75,000. A full-featured business app is typically ₹1,50,000–₹2,50,000. Enterprise platforms with complex features are scoped individually. All pricing is fixed before work begins no hourly billing or surprise invoices.',
   },
   {
     q: 'How long does it take to build a mobile app?',
-    a: 'An MVP takes 6â€“8 weeks. A full business app takes 10â€“14 weeks. Enterprise platforms take 14â€“24 weeks. Your timeline is agreed in writing before development begins and tracked weekly.',
+    a: 'An MVP takes 6–8 weeks. A full business app takes 10–14 weeks. Enterprise platforms take 14–24 weeks. Your timeline is agreed in writing before development begins and tracked weekly.',
   },
   {
     q: 'React Native or Flutter which is better for my app?',
@@ -187,7 +187,7 @@ export const APP_FAQS = [
   },
   {
     q: 'Do I need separate apps for Android and iOS?',
-    a: 'Not with React Native or Flutter. One codebase delivers both Android and iOS apps saving 30â€“40% in development time and cost while maintaining near-native performance.',
+    a: 'Not with React Native or Flutter. One codebase delivers both Android and iOS apps saving 30–40% in development time and cost while maintaining near-native performance.',
   },
   {
     q: 'Will NNC handle Play Store and App Store submission?',
@@ -218,7 +218,7 @@ export const APP_TESTIMONIALS = [
     quote: '"The team at NNC understood our OTT product inside out. The React Native app performed exactly like a native app. Deployment was smooth and they handled all the Play Store formalities."',
     author: 'CND Play',
     role: 'OTT Platform Â· Bengaluru',
-    result: '4.4â˜… Play Store',
+    result: '4.4★ Play Store',
     featured: false,
   },
 ]

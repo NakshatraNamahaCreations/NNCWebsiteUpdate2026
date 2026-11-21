@@ -6,6 +6,7 @@ import QuoteModal from '@/components/QuoteModal'
 import CallFloat from '@/components/CallFloat'
 
 export const metadata = {
+  metadataBase: new URL('https://www.nakshatranamahacreations.com'),
   title: 'Website Development Company in Bangalore | Nakshatra Namaha Creations',
   icons: {
     icon: '/assets/nnc-logo.png',
@@ -37,11 +38,11 @@ export const metadata = {
   creator: 'Nakshatra Namaha Creations Pvt. Ltd.',
   publisher: 'Nakshatra Namaha Creations Pvt. Ltd.',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
-  alternates: { canonical: 'https://nakshatranamahacreations.com' },
+  alternates: { canonical: 'https://www.nakshatranamahacreations.com' },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://nakshatranamahacreations.com',
+    url: 'https://www.nakshatranamahacreations.com',
     siteName: 'NNC Digital Website Development Company Bangalore',
     title: 'Website Development Company in Bangalore | Nakshatra Namaha Creations',
     description:
@@ -65,11 +66,11 @@ export const metadata = {
     images: ['https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png'],
   },
   // verification: {
-  //   google: 'REPLACE_WITH_YOUR_ACTUAL_GSC_TOKEN',  // get from Google Search Console â†’ Settings â†’ Ownership verification â†’ HTML tag
+  //   google: 'REPLACE_WITH_YOUR_ACTUAL_GSC_TOKEN',  // get from Google Search Console → Settings → Ownership verification → HTML tag
   // },
 }
 
-/* â”€â”€ JSON-LD Schemas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── JSON-LD Schemas ─────────────────────────────────────────── */
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -141,7 +142,7 @@ const localBusinessSchema = {
   url: 'https://nakshatranamahacreations.com',
   telephone: '+91-99005-66466',
   email: 'info@nakshatranamahacreations.com',
-  priceRange: 'â‚¹â‚¹',
+  priceRange: '₹₹',
   currenciesAccepted: 'INR',
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
@@ -206,7 +207,7 @@ const faqSchema = {
       name: 'How much does a website or app project cost?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Website development starts from â‚¹24,999. E-commerce from â‚¹45,000. Mobile apps from â‚¹75,000. CRM and SaaS platforms are scoped individually. All pricing is fixed before work begins.',
+        text: 'Website development starts from ₹24,999. E-commerce from ₹45,000. Mobile apps from ₹75,000. CRM and SaaS platforms are scoped individually. All pricing is fixed before work begins.',
       },
     },
     {
@@ -230,7 +231,7 @@ const faqSchema = {
       name: 'How long does a project take?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Corporate website: 3â€“5 weeks. E-commerce: 5â€“8 weeks. Mobile app: 8â€“14 weeks. CRM: 10â€“18 weeks. All timelines are agreed upfront.',
+        text: 'Corporate website: 3–5 weeks. E-commerce: 5–8 weeks. Mobile app: 8–14 weeks. CRM: 10–18 weeks. All timelines are agreed upfront.',
       },
     },
   ],

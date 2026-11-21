@@ -1,11 +1,11 @@
-// â”€â”€â”€ NNC SITE DATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── NNC SITE DATA ───────────────────────────────────────────────────────────
 // All content in one place. Update here reflects everywhere.
 
 export const SITE = {
   name: 'Nakshatra Namaha Creations Pvt. Ltd.',
   shortName: 'Nakshatra Namaha Creations',
   tagline: 'Your digital solutions partner',
-  url: 'https://nakshatranamahacreations.com',
+  url: 'https://www.nakshatranamahacreations.com',
   phone: '+91 99005 66466',
   phoneHref: 'tel:+919900566466',
   whatsapp: 'https://wa.me/919900566466',
@@ -14,7 +14,7 @@ export const SITE = {
   logo: '/assets/nnc-logo.png',
   teamPhoto: '/nnc-team.jpg',
   social: {
-    instagram: 'https://www.instagram.com/nnc.digitalbengaluru/',
+    instagram: 'https://www.instagram.com/nnc.digital/',
     linkedin: 'https://www.linkedin.com/company/nakshatra-namaha-creation/',
     youtube: 'https://www.youtube.com/c/NakshatraNamahaCreations',
     facebook: 'https://www.facebook.com/Nakshatranamahacreations/',
@@ -110,7 +110,7 @@ export const SERVICES = [
     iconColor: '#2196F3',
     desc: 'Nakshatra Namaha Creations offers custom website development services for corporate websites, business websites, e-commerce platforms and web applications using React JS and Next JS. Our website development ensures responsive design, performance and website speed, with PageSpeed 90+ guaranteed in every delivery contract.',
     features: ['Corporate & business website development', 'E-commerce website development', 'Custom web applications and portals', 'React JS website development', 'Next JS website development', 'Landing pages and funnels', 'CMS and content platforms', 'Progressive web apps'],
-    price: 'From â‚¹24,999',
+    price: 'From ₹24,999',
   },
   {
     id: 'mobile-app-development',
@@ -122,7 +122,7 @@ export const SERVICES = [
     iconColor: '#10B981',
     desc: 'Nakshatra Namaha Creations provides mobile app development services for Android and iOS using React Native and Flutter, building cross-platform mobile applications from MVPs to enterprise-level solutions. Our services cover application development, Play Store deployment and App Store deployment.',
     features: ['React Native app development', 'Flutter app development', 'Android application development', 'iOS application development', 'Cross-platform mobile applications', 'Play Store deployment', 'App Store deployment', 'On-demand platforms'],
-    price: 'From â‚¹75,000',
+    price: 'From ₹75,000',
   },
   {
     id: 'crm-software',
@@ -146,7 +146,7 @@ export const SERVICES = [
     iconColor: '#7C3AED',
     desc: 'Nakshatra Namaha Creations provides digital marketing and SEO services, including Google Ads, Meta Ads, search engine optimisation and social media management to improve online visibility. Our services cover technical SEO, on-page optimisation and paid advertising campaigns to reach target audiences.',
     features: ['Google Search and Display Ads', 'Facebook and Instagram Ads', 'Technical SEO', 'On-page SEO', 'Social media management', 'Digital advertising campaigns'],
-    price: 'From â‚¹15,000/mo',
+    price: 'From ₹15,000/mo',
   },
   {
     id: 'corporate-video',
@@ -158,7 +158,7 @@ export const SERVICES = [
     iconColor: '#EF4444',
     desc: 'Nakshatra Namaha Creations offers professional corporate video production services, creating corporate brand films, product videos, drone footage and motion graphics for businesses. Our in-house video production covers scripting, filming, editing and professional 4K delivery.',
     features: ['Corporate brand films', 'Drone and aerial video production', 'Product video shoots', 'Advertising video shoots', 'Motion graphics'],
-    price: 'From â‚¹50,000',
+    price: 'From ₹50,000',
   },
   {
     id: '2d-animation',
@@ -170,7 +170,7 @@ export const SERVICES = [
     iconColor: '#10B981',
     desc: 'Nakshatra Namaha Creations offers professional 2D animation services, including explainer videos, character animations, whiteboard animations and social media reels for engaging business communication. Our 2D animation process includes scripting, animation and final video delivery.',
     features: ['2D explainer videos', 'Product demo videos', 'Character animation', 'Whiteboard animation', 'Social media reels'],
-    price: 'From â‚¹18,000/min',
+    price: 'From ₹18,000/min',
   },
   {
     id: 'graphic-design',
@@ -182,7 +182,7 @@ export const SERVICES = [
     iconColor: '#F59E0B',
     desc: 'Nakshatra Namaha Creations provides graphic design and branding services, including logo design, brand identity, website and app UI/UX design and social media creatives. Our graphic design services focus on consistent branding, attractive visuals and user-friendly experiences.',
     features: ['Logo design and brand identity', 'UI/UX design for websites', 'UI/UX design for mobile applications', 'Social media creative kits', 'Brand guidelines'],
-    price: 'From â‚¹8,000',
+    price: 'From ₹8,000',
   },
   {
     id: 'b2b-marketing',
