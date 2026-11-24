@@ -9,9 +9,12 @@ export const metadata = {
   metadataBase: new URL('https://www.nakshatranamahacreations.com'),
   title: 'Website Development Company in Bangalore | Nakshatra Namaha Creations',
   icons: {
-    icon: '/assets/nnc-logo.png',
-    apple: '/assets/nnc-logo.png',
-    shortcut: '/assets/nnc-logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/images/nnc-logo.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: { url: '/images/apple-touch-icon.png', sizes: '180x180' },
+    shortcut: '/favicon.ico',
   },
   description:
     'Nakshatra Namaha Creations is a website development company offering custom websites, mobile apps, CRM software and digital marketing. 35+ in-house specialists.',
@@ -49,7 +52,7 @@ export const metadata = {
       'Nakshatra Namaha Creations is a website development company offering custom websites, mobile apps, CRM software and digital marketing. 35+ in-house specialists.',
     images: [
       {
-        url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
+        url: 'https://nakshatranamahacreations.com/images/og-banner.jpg',
         width: 1200,
         height: 630,
         alt: 'Nakshatra Namaha Creations Digital Agency Bangalore',
@@ -63,7 +66,7 @@ export const metadata = {
     title: 'Website Development Company in Bangalore | Nakshatra Namaha Creations',
     description:
       'Nakshatra Namaha Creations is a website development company offering custom websites, mobile apps, CRM software and digital marketing. 35+ in-house specialists.',
-    images: ['https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png'],
+    images: ['https://nakshatranamahacreations.com/images/og-banner.jpg'],
   },
   // verification: {
   //   google: 'REPLACE_WITH_YOUR_ACTUAL_GSC_TOKEN',  // get from Google Search Console → Settings → Ownership verification → HTML tag
@@ -76,21 +79,46 @@ const organizationSchema = {
   '@type': 'Organization',
   '@id': 'https://nakshatranamahacreations.com/#organization',
   name: 'Nakshatra Namaha Creations Pvt. Ltd.',
-  alternateName: 'NNC Digital',
+  alternateName: ['NNC', 'NNC Digital', 'Nakshatra Namaha Creations'],
   url: 'https://nakshatranamahacreations.com',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
-    width: 200,
-    height: 60,
+    url: 'https://nakshatranamahacreations.com/images/nnc-logo.png',
+    width: 512,
+    height: 512,
   },
+  image: 'https://nakshatranamahacreations.com/images/og-banner.jpg',
   description:
     'Nakshatra Namaha Creations is a full-stack digital agency in Bangalore delivering website development, mobile app development, CRM software, digital marketing, 2D animation and corporate video production.',
-  foundingDate: '2015',
-  numberOfEmployees: { '@type': 'QuantitativeValue', value: 35 },
+  foundingDate: '2015-03-07',
+  founder: {
+    '@type': 'Person',
+    name: 'Harish Kashyap',
+    jobTitle: 'Founder and Managing Director',
+    sameAs: 'https://www.linkedin.com/in/harish-kashyap-65035678',
+  },
+  slogan: 'Your Digital Solutions Partner',
+  numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 35, maxValue: 50 },
   legalName: 'Nakshatra Namaha Creations Private Limited',
   telephone: '+91-99005-66466',
   email: 'info@nakshatranamahacreations.com',
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+91-99005-66466',
+      contactType: 'customer service',
+      email: 'info@nakshatranamahacreations.com',
+      areaServed: 'IN',
+      availableLanguage: ['English', 'Hindi', 'Kannada', 'Marathi'],
+    },
+    {
+      '@type': 'ContactPoint',
+      telephone: '+91-85910-18808',
+      contactType: 'sales',
+      areaServed: 'IN',
+      availableLanguage: ['English', 'Hindi', 'Marathi'],
+    },
+  ],
   sameAs: [
     'https://www.instagram.com/nnc.digitalbengaluru/',
     'https://www.linkedin.com/company/nakshatra-namaha-creation/',
@@ -138,7 +166,8 @@ const localBusinessSchema = {
   '@type': 'ITService',
   '@id': 'https://nakshatranamahacreations.com/#localbusiness',
   name: 'Nakshatra Namaha Creations Pvt. Ltd.',
-  image: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
+  image: 'https://nakshatranamahacreations.com/images/og-banner.jpg',
+  logo: 'https://nakshatranamahacreations.com/images/nnc-logo.png',
   url: 'https://nakshatranamahacreations.com',
   telephone: '+91-99005-66466',
   email: 'info@nakshatranamahacreations.com',

@@ -112,7 +112,7 @@ function thankYouEmail(name, service) {
 
       <!-- Header -->
       <div style="background:linear-gradient(135deg,#0B1F4B 0%,#142D6B 100%);padding:40px 36px 32px;text-align:center;border-radius:12px 12px 0 0;">
-        <img src="https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png" alt="NNC" width="52" height="52" style="border-radius:12px;margin-bottom:16px;" />
+        <img src="https://nakshatranamahacreations.com/images/nnc-logo.png" alt="NNC" width="52" height="52" style="border-radius:12px;margin-bottom:16px;" />
         <h1 style="color:#ffffff;font-size:22px;font-weight:700;margin:0 0 6px;letter-spacing:-.02em;">Thank you, ${name}!</h1>
         <p style="color:rgba(255,255,255,.6);font-size:14px;margin:0;">We've received your enquiry and we're on it.</p>
       </div>
