@@ -28,12 +28,12 @@ const serviceSchema = {
   url: 'https://nakshatranamahacreations.com/services/crm-software-development',
   provider: {
     '@type': 'Organization',
-    '@id': 'https://nakshatranamahacreations.com#organization',
+    '@id': 'https://nakshatranamahacreations.com/#organization',
     name: 'Nakshatra Namaha Creations Private Limited',
     url: 'https://nakshatranamahacreations.com',
     telephone: '+91-99005-66466',
     email: 'info@nakshatranamahacreations.com',
-    logo: 'https://nakshatranamahacreations.com/images/logo.png',
+    logo: 'https://nakshatranamahacreations.com/images/nnc-logo.png',
   },
   areaServed: [{ '@type': 'City', name: 'Bangalore' }, { '@type': 'City', name: 'Mumbai' }, { '@type': 'City', name: 'Mysuru' }, { '@type': 'City', name: 'Hyderabad' }, { '@type': 'Country', name: 'India' }],
   hasOfferCatalog: {

@@ -70,7 +70,7 @@ export const STATS = [
 ]
 
 export const CLIENTS = [
-  { name: 'Homjee',               logo: '/assets/logo.png' },
+  { name: 'Homjee',               logo: '/assets/homjee-logo.png' },
   { name: 'Puran Interiors',       logo: '/assets/pi-logo.png' },
   { name: 'Vijaya Home Services',  logo: '/assets/vhs-logo.png' },
   { name: 'Rent Angadi',           logo: '/assets/rent-logo.webp' },

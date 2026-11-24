@@ -44,7 +44,7 @@ export const metadata = {
       'Top mobile app development company in Mysuru for Android and iOS apps using Flutter and React Native. 150+ apps delivered. Call +91 99005 66466.',
     images: [
       {
-        url: 'https://s3.eu-north-1.amazonaws.com/admin.nakshatranamahacreations.in/NNC+NEW+LOGO+2020+low+res.png',
+        url: 'https://nakshatranamahacreations.com/images/og-banner.jpg',
         width: 1200,
         height: 630,
         alt: 'Mobile App Development Company Mysuru Nakshatra Namaha Creations',

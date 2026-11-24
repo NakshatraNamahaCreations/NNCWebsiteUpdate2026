@@ -35,7 +35,7 @@ const localBusinessSchema = {
   description: 'Nakshatra Namaha Creations is a leading website development, mobile app development, CRM and digital marketing company in Rajarajeshwari Nagar, Bangalore. React JS and Node JS development, Android and iOS apps, corporate video, 2D animation, SEO and B2B digital solutions delivered by a 35+ in-house team across 4 offices in India.',
   url: 'https://nakshatranamahacreations.com/website-developers-in-bangalore',
   mainEntityOfPage: 'https://nakshatranamahacreations.com/website-developers-in-bangalore',
-  logo: 'https://nakshatranamahacreations.com/images/logo.png',
+  logo: 'https://nakshatranamahacreations.com/images/nnc-logo.png',
   image: ['https://nakshatranamahacreations.com/images/bangalore-office-exterior.jpg', 'https://nakshatranamahacreations.com/images/bangalore-office-interior.jpg', 'https://nakshatranamahacreations.com/images/bangalore-team.jpg'],
   telephone: '+91-99005-66466',
   email: 'info@nakshatranamahacreations.com',
